@@ -1,0 +1,16 @@
+/* 
+   DatabaseManager.strings
+   BathyScaphe
+
+   Created by Tsutomu Sawada on 11/02/06.
+   Copyright 2011 BathyScaphe Project. All rights reserved.
+ */
+
+"RebuildingDBErrorAlert" = "データベースエラーが発生したため、データベースの再構築に失敗しました。";
+"RebuildingDBErrorMessage" = "エラーコード：%ld（%@）";
+
+"RebuildingErrorAlert" = "データベースの再構築は完了しましたが、いくつかのログファイルは破損していたため再構築の対象から除外されました。";
+"RebuildingErrorMessage" = "破損したファイルを Finder で削除することをおすすめします。上級者の場合は、破損したファイルを直接編集して修正し、再度データベースの再構築を実行することもできます。";
+
+"RebuildingErrorShowFiles" = "破損したファイルを Finder に表示";
+"RebuildingErrorOK" = "OK";

@@ -1,0 +1,14 @@
+/* 
+   CookieManager.strings
+   BathyScaphe
+
+   Created by Tsutomu Sawada on 11/01/23.
+   Copyright 2011 BathyScaphe Project. All rights reserved.
+ */
+
+"beCookie error message text format" = "Be ログインに失敗しました。%@";
+"beCookie error message text" = "Be ログインに失敗しました。";
+"beCookie canceled message text" = "Be ログインがキャンセルされました。";
+
+"beCookie error info text format" = "Be が無効な状態で書き込みます。（エラーコード：%lu）";
+"beCookie canceled info text" = "Be が無効な状態で書き込みます。";

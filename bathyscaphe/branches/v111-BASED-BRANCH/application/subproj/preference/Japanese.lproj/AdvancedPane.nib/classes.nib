@@ -1,0 +1,45 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                changeProxyPort = id; 
+                changeProxyURL = id; 
+                chooseApplication = id; 
+                closeSheet = id; 
+                enableProxy = id; 
+                enableProxyWhenPOST = id; 
+                openSheet = id; 
+                syncSystemConfigProxy = id; 
+            }; 
+            CLASS = AdvancedPrefController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_closeSheetBtn" = NSButton; 
+                "_helperAppBtn" = NSPopUpButton; 
+                "_openSheetBtn" = NSButton; 
+                "_proxyPortField" = NSTextField; 
+                "_proxySheet" = NSWindow; 
+                "_proxyURLField" = NSTextField; 
+                "_proxyWhenPOSTCheckBox" = NSButton; 
+                "_usesProxyCheckBox" = NSButton; 
+                "_usesSystemConfigProxyCheckBox" = NSButton; 
+            }; 
+            SUPERCLASS = PreferencesController; 
+        }, 
+        {CLASS = BSIconTextFieldCell; LANGUAGE = ObjC; SUPERCLASS = NSTextFieldCell; }, 
+        {
+            ACTIONS = {"" = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {openHelp = id; }; 
+            CLASS = PreferencesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {"_contentView" = NSView; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

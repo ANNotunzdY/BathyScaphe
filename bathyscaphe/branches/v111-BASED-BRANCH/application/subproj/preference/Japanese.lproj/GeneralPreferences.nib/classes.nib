@@ -1,0 +1,25 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {"" = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {changeAutoscrollMask = id; }; 
+            CLASS = GeneralPrefController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {"_autoscrollMaskCheckBox" = NSMatrix; }; 
+            SUPERCLASS = PreferencesController; 
+        }, 
+        {
+            ACTIONS = {openHelp = id; }; 
+            CLASS = PreferencesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {"_contentView" = NSView; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

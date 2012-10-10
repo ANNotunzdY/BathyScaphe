@@ -1,0 +1,11 @@
+/* 
+   AddNgExWindow.strings
+   BathyScaphe
+
+   Created by Tsutomu Sawada on 10/08/07.
+   Copyright 2010 BathyScaphe Project. All rights reserved.
+ */
+
+"%@ only" = "“%@” のみ";
+
+"AddNgExWindow Help Anchor" = "bs_ngexpression"; /* same as NGExpressionsEditor */

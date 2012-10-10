@@ -1,0 +1,30 @@
+{
+    IBClasses = (
+        {
+            CLASS = CMRProgressIndicator; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSProgressIndicator; 
+        }, 
+        {CLASS = CMRPullsDownButton; LANGUAGE = ObjC; SUPERCLASS = NSPopUpButton; }, 
+        {
+            ACTIONS = {cancel = id; toggleStatusLineShown = id; }; 
+            CLASS = CMRStatusLine; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_progressIndicator" = NSProgressIndicator; 
+                "_statusLineView" = NSView; 
+                "_statusTextField" = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }, 
+        {
+            CLASS = SGContainerTableView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {"m_dataSource" = id; }; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

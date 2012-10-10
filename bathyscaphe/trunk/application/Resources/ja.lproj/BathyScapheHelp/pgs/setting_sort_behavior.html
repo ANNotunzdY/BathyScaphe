@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="即時ソート, 自動ソート, 一覧のソート, 並び順, 順番, 順序">
+<meta name="description" content="スレッドを更新／削除した後、すぐにソートするかどうかを選択することができます。">
+<title>スレッドの更新／削除後すぐにソートするかを設定する</title>
+<link rel="start" href="../BathyScapheHelp.html">
+<link rel="index" href="../xpgs/xall.html">
+<link rel="stylesheet" href="../sty/standard.css" media="screen" type="text/css">
+</head>
+<body>
+<div id="navbar">
+<div id="home"><a href="../BathyScapheHelp.html" rel="start">BathyScaphe ヘルプ</a></div>
+<div id="index"><a href="../xpgs/xall.html" rel="index">索引</a></div>
+</div>
+<div id="contents">
+<h1><img src="../gfx/icon32.png" alt="" title="" width="32" height="32" id="h1icon">スレッドの更新／削除後すぐにソートするかを設定する</h1>
+<p>スレッドを更新したり、ログを削除したりすると、スレッドのステータスや既得レス数、最終更新日などの情報が変化します。このため、それらのいずれかを基準にソートしている場合、すぐにソートが行われてスレッド一覧での表示順序が変化します。</p>
+<p>例として、「既得レス数」の「降順」でソートしている場合を考えます。下のサンプルでは、A スレッドが一番既得レス数が多く、C スレッドが一番少ないため、A スレッド→B スレッド→C スレッド の順に表示されています。</p>
+<table>
+  <tr><th>スレッドタイトル</th><th>既得レス数</th></tr>
+  <tr><td>A スレッド</td><td>100</td></tr>
+  <tr><td>B スレッド</td><td>25</td></tr>
+  <tr><td><strong>C スレッド</strong></td><td><strong>20</strong> ← 3番目</td></tr>
+</table>
+<p>C スレッドを開いて「スレッドを更新」すると、10個の新着レスがあったため、既得レス数が10増えて30になったとします。すると、すぐにソートが行われて、B スレッドと C スレッドの位置が入れ替わるでしょう。スレッド一覧の表示は下のようになるはずです。</p>
+<table>
+  <tr><th>スレッドタイトル</th><th>既得レス数</th></tr>
+  <tr><td>A スレッド</td><td>100</td></tr>
+  <tr><td><strong>C スレッド</strong></td><td><strong>30</strong> ← 2番目</td></tr>
+  <tr><td>B スレッド</td><td>25</td></tr>
+</table>
+<p>しかし、使い方によってこのように「すぐにソート」が行われない方が便利な場合は、この動作を無効にすることもできます。</p>
+
+<h2 id="P0">すぐにソートしないようにするには：</h2>
+<ol>
+  <li>アプリケーションメニュー（「BathyScaphe」メニュー）から「環境設定…」と選択し、さらに「一般」をクリックします。
+  <li>「スレッドの更新／削除後すぐにソートする」のチェックボックスをクリックして、選択解除します。
+</ol>
+<p>すぐにソートしない場合、再ソートは次に一覧を更新したり、表示モードを切り替えたりしたときにまとめて行われます。</p>
+<p><strong>注意</strong>：スマート掲示板や、特定の状況では、すぐにソートしないように設定していてもすぐにソートされる場合があります。これはすぐにソートしなければ正しくスレッド一覧を表示できないため、やむを得ず行っているものです。</p>
+
+<h2 id="P1">関連項目</h2>
+<ul class="rel_items">
+  <li><a href="./sort_threads.html" class="wikipage">スレッド一覧をソートする</a>
+  <li><a href="./setting_general.html" class="wikipage">「一般」を設定する</a>
+</ul>
+</div>
+</body>
+</html>

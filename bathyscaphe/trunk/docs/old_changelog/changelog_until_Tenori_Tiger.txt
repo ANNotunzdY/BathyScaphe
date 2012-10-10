@@ -1,0 +1,2646 @@
+2009-05-16 tsawada2 <tsawada2@users.sourceforge.jp>
+	*changelog.txt
+		サイズが大きくなってきたので docs/old_changelog 下に移動します。
+================================================= 1.6.2(v390) / Tenori Tiger / CVS Tag : v162_FINAL
+2009-05-07 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/window/CMRReplyMessenger-Connector.m
+		デバッグ用ログ出力が残っていたので取り除いた。
+	* application/Resources/Japanese.lproj/BathyScapheHelp/
+		ヘルプコンテンツの更新。
+	* application/Resources/Japanese.lproj/BathyScapheHelp/BathyScapheHelp idx
+		[削除] 10.3.9 でしか使用されない古いインデックスファイルだったので、このバージョンからは削除。
+2009-05-06 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/browser/CMRBrowser.m
+	* application/source/browser/CMRThreadsList-DataSource.m
+	* application/source/window/BSQuickLookPanel.m
+	* application/source/window/BSQuickLookPanelController.m
+		クイックルックパネル表示中に基のブラウザウインドウを閉じた後、クイックルックパネルに対してキーイベントを
+		送信するとクラッシュする問題が起きていたのを修正。
+	* application/Resources/Japanese.lproj/board_default.plist
+		最新のものに更新。
+=================================================
+2009-04-29 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/manager/BSQuickLookObjectController.m
+		[新規追加] content として BSQuickLookObject を取り扱う NSObjectController のサブクラス。
+		-setContent: 時に、古い content の BSQuickLookObject に -cancelDownloading を送るように
+		オーバーライドしてあるだけ。
+	* application/Resources/Japanese.lproj/BSQuickLookPanel.nib
+		nib ファイル内の NSObjectController オブジェクトのクラスを BSQuickLookObjectController に変更。
+	* application/source/object/BSQuickLookObject.m
+		メモリ管理の観点から一部コードを修正。
+2009-04-27 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/subproj/preference/Japanese.lproj/ViewPane.nib
+		「表示」環境設定＞「詳細オプション」に、「抽出とハイライトのカラー」設定項目を追加
+		（いつの間にか抜け落ちていた）。
+2009-04-21 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/thread/BSSearchOptions.m
+		将来の変更を準備。
+2009-04-20 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/thread/CMRThreadViewer-Validation.m
+	* application/source/thread/CMRThreadViewer-Find.m
+	* application/source/view/CMRThreadView.m
+		-findTextInSelection: の実装場所を CMRThreadViewer (<- NSWindowController) から
+		 CMRThreadView (<- NSTextView) に変更（よりふさわしい場所だと思う）。
+2009-04-19 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/window/BSLocalRulesPanelController.m
+		Mac OS X v10.3.x に遠慮していた部分を修正。
+		- NSKeyValueBinding.h:
+		APPKIT_EXTERN NSString *NSConditionallySetsEditableBindingOption
+		↑これが AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER だった
+	* application/source/browser/CMRBrowser-Action.m
+	* application/source/browser/CMRBrowser-Delegate.m
+	* application/source/browser/CMRThreadsList-DataSource.m
+	* application/source/view/ThreadsListTable.m
+	* application/source/window/BSQuickLookPanel.m
+	* application/source/window/BSQuickLookPanelController.m
+	* application/Resources/Japanese.lproj/BSQuickLookPanel.nib/keyedobjects.nib
+		「先頭のレスをクイックルック」機能の改良：
+		- Finder の Quick Look のように、クイックルックパネル表示中も矢印キーでスレッド一覧の選択項目を
+		　変更できるようにした（正確には、ブラウザウインドウで直前にフォーカスが当たっていたビューに
+		　↑／↓のいずれかを含むキーイベントがパススルーされるようにした）。
+		- クイックルックパネル表示中に選択項目が変化した際、パネルの表示内容も選択項目に追従して更新される
+		　ようにした。
+		- クイックルックパネル表示中に return キーを押すと、そのスレッドを開けるようにした。
+2009-04-09 masakih <masakih@users.sourceforge.jp>
+	* application/source/manager/DatabaseManager-DatabaseAccess.m:
+		Fix bug チケット #16031
+2009-03-22 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/CMRAppDelegate.m
+	* application/Resources/Japanese.lproj/Localizable.strings
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		「BathyScaphe 終了時の option キー押下→データベースの vacuum」機能について、
+		実装方法を変更して
+		- メニューアイテムに「バキュームして終了…」（Cmd-option-Q）を追加して、これを「BathyScaphe を終了」
+		　（Cmd-Q）の alternating menu item にした。
+		- 実行前に確認のダイアログを表示するようにした。
+2009-03-08 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/view/ThreadsListTable.m
+		テーブルビューで行が選択されていない状態でも、キーバインドで「先頭のレスをクイックルック」が作動し、
+		空のウインドウが表示されていた問題を修正。
+2009-03-01 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/Resources/image/cmlf_icon.png
+		[削除] 削除。
+	* application/source/window/CMRBrowserTbDelegate.m
+		「表示モードの切り替え」ツールバー項目をデフォルトセットに追加。
+=================================================
+2009-03-01 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/composer/CMRAttributedMessageComposer.m
+		-[NSAttributedString initWithHTML:〜] メソッドは使用しないようにした。
+	* application/Resources/Japanese.lproj/board_default.plist
+		最新のものに更新。
+	* application/Resources/text/HostProperties.plist
+		まちBBSの定義を修正。
+2009-02-17 masakih <masakih@users.sourceforge.jp>
+	* application/source/manager/DatabaseManager.m:
+	* application/source/manager/SQLiteDB.h:
+	* application/source/manager/SQLiteDB.m:
+		SQlite用NSZoneが正しく設定されていなかったのを修正。
+	* application/source/bbs/BoardListItem/SmartBLIEditorHelper.m:
+		スマート掲示板の編集時にBSDatePickerの値が正しく設定されていなかったのを修正。
+	* application/BathyScaphe.xcodeproj/project.pbxproj:
+		afpアクセス可能にするため、SQLITE_ENABLE_LOCKING_STYLE=1を有効にした。
+	* application/source/manager/DatabaseManager-DatabaseAccess.m:
+		何カ所かでデータベースアクセス失敗時にエラーを出すようにした
+	* application/source/manager/SQLiteDB.m:
+		valueForSTMT()にもgive upする機構を付けた。
+	* misc/sqlite/*:
+		sqliteをversion 3.5.9 に更新。
+2009-02-17 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/browser/Browser.m
+		データベースの再構築中にモーダルウインドウを表示し、ユーザが再構築が完了していないのに
+		BathyScaphe の各部を操作することがないようにした。
+	* application/Resources/Japanese.lproj/BSModalStatusWindow.nib
+		[新規追加] データベースの再構築中に表示するモーダルウインドウ用の nib ファイル。
+2009-02-15 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/preferences/AppDefaults-ThreadsList.m
+		HEADCheck の制限時間内かどうかの判定処理を修正した。
+=================================================
+2009-02-15 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/browser/BSDBThreadList.m
+	* application/source/browser/BSThreadsListOPTask.m
+		メモリ管理の修正。
+	* application/source/browser/CMRBrowser-Delegate.m
+	* application/source/browser/CMRBrowser-List.m
+	* application/source/browser/CMRThreadsList.m
+		役割が重複する Notification を整理。
+	* application/source/messaging/CMXWorkerContext.m
+		SGBaseQueue の替わりに SGThreadsafeBaseQueue にしてみた。
+		意味があるのかどうかは、微妙？
+	* application/source/main.m
+	* application/source/thread/CMRThreadLayoutTask.m
+	* application/source/thread/CMRThreadViewer.m
+	* application/source/browser/Browser.m
+	* application/source/preferences/AppDefaults-Deprecated.h
+	* application/source/preferences/AppDefaults.m
+	* application/source/preferences/CMRPreferencesDefautValues.h
+		微修正。	
+	* application/Resources/Japanese.lproj/CMRStatusView.nib
+	* application/Resources/Japanese.lproj/CMRTaskItem.nib
+	* application/Resources/Japanese.lproj/CMRTaskManager.nib
+	* application/source/task/CMRTaskItemController.m
+	* application/source/task/CMRTaskManager-Management.m
+	* application/source/task/CMRTaskManager.m
+	* application/source/view/BSNavigationStatusLine.m
+	* application/source/view/CMRStatusLine.m
+		Cocoa Binding 周りでメモリリークが発生していたので、それを回避するために様々な修正。
+	* application/source/browser/CMRBrowser-ViewAccessor.m
+	* application/source/thread/CMRThreadViewer-ViewAccessor.m
+	* application/source/window/CMRReplyController-ViewAccessor.m
+	* application/source/window/CMRStatusLineWindowController.(h|m)
+		ステータス行オブジェクトがきちんと release されるよう、各部の修正。
+		同時に、使われなくなっていたインスタンス変数やメソッドを整理。各サブクラスにも対応する変更。
+2009-02-12 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/Resources/Japanese.lproj/CMRTaskItem.nib
+		直接 File's owner に Binding せず、間に NSObjectController を挟むようにした。
+	* application/subproj/previewer/BSIPIFullScreenController.m
+		スワイプの向きと前／次への移動の向きを最初の実装に戻した。
+	* application/subproj/preference/font_color/BSThemeEditor.m
+		テーマエディタで「OK」をクリックしたあと、commitEditing: を呼んで編集内容を確定させるようにした。
+		ほか、コードの整理。
+	* frameworks/CocoMonar/framework/src/BSThreadViewTheme.m
+		ファイル書き込み時のエラーを NSError で取得できるよう、メソッドを追加した。
+	* application/subproj/preference/font_color/FCController.m
+		選択されたテーマに対して、「ファイル」＞「Finder に表示」が利用できるようにした
+		（デフォルト・テーマを除く）。
+	* application/source/main.m
+	* application/source/CMRExports.h
+	* application/source/messaging/CMXWorkerContext.m
+		CMXInternalMessaging, SGInternalMessenger, および SGRunLoopMessenger はもう使用されて
+		いないので、import や初期化を行なっている箇所から全て削除した。
+=================================================
+2009-02-09 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/Resources/Japanese.lproj/Acknowledgments.rtf
+		コピーライトを更新。
+	* application/source/preferences/AppDefaults.m
+	* application/subproj/preference/font_color/FCController.m
+		テーマフォルダが未作成だったり見つからない場合の処理を改善した。
+	* application/subproj/previewer/BSIPIFullScreenController.m
+		スワイプの向きと前／次への移動の向きを間違えている気がするのでリリース前に修正しておいた。
+	* frameworks/CocoMonar/Info-CMF.plist
+	* frameworks/CocoMonar/English.lproj/InfoPlist.strings
+	* frameworks/CocoMonar/framework/src/CMRAppTypes.h
+	* application/source/preferences/CMRPreferencesDefautValues.h
+		将来に備えて、列挙子定義を追加。それに伴い、CocoMonar Framework のビルド番号更新。
+2009-02-02 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/preferences/AppDefaults.m
+		「表示」環境設定でのテーマ関連のインタフェース仕様変更に伴い、必要な変更を行った。
+	* application/subproj/preference/Japanese.lproj/AdvancedPane.nib
+		暫定的に配置していた「Be の saap:// アイコンを表示する」チェックボックスを取り除いた
+		（「表示」環境設定に移動した）。
+	* application/subproj/preference/Japanese.lproj/FilterPreferences.nib/classes.nib
+	* application/subproj/preference/Japanese.lproj/ReplySetting.nib/info.nib
+		「＋」「ー」ボタンを画像ではなく Gradient Button に変更した（Mac OS X v10.3.9 に気兼ねする
+		必要がなくなったので）。
+	* application/subproj/preference/Japanese.lproj/GeneralPreferences.nib
+		「Mail 欄の内容：」ラジオボタンを取り除いた（「表示」環境設定に移動した）。
+	* application/subproj/preference/Japanese.lproj/ThemeEditor.nib
+	* application/subproj/preference/Japanese.lproj/ViewPane.nib
+	* application/Resources/Japanese.lproj/Localizable.strings
+	* application/subproj/preference/Japanese.lproj/Localizable.strings
+	* application/subproj/preference/font_color/BSThemeEditor.m
+	* application/subproj/preference/font_color/BSThemePreView.m
+	* application/subproj/preference/font_color/FCController.m
+		「表示」環境設定の改良：
+		- テーマの選択、追加、削除のインタフェースを大幅に変更。
+		- カスタム・テーマの取り扱いを変更。
+		- テーマのプレビューを実装。
+		などなど。
+	* application/subproj/previewer/BSIPIFullScreenController.m
+	* application/subproj/previewer/BSIPIFullScreenWindow.(h|m)
+		プレビューインスペクタ（2.8.2）：
+		フルスクリーン時にスワイプで前／次のイメージへ移動する試みを実装（未検証）。
+	* application/subproj/preference/rsrc/themePreview.plist
+		[新規追加] テーマをプレビューするためのサンプルデータ。BSThemePreView が使用。
+2009-01-12 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/subproj/preference/font_color/BSThemePreView.(h|m)
+		[新規追加] テーマをプレビューするビュー。「表示」環境設定で使用予定。まだ作成途中。
+	* application/subproj/preference/Japanese.lproj/ThemeEditor.nib
+	* application/subproj/preference/Japanese.lproj/ViewPane.nib
+	* application/subproj/preference/font_color/FCController.m
+		「表示」環境設定を改造中。テーマの選択インタフェースを変更予定。
+	* application/source/network/CMRDownloader.m
+		エラーログを抑制した。
+	* application/source/window/CMRBrowserTbDelegate.m
+		「表示モードの切り替え」ツールバー項目が、「テキストのみ」モードでも動作するようにした。
+	* application/subproj/preference/SyncPaneController.m
+	* application/subproj/preference/Japanese.lproj/SyncPane.nib/classes.nib
+		「同期」環境設定で、同期のログが無いときは「同期のログを表示」ボタンを淡色表示にするようにした。
+	* application/subproj/previewer/Japanese.lproj/BSIPIPreferences.nib
+		プレビューインスペクタの環境設定パネルで、ほとんどのラベルに「Mixed」というツールチップが表示される
+		問題を修正。
+	* application/subproj/previewer/Japanese.lproj/InfoPlist.strings
+	* application/Resources/Japanese.lproj/InfoPlist.strings および、各種 Info.plist
+		コピーライト表記の変更（2008→2009）。
+	* application/subproj/reply/Japanese.lproj/InfoPlist.strings
+		[削除] 不要になったので削除した。
+=================================================
+2008-12-27 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/subproj/previewer/BSImagePreviewInspector-View.m
+	* application/subproj/previewer/BSImagePreviewInspector.m
+		KVO の登録タイミングを -windowDidLoad: から -initWithPreferences: に変更。そうしないと
+		-dealloc: 時の -removeObserver: でコンソールにエラーメッセージが吐かれることがあるため。
+2008-12-24 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/subproj/previewer/BSIPIHistoryManager.m
+	* application/subproj/previewer/BSIPIToken.m
+		イメージをドラッグ＆ドロップで保存した際や、「別名で保存...」した際に kMDItemWhereFroms 拡張属性
+		の値がファイルに記入されない問題を修正。
+	* frameworks/SGAppKit/framework/src/extensions/workspace/NSWorkspace-SGExtensions.m
+		Spotlight コメントをファイルに付加するメソッドを廃止した。
+	* application/source/bbs/BoardListItem/SmartBoardList.m
+		掲示板リスト項目をドラッグ＆ドロップする際、ドロップ先の妥当性チェックを強化した
+		（カテゴリ項目を自分自身の内部にドロップできないようにした）。
+2008-12-22 tsawada2 <tsawada2@users.sourceforge.jp>
+	* frameworks/SGFoundation/framework/source/classes/files/UKXattrMetadataStore.h
+	* frameworks/SGFoundation/framework/source/classes/files/UKXattrMetadataStore.m
+		[新規追加] from <http://www.zathras.de>
+	* frameworks/SGFoundation/framework/source/classes/SGFoundationClasses.h
+		UKXattrMetadataStore を SGFoundation フレームワークに追加した。
+	* application/Resources/Japanese.lproj/Acknowledgments.rtf
+		UKXattrMetadataStore に関する記述を追加。
+	* application/source/composer/CMRMessageFilter.m
+		重複するサンプルを取り除く方法を変更。
+	* application/source/composer/CMRMessageSample.m
+		デバッグ用に description メソッドを実装。
+	* application/source/thread/CMRThreadViewer-Link.m
+	* application/source/view/SGLinkCommand.m
+	* application/subproj/preference/Japanese.lproj/LinkPreferences.nib
+	* application/subproj/previewer/BSIPIDefaults.m
+	* application/subproj/previewer/BSIPIHistoryManager.m
+	* application/subproj/previewer/Japanese.lproj/BSIPIPreferences.nib
+		ダウンロードしたファイルや、プレビューしたイメージの URL を Spotlight コメントに
+		追加するのは止めて、拡張属性（extend attribute）の com.apple.Metadata.kMDItemWhereFroms
+		に書き込むようにした。Tiger でも Leopard でも書き込まれると思うが、Tiger では、残念ながらこれは
+		Spotlight のメタデータとしては使用されないであろう。もちろん、Leopard では Spotlight でばっちり。
+		このために UKXattrMetadataStore を使用。また、Spotlight コメントに設定するかどうかの設定は廃止。	
+	* application/subproj/preference/font_color/FCController.m
+	* application/subproj/preference/SoundsPaneController.m
+	* application/subproj/previewer/BSIPIToken.m
+　		メモリリークを修正。
+	* application/subproj/previewer/BSImagePreviewInspector.m
+		プレビューインスペクタが半透明で表示されている場合に、シートを表示するときは一時的に不透明に
+		戻すようにした。
+=================================================
+2008-12-01 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/subproj/preference/pane/PreferencesPane-Toolbar.m
+		Panther 対策のコードを削除。
+	* frameworks/SGAppKit/framework/src/custom/bathyscaphe/BSBoardListView.(h|m)
+		掲示板リストの選択項目の色を、ブルー／グラファイトによって変えるように改良。
+	* frameworks/SGAppKit/framework/src/SGAppKit.h
+		NSScrollView のカテゴリを import しなくなった。
+	* application/source/CMRAppDelegate.m
+	* application/source/manager/DatabaseManager-Notifications.m
+		データベースのバキューム機能について、option キーが押されているかの検知部を
+		CMRAppDelegate に移した。
+	* application/source/browser/BSDBThreadList.(h|m)
+	* application/source/browser/BSDBThreadsListDBUpdateTask2.(h|m)
+	* application/source/browser/BSThreadListUpdateTask.m
+	* application/source/browser/BSThreadsListOPTask.(h|m)
+	* application/source/browser/Browser.(h|m)
+	* application/source/browser/CMRBrowser.m
+	* application/source/browser/CMRFavoritesManager.(h|m)
+	* application/source/browser/CMRThreadsList.(h|m)
+		「ログ一覧」モードへの切り替え機能の追加、および、データベースの再構築機能の追加。
+	* application/source/manager/DatabaseManager-DatabaseAccess.m
+	* application/source/manager/DatabaseManager.h
+		データベースへのログファイル情報の挿入部分などを手直し。また、未使用のコードを削除。
+	* application/source/composer/CMRAttributedMessageComposer.m
+	* application/source/thread/CMRThreadLinkProcessor.m
+	* application/source/view/popup/CMXPopUpWindowController+View.m
+		微修正。
+	* application/source/browser/CMRBrowser-Validation.m
+	* application/source/window/CMRBrowserTbDelegate.m
+		しばらく隠されていた「表示モードの切り替え」ツールバー項目を使用可能にした。
+	* application/source/bbs/BoardList.h
+	* application/source/bbs/BoardList.m
+	* application/source/bbs/BoardList-OVDataSource.m
+	* application/source/composer/CMRSubjectReader.h
+	* application/source/composer/CMRSubjectReader.m
+	* application/source/composer/CMRThreadSubjectComposer.h
+	* application/source/composer/CMRThreadSubjectComposer.m
+	* application/source/extensions/NSIndexSet+BSAddition.h
+	* application/source/extensions/NSIndexSet+BSAddition.m
+	* application/source/extensions/NSTableView+BSAdditions.h
+	* application/source/extensions/NSTableView+BSAdditions.m
+	* application/source/network/ThreadsListDownloader.h
+	* application/source/network/ThreadsListDownloader.m
+	* application/source/object/CMRBBSSignature.h
+	* application/source/object/CMRBBSSignature.m
+	* application/source/object/CMRThreadSignature_p.h
+	* application/source/preferences/AppDefaults-Alert.m
+	* application/source/preferences/AppDefaults-LibPath.m
+	* application/source/preferences/CMXTemplateKeys.h
+	* application/source/thread/CMRThreadDocument_p.h
+		[削除] 未使用になっていたのでリポジトリからも削除。
+	* application/Resources/Japanese.lproj/CMRBrowser.nib
+	* application/Resources/Japanese.lproj/CMRBrowser.nib/*.nib
+		[新規追加] Browser.nib を Interface Builder 3 フォーマットに更新したので、
+		混乱しないようファイル名を別にした。
+	* application/Resources/Japanese.lproj/Browser.nib/*.nib
+		[削除] CMRBrowser.nib に置き換え、リポジトリから削除。
+	* application/Resources/Japanese.lproj/CMRAccessorySheet.nib/*.nib
+	* application/Resources/Japanese.lproj/BSTimeMachine.nib/*.nib
+	* application/Resources/Japanese.lproj/BSFavoritesProgressPanel.nib/*.nib
+		[削除] 未使用になっていたのでリポジトリからも削除。
+2008-10-19 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/browser/BSFavoritesHEADCheckTask.h
+	* application/source/browser/BSFavoritesHEADCheckTask.m
+	* application/source/browser/w2chFavoriteItemList.m
+	* application/source/browser/CMRAccessorySheetController.h
+	* application/source/browser/CMRAccessorySheetController.m
+	* application/source/browser/CMRThreadsList-Download.m
+	* application/source/browser/CMRThreadsList-Filter.m
+	* application/source/browser/CMRThreadsList-listImport.m
+	* application/source/browser/CMRThreadsList-Notification.m
+	* application/source/browser/CMRThreadsList-Remove.m
+	* application/source/browser/CMRThreadsListReadFileTask_p.h
+	* application/source/browser/CMRThreadsListReadFileTask.h
+	* application/source/browser/CMRThreadsListReadFileTask.m
+	* application/source/browser/CMRThreadsUpdateListTask_p.h
+	* application/source/browser/CMRThreadsUpdateListTask.h
+	* application/source/browser/CMRThreadsUpdateListTask.m
+		[削除] 未使用になっていたのでリポジトリから削除。
+=================================================
+2008-10-13 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/composer/BSBeSAAPAnchorComposer.[h|m]
+		[新規追加] Be の saap:// アイコンを表示するクラス。
+		いや、CMRAttributedMessageComposer に埋め込んで全然良い機能なのだが、
+		CMRAttributedMessageComposer クラスが嫌いなので、別クラスに仕立てた。
+		そうは言っても CMRAttributedMessageComposer からのみ呼び出されて仕事をする。
+	* application/Resources/Japanese.lproj/browserListColumns.plist
+	* application/source/extensions/NSTableColumn+CMXAdditions.m
+		スレッド一覧のカラムを定義したプロパティリストファイルについて、以下のように変更：
+		- resizableキー（値：boolean）を廃止し、resizingMaskキー（値：integer）を新設。
+		- sortDescriptor protoType キー（値：dictionary）を新設。この dictionary にはさらに
+		　keyPath, ascending, selector の各キーがあり、要するにここにカラムの sortDescriptorProtoType
+		　がプロパティリストとして定義されている。
+	* application/source/bbs/BoardManager-BSAddition.m
+		BoardProperties.plist から今までの SortDescriptors 情報は読み込まないようにした。
+		新しく NSData 形式で SortDescriptors を読み書きするようになった。
+		また、sortColumnForBoard:, isAscendingAtBoard: 系のメソッドは廃止した。
+	* application/source/browser/BSDBThreadList.m
+	* application/source/browser/BSDownloadTask.m
+	* application/source/browser/BSThreadListUpdateTask.m
+		スレッド一覧のフィルタリングは -[NSArray filteredArrayUsingPredicate:] を使って行なうようにした。
+		ソート処理を SortDescriptors を使う方法に一本化し、不要なメソッドを削除した。
+	* application/source/browser/Browser.m
+	* application/source/browser/CMRBrowser-Validation.m
+	* application/source/browser/CMRBrowser-Action.m
+		不要なメソッドまたはコードを削除した。
+	* application/source/browser/CMRBrowser-List.m
+	* application/source/browser/CMRBrowser-Delegate.m
+		カラムのハイライト処理などで、不要になったコードを削除した。
+	* application/source/browser/CMRThreadsList-DataSource.m
+	* application/source/browser/CMRThreadsList.m
+		BSDBThreadList に合わせて修正。
+	* application/source/composer/CMRAttributedMessageComposer-Anchor.m
+		Be の saap:// リンクの処理を追加した。
+	* application/source/composer/CMRMessageAttributesTemplate.m
+	* application/source/preferences/AppDefaults-ThreadViewer.m
+	* application/source/preferences/CMRPreferencesDefautValues.h
+	* application/subproj/preference/Japanese.lproj/AdvancedPane.nib
+		Be の saap:// リンクのアイコンを表示するかどうかの設定が出来るようにした。
+	* application/source/preferences/AppDefaults.m
+		デフォルトのソートカラムの設定を NSSortDescriptor の Array で提供するようにした。
+2008-09-08 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/browser/BSDBThreadList.m
+	* application/source/browser/BSDownloadTask.m
+	* application/source/browser/Browser.m
+		細部の修整。
+	* application/source/composer/CMR2chDATReader.m
+	* application/source/composer/CMRThreadDictReader.m
+	* application/source/thread/CMRThreadAttributes.m
+	* application/source/preferences/AppDefaults-ThreadViewer.m
+	* application/source/threaddata/CMRThreadVisibleRange.m
+		デフォルトの visible range について、AppDefaults クラスとの役割分担を見直し。
+	* application/subproj/preference/Japanese.lproj/LinkPreferences.nib
+	* application/subproj/preference/Japanese.lproj/ReplySetting.nib
+	* application/subproj/preference/reply/CMRReplyDefaultsController.m
+		ボタンのベゼルスタイルで Mac OS X v10.3.9 に配慮していた部分を削除。はじめから nib で
+		設定できる嬉しさ。
+	* application/subproj/previewer/BSIPIDefaults.m
+	* application/subproj/previewer/BSImagePreviewInspector-View.m
+		イメージ・ビューの背景色を調整。
+		また、ウインドウ周りの設定項目については、KVO で設定変更が速やかに反映されるようにした。
+2008-09-07 tsawada2 <tsawada2@users.sourceforge.jp>
+	プレビューインスペクタの改良：
+	* application/subproj/previewer/BSIPIDefaults.[h|m]
+		[新規追加] BSImagePreviewInspector クラスから環境設定周りのコードを別クラスに分離。
+	* application/subproj/previewer/BSIPIPreferencesController.[h|m]
+		[新規追加] BSImagePreviewInspector クラスから環境設定パネル周りのコードを
+		別クラスに分離。
+	* application/subproj/previewer/Exif16.tiff
+		[新規追加] プレビューインスペクタで用いる画像リソース。
+	* application/subproj/previewer/Exif.tiff
+		[削除] 削除。
+	* application/subproj/previewer/Japanese.lproj/BSIPIFullScreen.nib
+	* application/subproj/previewer/BSIPIFullScreenController.m
+	* application/subproj/previewer/Japanese.lproj/Localizable.strings
+		フルスクリーン表示中の情報表示インタフェースを見直し。また、Binding をコード中ではなく
+		nib であらかじめ設定しておくようにした。
+	* application/subproj/previewer/BSIPIHUDView.m
+	* application/subproj/previewer/BSIPIToken.m
+		微修正。
+	* application/subproj/previewer/BSImagePreviewInspector-View.m
+	* application/subproj/previewer/BSImagePreviewInspector.m
+	* application/subproj/previewer/Japanese.lproj/BSIPIPreferences.nib
+	* application/subproj/previewer/Japanese.lproj/BSImagePreviewInspector.nib
+		BSImagePreviewInspector クラスの一部を別クラスに分離させる内部構造変更。
+		機能／外観的には何も変わっていない。
+2008-08-22 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/browser/CMRBrowser.m
+		ブラウザウインドウのカスケード処理を三たび修正。
+		というか、よく考えたら何もごちゃごちゃやる必要はないじゃないか。
+		CMRBrowser クラスは NSWindow(Controller)の frame Auto-Save に委ねているのだから、
+		setShouldCascadeWindow:YES で常時良きに計らってくれるんじゃないのか。
+2008-08-21 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/network/ThreadTextDownloader.m
+	* application/source/manager/DatabaseManager-Notifications.m
+		ThreadTextDownloader の処理を少し改良した。
+	* application/source/browser/CMRBrowser-BLEditor.m
+		掲示板リストから、選択されている項目以外の項目を（Control-クリックで）削除した時は、
+		できるだけ選択されている項目の選択状態を維持するようにした。
+	* application/Resources/Japanese.lproj/BSLocalRulesPanel.nib
+		ボタンのベゼルスタイルを変更した。
+2008-08-11 tsawada2 <tsawada2@users.sourceforge.jp>
+	プレビューインスペクタの改良：
+	* application/subproj/previewer/BSIPIArrayController.m
+		BSIPIArrayController をターゲットとする IBAction の validation を、誤って
+		BSImagePreviewInspector でやろうとしていたのを修正。
+	* application/subproj/previewer/BSIPIFullScreenController.m
+	* application/subproj/previewer/Japanese.lproj/BSIPIFullScreen.nib
+		フルスクリーン表示中に、「i」キーを押して Exif データを表示／隠すことができるようにした。
+		画面の左下に HUD っぽいビューで表示される。
+		また、一部のショートカットキーが効かなくなっていた問題を修正。
+	* application/subproj/previewer/BSIPIHUDView.[h|m]
+		[新規追加] フルスクリーン表示中の Exif データ表示で使用する、NSView のサブクラス。
+	* application/subproj/previewer/BSIPIImageView.m
+		イメージビューの背景を好きな色で塗りつぶせる機能を追加した。
+	* application/subproj/previewer/BSIPITextFieldCell.m
+		描画方法を修正し、リスト・ビューでツールチップの反応領域が狭かった問題を解決。
+	* application/subproj/previewer/BSIPIToken.m
+		Exif データで、撮影日付も取得するようにした。また、カメラ機種名の取得時に、余分な空白を
+		削ぎ落とすようにした。
+	* application/subproj/previewer/BSImagePreviewInspector-Tb.m
+		ツールバー項目の validation を tag に基づいて行なうようにした。
+		Leopard では「保存」ボタンのアイコンを別デザインのものに変えるようにした。
+	* application/subproj/previewer/BSImagePreviewInspector-View.m
+		イメージビューのフォーカスリングを描かないようにした。
+	* application/subproj/previewer/BSImagePreviewInspector.m
+		イメージビューのショートカットキーがより確実に動作するようにした。
+	* application/subproj/previewer/Exif.tiff
+		[新規追加] フルスクリーン表示中の Exif データ表示で使用する、画像リソース。
+	* application/subproj/previewer/Save_Leopard.tiff
+		[新規追加] Leopard でのみツールバーで使用される画像リソース。
+	* application/subproj/previewer/Japanese.lproj/BSImagePreviewInspector.nib
+		最近の Apple のスタイルに合わせ、イメージ・ビューやテーブル・ビューをウインドウの境界いっぱいに配置した。
+=================================================
+2008-07-21 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/threaddata/CMRThreadMessage.m
+		なぜか CMRThreadContentsStatusKey を CMRThreadContentsHostKey と間違えている箇所を見つけたので修正。
+	* application/source/composer/CMRAttributedMessageComposer.m
+		微修正。
+	* frameworks/CocoMonar/CMF.pbproj
+	* frameworks/CocoMonar/framework/Resources/*
+		[削除] 未使用につき削除。
+	* application/subproj/preference/Japanese.lproj/LinkPreferences.nib
+		「とりあえず」ダウンロード元 URL をファイルの Spotlight コメントに設定するかどうかのチェックボックスを
+		「リンク」環境設定に押し込んだ。このレイアウトは強引なので、必ず後で修正する。
+	* application/source/task/CMRTaskManager.m
+	* application/source/view/CMRStatusLine.m
+	* application/source/view/BSNavigationStatusLine.m
+	* application/Resources/Japanese.lproj/CMRStatusView.nib
+		CMRTaskManager と CMRStatusLine 周りをさらに見直し、Cocoa Binding をさらに多用するようにした。
+		CMRTaskWillStartNotification/CMRTaskDidFinishNotification は、もはや CMRTaskManager でしか観察されない。
+		ナビゲーションバーの描画は、新設の -[CMRTaskManager currentTask] との Binding によって制御される。
+		少なくとも Leopard 上では、以前より滑らかな挙動が得られている。コード量もさらに削減できた。
+	* application/source/view/SGLinkCommand.m
+	* application/source/preferences/AppDefaults-ThreadViewer.m
+		「リンク先のファイルをダウンロード」機能で、ダウンロード元の URL をファイルの Spotlight コメントに設定する機能を
+		（入／切出来るようにした上で）復帰させた。デフォルトは「切」。
+		ただし、まだ「環境設定」にインタフェースを用意していない（後日やる）。
+	* application/subproj/previewer/BSImagePreviewInspector.m
+	* application/subproj/previewer/BSIPIToken.m
+	* application/subproj/previewer/Japanese.lproj/Localizable.strings
+		プレビューインスペクタ：
+		ツールチップで表示する Exif データ内容の拡充と方法の見直し。
+		また、リスト・ビューで Exif データが無い項目に対して、ツールチップが表示されなかったのを、「Exif データがありません」
+		と表示されるようにした（イメージ・ビューと挙動を合わせた）。
+2008-07-17 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/browser/CMRBrowser.m
+		Mac OS X v10.4.x で、2008-06-08 の更新に含まれる「ブラウザウインドウのカスケード処理を見直した」際の問題により、
+		カスケード処理がうまくいかなくなっていた問題に対処。
+		- これは、2008-06-08 以降、ウインドウのカスケード処理の一部を -[CMRBrowser dealloc] 時に実行していた
+		　ことが関係していると思われる。Mac OS X v10.5 では、10.4.x 以前と -[NSWindowController dealloc] 周りの
+		　挙動が変更（というか、NSWindowContoller のバグが修正された）ため、10.5 では正しく動作していても
+		　10.4 では意図通りに処理が呼び出されなかったものと思われる。このへんをごちゃごちゃ直したつもり。
+	* application/source/composer/CMXTextParser.m
+		内部処理時にID末尾 I の投稿（iPhone WiFi からの投稿）を認識するようにした。
+2008-07-15 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/composer/CMXTextParser.m
+		内部処理時にID末尾 i の投稿（iPhone 3G からの投稿）を認識するようにした。
+	* application/subproj/previewer/BSImagePreviewInspector.m
+	* application/subproj/previewer/BSImagePreviewInspector-Settings.m
+	* application/subproj/previewer/BSIPIHistoryManager.m
+	* application/subproj/previewer/BSIPIFullScreenController.m
+	* application/subproj/previewer/BSIPIArrayController.m
+	* application/subproj/previewer/BSIPIToken.m
+	* application/subproj/previewer/Japanese.lproj/BSIPIPreferences.nib
+	* application/subproj/previewer/Japanese.lproj/BSImagePreviewInspector.nib
+	プレビューインスペクタ（2.7.5 -> 2.8）：
+	- jpeg イメージの Exif データが取得できた時は、ツールチップで抜粋を表示するようにした。
+	イメージ・ビューとリスト・ビューで有効。「焦点距離、F値、シャッタースピード、ISO設定感度」を表示する。
+	- イメージ・ビューとフルスクリーン表示時に、option+←／→ キーで最初／最後のイメージに移動するようにした。
+	- Mac OS X v10.4 以降にふさわしいコードに一部書き換えた。
+	- イメージのダウンロード元 URL を Spotlight コメントに記入する機能を復活させ、かつ、「プレビューインスペクタの環境設定」
+	　から入／切出来るようにした（デフォルトは切）。 
+2008-07-02 masakih <masakih@users.sourceforge.jp>
+	* application/source/view/BSStatusLineView.m:
+		m_messageTextをマルチスレッヂングに対し保護。
+2008-06-29 masakih <masakih@users.sourceforge.jp>
+	* application/source/manager/DatabaseManager-DatabaseAccess.m:
+		デバッグ出力追加。
+	* application/source/manager/DatabaseManager-Notifications.m:
+		ログ削除時にFavoritesテーブルの更新を忘れていた。
+	* application/source/manager/SQLiteDB.m:
+		先の変更のloop条件を間違えていた。
+	* application/source/thread/CMRThreadLayoutTask.m:
+		-[CMRThreadLayoutTask message] でブロック処理。
+		これでダメならやり方変える必要があると思われる。
+=================================================
+2008-06-28 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/view/SGLinkCommand.m
+	* application/subproj/previewer/BSIPIHistoryManager.m
+		ダウンロードしたファイルの Finder コメントに URL を記入する機能をいったん取り外した。
+		ちょっと練り直したいので。
+	* frameworks/SGAppKit/framework/resource/attachFinderComment.scpt
+		Finder コメントが既に記入されている場合、そのコメントを消さないようにした。
+	* application/source/composer/BSIkioiNumberFormatter.[h|m]
+		[新規追加] NSNumberFormatter のサブクラスで、勢いの数値を適当なフォーマットに変換して表示するためのもの。
+	* application/source/browser/BSDBThreadList.m
+	* application/source/browser/CMRBrowser-ViewAccessor.m
+	* application/source/preferences/AppDefaults.h
+	* application/source/preferences/AppDefaults-ThreadsList.m
+		勢いの表示に NSLevelIndicator を用いるかどうかを選択する設定項目を追加した（当面隠しオプション）。
+		defaults write jp.tsawada2.BathyScaphe UsesLevelIndicator -bool true(false)
+		NSLevelIndicator を用いない場合、生の NSNumber に NSNumberFormatter を噛ませて、NSString に変換して表示。
+		NSNumberFormatter のフォーマットはとりあえず NSNumberFormatterDecimalStyle にしといた。
+	* application/source/manager/Cookie.m
+		NSString -> NSDate の変換失敗のため、以前に取得したクッキーを有効期限切れと誤認して利用せず、書き込む度に「クッキー確認」
+		が出る（＝新しいクッキーを取得する）ようになっていた問題を解決。
+		- この副作用で Cookies.plist が不必要に肥大化した可能性有り。気になる人は BathyScaphe をリセットするか、
+		　手動で Cookies.plist を削除しても良い。
+2008-06-28 masakih <masakih@users.sourceforge.jp>
+	* application/source/manager/SQLiteDB.m:
+		今後のため、sqlite_close()の試行回数の上限を1000回に定め、
+		それ以上掛かる場合はログを吐いて諦めるように修正。
+2008-06-25 masakih <masakih@users.sourceforge.jp>
+	* application/source/browser/BSThreadsListOPTask.m:
+		メインウインドウを閉じると暴走するバグを解消。
+	* application/source/manager/SQLiteDB.m:
+		デバッグ出力追加。
+2008-06-23 masakih <masakih@users.sourceforge.jp>
+	* application/source/browser/BSThreadListItem.m:
+		勢いソート時のバグを解消。
+=================================================
+2008-06-23 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/composer/CMRMessageFilter.m
+		一部関数の内部を修正。迷惑レスフィルタは中期的に大改良が必要だな……現状はどうして動いているのか不思議なくらい。
+2008-06-22 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/browser/CMRBrowser.m
+		スレッドタイトルバーの更新タイミングを変更し、
+		http://pc11.2ch.net/test/read.cgi/mac/1211029333/330 で報告された問題を解決。
+		（以下、転載）
+		>330 名前: 名称未設定 投稿日: 2008/06/13(金) 18:32:40 ID: rtiZHCAC0 
+		>【Mac OS X】Version 10.4.11（Build 8S165）
+		>【BathyScaphe】1.6.1 (271)
+		>【プレビュープラグイン】jp.tsawada2.bathyscaphe.ImagePreviewer (2.7.3/15)
+		>【不具合の内容】 スレッドタイトルバーにタイトルが表示されない
+		>【再現手順】
+		>1. 3ペインでスレッドを表示させる
+		>2. 表示されたスレッドを削除する
+		>3. メニューバーの「履歴」から、削除したスレッドを取得する
+		>4. レスは表示されるが、スレッドタイトルバーにタイトルが表示されない
+	* application/source/browser/CMRThreadsList.m
+		ソース整理を少々。
+2008-06-22 masakih <masakih@users.sourceforge.jp>
+	* application/source/browser/BSDBThreadList.m:
+		不要なコメントを消去。
+	* application/source/browser/BSDBThreadsListDBUpdateTask2.m:
+		デバッグログを残すように修正。
+	* application/source/browser/BSThreadListItem.m:
+		typo修正。
+	* application/source/manager/DatabaseManager.m:
+		tablenameForKeyを修正。スレッド一覧のtooltipのちらつきを解消。
+2008-06-11 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/composer/CMRMessageAttributesTemplate.m
+		一部メソッドを関数化。
+	* application/source/composer/CMRMessageSample.m
+		迷惑レスのサンプルに「サンプルとして（はじめて）収集した日付」を属性として持たせるようにした。
+2008-06-08 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/subproj/previewer/BSIPIHistoryManager.m
+		プレビューインスペクタ（2.7.5）：
+		- イメージを保存する際、ファイルの Finder コメントにダウンロード元の URL を記入するようにした。
+	* application/source/view/SGLinkCommand.m
+		リンク先のファイルをダウンロードしているとき、プログレスインジケータの表示が適切に更新されなくなっていたので修正。
+	* application/source/bbs/BoardWarrior.m
+		AppleScript サブルーチン実行用のメソッドは SGAppKit に移した。
+	* frameworks/SGAppKit/framework/src/extensions/workspace/NSWorkspace-SGExtensions.[h|m]
+		SGAppKit:
+		NSWorkspace カテゴリに、ファイルに Finder コメントを追加するためのメソッドを追加した。
+	* frameworks/SGAppKit/framework/src/extensions/NSAppleScript-SGExtensions.[h|m]
+		[新規追加] AppleScript サブルーチンを実行するメソッドをカテゴリで追加。
+		- BoardWarrior クラスで使用していたものを他でも使えるよう、SGAppKit に移してきた。
+	* frameworks/SGAppKit/framework/resource/attachFinderComment.scpt
+		[新規追加] Finder コメントをファイルに付加するためのコンパイル済み AppleScript。
+	* application/source/browser/BSThreadsListOPTask.m
+		微修正。
+	* application/source/browser/Browser.m
+	* application/source/browser/CMRThreadsList.m
+		-[Browser removeDatochiFiles] は CMRThreadsList クラスに移した。
+	* application/source/browser/BSDBThreadList.m
+	* application/source/browser/CMRBrowser-ViewAccessor.m
+	* application/source/browser/CMRTextColumnCell.m
+		「勢い」カラムの表示には NSLevelIndicatorCell を用いるようにしてみた。
+		ただし、そのまま NSLevelIndicatorCell を用いるとセルのサイズいっぱいに描画されて見苦しいので、
+		サブクラス BSIkioiCell を CMRTextColumnCell.m に記述して用意し、適切にマージンを取って描画するように。
+		また、勢いの値は対数を取ってから NSLevelIndicatorCell に渡すようにして、勢いのあるスレとないスレの差が
+		（表示上）極端に開き過ぎないようにしている。
+	* application/source/browser/CMRBrowser.m
+		- ブラウザウインドウのカスケード処理周りを改良した。
+		- -selectedThreadsReallySelected メソッドのコアを CMRThreadsList クラスに移した。
+	* application/source/browser/CMRThreadsList-DataSource.m
+		微修正。		
+	* application/source/browser/BSThreadListItem.m
+		勢いを NSNumber のまま扱うようにした（表示時に NSLevelIndicatorCell に渡すため）。
+		定数 IkioiColumnIdentifier を、CocoMonar Framework で用意した BSThreadEnergyKey に置き換えた。
+	* application/source/network/CMRDATDownloader.m
+	* application/source/network/CMRDownloader.m
+	* application/source/network/ThreadTextDownloader.m
+		CMRDownloader とそのサブクラス：
+		- HTTP Status code 302, 416 のエラーについては適切な NSError を生成して CMRThreadViewer に
+		　渡すようにした。
+		- NSCalendarDate ではなく BSHTTPDateFormatter を使うようにした。
+		- メモリ管理を見直した。
+		- その他、微修正。
+	* application/source/browser/BSBoardListItemHEADCheckTask.m
+	* application/source/browser/BSDownloadTask.m
+	* application/source/thread/CMRThreadComposingTask.m
+	* application/source/thread/CMRThreadFileLoadingTask.m
+	* application/source/thread/CMRThreadLayoutTask.m
+		CMRTask 関連：KVO 対応。
+		- BSBoardListItemHEADCheckTask.m については NSCalendarDate ではなく BSHTTPDateFormatter を使うようにもした。
+	* application/source/thread/CMRThreadDocument.m
+		ソースの整理と、NSURL ベースに一部書き換え（CMRDocumentFileManager.m の変更点とも関連）。
+	* application/source/thread/CMRThreadViewer-Action.m
+		微修正。
+	* application/source/thread/CMRThreadViewer-Contents.m
+	* application/source/thread/CMRThreadViewer.m
+		以下のような場合に、「履歴」メニューにスレッドが登録されなかった問題を修正した。
+		- 未取得のスレッドをオフラインモードで開き（このとき、空白のウインドウが開く）、それから「スレッドを更新」
+		して内容を取得したとき。
+		- 未取得のスレッドを（オンラインでも）既存のスレッドウインドウにドラッグ＆ドロップして表示させたとき。
+	* application/source/thread/CMRThreadViewer-Download.m
+		不要な retain の解消、エラー処理の見直しなど。
+		-「あぼーんで再取得が必要です」および「dat 落ちっぽいです、●で取得してみる？」のエラーについては、 	
+		　CMRDownloader 側で NSError オブジェクトを生成。CMRThreadViewer ではその NSError から
+		　+[NSAlert alertWithError:] でアラート生成、という方法を使うようにしてみた。
+	* application/source/thread/CMRThreadViewer-ViewAccessor.m
+		ナビゲーションバーのセットアップは BSNavigaionStatusLine クラスに任せて、見通しを良くした。
+	* application/source/view/BSNavigationStatusLine.[h|m]
+		[新規追加] CMRStatusLine のサブクラスで、BSIndexingPopupper と CMRIndexingStepper を
+		インスタンス変数に持つ。
+	* application/source/view/BSStatusLineView.[h|m]
+		[新規追加] BSTsuruPetaView のサブクラスで、ステータスメッセージを表示する機能を持つ。
+		- BSTsuruPetaView 上に NSTextField を配置してメッセージを表示すれば良さそうなものだが、
+		Binding で NSTextField にメッセージをセットすると何故か描画時にゴミが残るので、TsuruPetaView に
+		直接描画するためにこのクラスを作った。
+	* application/source/view/CMRStatusLine.[h|m]
+		ソースの整理と軽量化。
+	* application/source/view/CMXImageAttachmentCell.m
+		実際には何も修正されていないが、何故か変更扱いに。
+	* application/source/view/SGLinkCommand.m
+		CMRTaskWillProgressNotification はもう発行しない。
+	* application/source/view/ThreadsListTable.[h|m]
+		微修正。
+	* application/source/CMRAppDelegate.[h|m]
+		ブラウザウインドウのカスケード処理は CMRBrowser 側でやるようにしたので、不要になった部分を削除した。
+	* application/source/task/BSTaskItemValueTransformer.[h|m]
+		[新規追加] binding しやすくするための Value Transformer。
+	* application/source/task/CMRTask.[h|m]
+	* application/source/task/CMRTaskItemController.[h|m]
+	* application/source/task/CMRTaskItemController_p.h
+	* application/source/task/CMRTaskManager-Management.m
+	* application/source/task/CMRTaskManager.[h|m]
+	* application/source/task/CMRTaskManager_p.h
+	* application/Resources/Japanese.lproj/CMRTaskDescription.strings
+		CMRTask 周りの改良：
+		- CMRTask プロトコルに準拠するオブジェクトは、今後自らの進行状況をすべて KVO で捉えられるよう
+		　にすべきである。即ち、-setMessage:, -setAmount:, -setTitle: などを実装して、タスクの
+		　進行状況を KVO や binding で知ることができるようにしなければならない。
+		- 上記変更に伴い、CMRTaskWillProgressNotification はもはや発行／使用されない。
+		　CMRTaskManager はもはやこの通知を利用しない。ステータスバーやプログレスバーの表示内容は
+		　タスクに binding され、自動的に更新される。
+		CMRTaskManager はかなりシンプルにした。
+	* application/Resources/Japanese.lproj/Downloader.strings
+	* application/Resources/Japanese.lproj/Localizable.strings
+	* application/Resources/Japanese.lproj/ThreadViewer.strings
+	* application/Resources/Japanese.lproj/ThreadsList.strings
+		メッセージの修正や、記述場所の変更。
+		- ThreadViewer.strings に書かれていたエラーメッセージの一部が Downloader.strings に移動。
+		　これはエラー処理自体が、一部 CMRThreadViewer から CMRDownloader('s subclass) に移動
+		　したことによる。
+		- ほかにもごちょごちょ。
+	* application/Resources/Japanese.lproj/BSReplyAlertSheet.nib
+		書き込み時の「クッキー確認」アラートで、return キーを二度押さないと認識されない問題を修正
+		（していたつもりなのだが、できていなかったので、改めて修正…nib で responder chain をがっちり
+		指定してやった。これで解決したかどうか？）。
+	* application/Resources/Japanese.lproj/CMRIndexingStepper.nib
+	* application/source/view/CMRIndexingStepper-ViewAccessor.m
+		Mac OS X v10.3.9 に遠慮する必要はなくなったので、Button の bezelStyle を最初から
+		NSSmallSquareBezelStyle に指定した。
+	* application/Resources/Japanese.lproj/CMRStatusView.nib
+	* application/Resources/Japanese.lproj/CMRTaskItem.nib
+	* application/Resources/Japanese.lproj/CMRTaskManager.nib
+		ステータスバー、および「進行状況」表示の方法見直しに伴う変更。binding を多用するようになった。
+	* application/source/composer/BSDateFormatter.m
+		NSCalendarDate ではなく NSCalendar + NSDate を使用するようにした。
+	* application/subproj/reply/account/w2chAuthenticater.[h|m]
+		●ログインしてから 24時間以上経過した場合、自動的に●ログインし直すようにした。
+		- ●ログインのセッションIDの取得時刻を保持し、24時間以上前に取得されたものである場合は
+		　自動的に再ログインして新しいセッションIDを取得するようにした。
+	* application/source/manager/CMRDocumentController.m
+		ファイルパス（NSString）をファイル URL（NSURL）ベースで取り扱うように修正。
+	* application/source/manager/CMRDocumentFileManager.[h|m]
+		ログファイルをコピーするユーティリティメソッドを追加。
+	* application/source/manager/CMRReplyDocumentFileManager.[h|m]
+		ソースの整理。
+	* application/source/manager/CMRTrashbox.[h|m]
+	* application/source/manager/DatabaseManager-Notifications.m
+		DatabaseManager と CMRTrashBox の間のやり取りを NSNotification を介してではなく、
+		直接 CMRTrashBox が DatabaseManager のメソッドを呼ぶようにした（どちらも
+		singleton なのでそれで間に合うはず）。
+	* application/source/manager/Cookie.m
+		NSCalendarDate ではなく BSHTTPDateFormatter を使うように変更。
+	* application/source/manager/DatabaseManager-DatabaseAccess.m
+		すでにデータベースに登録されているスレッドに対して -insertThreadID:title:count:date:atBoard: を
+		呼んだ場合、新しい情報で UPDATE するようにした。
+	* frameworks/CocoMonar/CMF.xcodeproj/project.pbxproj
+		CocoMonar Framework:
+	* frameworks/CocoMonar/framework/src/CMRFRWKCommon.h
+		BSHTTPDateFormatter.h をインポート。
+	* frameworks/CocoMonar/framework/src/BSHTTPDateFormatter.[h|m]
+		[新規追加] NSDateFormatter のサブクラスで、RFC 1123 フォーマットの日付文字列を
+		NSDate に変換する用途に特化したもの。Mac OS X v10.4 以降での動作を前提としている。
+	* frameworks/CocoMonar/framework/src/BathyScapheErrors.h
+		DAT ダウンロード時のエラーを NSError で表現するにあたり、追加のエラーコードを列挙した。
+	* frameworks/CocoMonar/framework/src/CMRPropertyKeys.[h|m]
+		「勢い」を表す定数 BSThreadEnergyKey を定義した。
+	* frameworks/SGFoundation/SGFoundation.xcodeproj/project.pbxproj
+		SGFoundation:
+	* frameworks/SGFoundation/framework/source/extensions/SGFoundationAdditions.h
+		NSCalendarDate-SGExtension.[h|m] を使用停止とし、ヘッダから外した。
+2008-06-07 masakih <masakih@users.sourceforge.jp>
+	* application/source/manager/DatabaseManager-Notifications.m:
+	* application/source/manager/DatabaseManager.m:
+		optionキーを押しながら終了すると、databaseに対してVACUUMを実行するようにした。
+		暫定機能。
+2008-06-06 masakih <masakih@users.sourceforge.jp>
+	* application/Resources/text/KeyValueTemplates.plist:
+		System - Delete Unused Thread Informationsのデフォルト値 YES(Boolean)を設定。
+		System - SQLite Cache Sizeのデフォルト値 0(Number)を設定。
+	* application/source/main.m:
+	* application/source/manager/DatabaseManager.m:
+		SQLiteが用いるキャッシュサイズを変更できるようにした。
+		KeyValueTemplates.plistのSystem - SQLite Cache Size
+		の値を用いてキャッシュサイズを決定する。
+		0以下の場合はSQLiteの規定値(2000)を使用。
+	* application/source/browser/BSBoardListItemHEADCheckTask.m:
+		HEADCheckでdat落ちしたスレッドを対象から外すようにした。
+		ついでに、効率を若干犠牲にして読みやすく変更。
+	* application/source/browser/BSDBThreadsListDBUpdateTask2.m:
+		掲示板更新時に不要なデータをデータベースから削除するようにした。
+		不要なデータとは、未読であり且つdat落ちしたスレッドのデータである。
+		KeyValueTemplates.plistのSystem - Delete Unused Thread Informations
+		の値を用いてデータの削除の可否を判別する。
+	* application/source/browser/BSThreadListItem.m:
+		nilをNSMutabuleArrayに投入しようとして例外を投げてしまう可能性があった箇所を修正。
+	* application/source/manager/DatabaseManager-Notifications.m:
+		ログ削除時にdat落ちフラグ(isDatOchi)とお気に入りフラグ(isFavorite)もリセットするようにした。
+	* application/subproj/BSIPILeopardSlideshowHelper/Makefile:
+		ビルドできてなかったので修正した。
+	* application/source/manager/SQLiteDB.m:
+		デバッグ用出力がNSLogで出力されていたのでUTILDebugWriteに変更した。
+2008-03-31 masakih <masakih@users.sourceforge.jp>
+	* application/subproj/BSIPILeopardSlideshowHelper/Makefile:
+		ビルドできてなかったので修正した。
+2008-03-30 masakih <masakih@users.sourceforge.jp>
+	* Makefile:
+		clean-BSIPILeopardSlideshowHelperをcleanターゲットに入れるのを忘れていたので修正した。
+	* application/subproj/BSIPILeopardSlideshowHelper/Makefile:
+		依存関係を使い記述を簡素化した。
+2008-03-28 masakih <masakih@users.sourceforge.jp>
+	* Makefile:
+	* application/subproj/BSIPILeopardSlideshowHelper/Makefile:
+		BSIPILeopardSlideshowHelper用のMakefileとターゲットを追加。
+2008-03-22 masakih <masakih@users.sourceforge.jp>
+	* application/Resources/Japanese.lproj/browserListColumns.plist:
+	* application/source/browser/BSThreadListItem.m:
+	* application/source/manager/DatabaseManager.m:
+		勢いを付けた。
+	* application/source/browser/BSThreadListUpdateTask.m:
+		いらない部分をばっさり削除した。
+2008-03-09 tsawada2 <tsawada2@users.sourceforge.jp>
+	* application/source/view/BSTsuruPetaView.[h|m]
+		(SGAppKit) BSTsuruPetaView クラス：ソースの整理。
+	* frameworks/SGAppKit/framework/src/custom/bathyscaphe/BSPopUpTitlebar.[h|m]
+		(SGAppKit) BSPopUpTitlebar クラス：
+		- Mac OS X v10.4 以降でのみ使えるメソッドを使用するようになった。
+		- タイトルバーにタイトルを描画するコードを実装した（これまでも -title/-setTitle: メソッドはヘッダに記載していたが、
+		　タイトルバーに実際にタイトルを描画するコードは未実装だった）。今後 BathyScaphe 側で活用するだろう。
+	* frameworks/SGAppKit/framework/src/custom/container/SGContainerTableView.[h|m]
+		(SGAppKit) SGContainerTableView クラス：
+		- NSTableView と類似したメソッドをいくつか追加した。
+		- 全体にコードを見直し、効率化を図った。
+2008-03-08 tsawada2 <tsawada2@users.sourceforge.jp>
+	* frameworks/CocoMonar/framework/src/BathyScapheErrors.[h|m]
+		CocoMonar Framework:
+		[新規追加] BathyScaphe で用いられるエラードメイン、エラーコードの定数をここに記述することにした。たぶん内容は今後も増える。
+	* frameworks/CocoMonar/English.lproj/InfoPlist.strings
+	* frameworks/SGAppKit/framework/resource/English.lproj/InfoPlist.strings
+		(c)2005-2007 から 2005-2008 へ。または、バージョン文字列の変更。
+	* frameworks/CocoMonar/framework/src/CMRFRWKCommon.h
+		BathyScapheErrors.h の import。
+	* application/BathyScaphe.xcodeproj/project.pbxproj
+	* frameworks/CocoMonar/CMF.xcodeproj/project.pbxproj
+	* frameworks/SGAppKit/SGAppKit.xcodeproj/project.pbxproj
+		Mac OS デプロイメントターゲットを 10.4 に引き上げ。
+	* application/Resources/Japanese.lproj/Messenger.strings
+	* application/Resources/Japanese.lproj/BSBoardInfoInspector.nib
+	* application/Resources/Japanese.lproj/BSNewThreadWindow.nib
+	* application/Resources/Japanese.lproj/Browser.nib
+	* application/Resources/Japanese.lproj/CMRReplyWindow.nib
+	* application/Resources/Japanese.lproj/CMRThreadViewer.nib
+		Mac OS X v10.3.9 に遠慮して、nib ファイルで 10.4 以降のみ利用可能な Window style mask や Button bezel style を
+		適用せず、-awakeFromNib: でコードから設定していたのを止めた！ポリシーは「nib でセットできることは nib で済ませておく」。
+		とくに BSWindow はやめて NSWindow に戻した。もう必要ないので。
+	* application/Resources/Japanese.lproj/MainMenu.nib
+	* application/source/CMRAppDelegate.m
+	* application/source/manager/CMRDocumentController.m
+		「ファイル」＞「最近使った書類」サブメニューを表示しないための方法を Mac OS X v10.4 以降での標準的な手法に改めた。
+		その他、Mac OS X v10.4 以降にふさわしいコードに一部修正。
+	* application/source/bbs/BSBoardInfoInspector.m
+	* application/source/bbs/BSLocalRulesCollector.m
+		Mac OS X v10.4 以降にふさわしいコードに一部修正。
+	* application/source/bbs/BoardListItem/SmartBoardList.m
+	* application/source/browser/Browser.m
+	* application/source/thread/CMRThreadDocument.m
+	* application/source/window/CMRReplyMessenger.m
+	* application/source/thread/CMRThreadViewer-Action.m
+		NSDocument 周りのメソッドを Mac OS X v10.4 以降で推奨されるものに更新（まだ途中）。
+		document が読み込めない（開けない）ときのエラー処理を強化（アラートの表示など）。
+	* application/source/browser/CMRBrowser-ViewAccessor.m
+		NSTableView+BSAddition.[h|m] をターゲットから外した。それに伴う変更。
+	* application/source/browser/CMRThreadsList-DataSource.m
+	* application/source/browser/CMRThreadsList.m
+	* application/source/view/ThreadsListTable.m
+		ThreadsListTable.m に記述されていたコードの大部分を、より適切な場所と思われる CMRThreadsList-DataSource.m に持ち替えた。
+		その他、CMRThreadsList ではメソッド名の変更や追加、廃止を少々。
+	* application/source/window/CMRReplyController-ViewAccessor.m
+	* application/subproj/previewer/BSIPIHistoryManager.m
+		Mac OS X v10.4 以降では -[NSArray objectsAtIndexes:] が使えるので喜んで使用。
+	* application/subproj/previewer/Japanese.lproj/BSImagePreviewInspector.nib
+		何を変えた訳でもないが、ちょっといじってたら変更されたことになってしまった ;-b
+	* frameworks/SGAppKit/framework/src/SGAppKit.h
+		BSWindow クラスは外した。もう必要ないので。
+	* frameworks/SGAppKit/framework/src/extensions/workspace/NSWorkspace-SGExtensions.m
+		AppleEvent 経由で activate および reveal in Finder を行うメソッドを追加した。
+2008-03-06 masakih <masakih@users.sourceforge.jp>
+	* application/source/browser/BSBoardListItemHEADCheckTask.m:
+		情報文字列の取得／設定をスレッドセーフにした。
+================================================= 1.6.1(v271) / SilverGull / CVS Tag : v161_FINAL
+2008-02-26 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* frameworks/SGAppKit/framework/src/custom/BSTitleRulerAppearance.[h|m]
+		SGAppKit 1.7.6:
+		スレッドタイトルバーのカラーを設定するツールを作る際などに、グラデーションの起点色と終点色にそれぞれ直接 key-value-binding できた方が楽そうなので
+		そのために追加のアクセサメソッドを仕込んでおいた。
+	* application/Resources/Japanese.lproj/BathyScapheHelp/
+		ヘルプコンテンツの更新。
+	* application/source/composer/CMXTextParser.m
+		+[CMXTextParser convertMessageSourceToCachedMessage:] の中身を @synchronized() でくくった。複数のスレを同時に開こうとしたとき、
+		このメソッドの同時呼び出しは巡り巡って(*) Oniguruma の onig_new_deluxe() の同時呼び出しを行なうリスクが高い。Oniguruma はスレッドセーフでは
+		ない状態でコンパイルされているので、ここでクラッシュするリスクが高い。
+		それを回避するための暫定処置。
+		(*) 巡り合わせ：
+			onig_new_deluxe
+			-[OGRegularExpression initWithString:options:syntax:escapeCharacter:]
+			+[OGRegularExpression regularExpressionWithString:options:]
+			-[NSMutableString(OgreKitAdditions) replaceOccurrencesOfRegularExpressionString:withString:options:range:]
+			htmlConvertBreakLineTag (CMXTextParser.m:123)
+			+[CMXTextParser convertMessageSourceToCachedMessage:] (CMXTextParser.m:229)
+		- 本来、OgreKit ないし Oniguruma の方で対策をとった方が良いのだが、とりあえず… 
+	* application/subproj/reply/Japanese.lproj/Localizable.strings
+		「エラーメッセージが悪い。」と言われたので。暫定修正。
+2008-02-24 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Resources/image/lastUpdatedHeader.png
+		差し替え。今までより濃い色だが、これは HUD Window と同じ配色だね。同じにする深い意味はないけど。
+	* application/source/thread/CMRThreadLayout-MessageRange.m
+	* application/source/thread/CMRThreadLayout.m
+	* application/source/thread/CMRThreadViewer.m
+		最後に読んだ位置までスクロールする際の問題を暫定的に修正。
+	* application/Resources/Japanese.lproj/BSReplyAlertSheet.nib
+		アラートのボタンに対するショートカットキーが、二度押さないと効かない問題を修正（たぶん）。
+=================================================
+2008-02-20 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/subproj/preference/Japanese.lproj/SyncPane.nib
+		とりあえずレイアウトを変更し、ステータスメッセージが見切れないようにした。
+	* application/Resources/Japanese.lproj/board_default.plist
+		最新のものに更新。
+	* application/source/view/CMRThreadView.m
+		透明あぼーん時の poof 発生タイミングを再び「実際にテキストが消える前」に戻した。（cf. 2008-01-26）
+	* application/source/window/CMRReplyMessenger.m
+		「ローカルルールを表示」ツールバー項目の label が、どういうわけか勝手に -validateMenuItem: の内容に汚染されてしまう（-validateToolbarItem: では
+		label をいじっていないのに、-validateMenuItem: で変更した menuItem の title が反映されてしまう）。気持ち悪いので強制的に -validateToolbarItem:
+		で -setLabel: を呼んで label を修正してやるッ！
+	* application/Resources/Japanese.lproj/Acknowledgments.rtf
+		内容を一部編集。
+	* application/source/manager/DatabaseManager-Notifications.m
+	* application/source/manager/DatabaseManager.h
+	* application/source/network/ThreadTextDownloader.m
+		スレッドをダウンロードした時のデータベースの更新も、Notification ではなく DatabaseManager を直接叩いて処理するようにした。
+		- DatabaseManager 以外に Notification を観察する人がいないので、わざわざ Notification を使う必要が無い。
+	* application/source/browser/CMRBrowser-Delegate.m
+	* application/source/preferences/AppDefaults-ThreadViewer.m
+	* application/source/preferences/AppDefaults.h
+	* application/subproj/preference/Japanese.lproj/AdvancedPane.nib
+		スリープを解除したとき、スレッド一覧だけでなく「開いているスレッド」も自動更新できるようにした。
+		-「詳細」環境設定にある。デフォルトでは切になっている。
+	* application/source/browser/Browser.m
+	* application/source/manager/DatabaseManager-Notifications.m
+		スレのダウンロード及び削除に伴うデータベース更新後の、現在のスレッドリストの update を、DatabaseManager が（強引な方法で）
+		直接行なうのではなく、通知を飛ばして Browser クラスで処理させるようにした。
+	* application/source/thread/CMRThreadViewer.m
+	* application/source/thread/CMRThreadViewer-Contents.m
+	* application/source/thread/CMRThreadAttributes.[h|m]
+	* application/source/thread/CMRThreadViewer-ViewAccessor.m
+	* application/source/thread/CMRThreadLayout-MessageRange.m
+	* application/source/thread/CMRThreadLayout.m
+		NSNotification による通知を廃止し、デリゲートまたは KVO で処理するようにした。その他、スレッドを開いたり読み込んだりする際の
+		処理を細かく見直した。
+		また、3ペインで表示中のスレッドを削除した際は、CMRBrowser に保持されているそのスレの CMRThreadAttributes を nil にセットする
+		ようにした。
+	* application/source/manager/CMRDocumentController.m
+		2008-02-19 の「同じスレッドを同時に複数のウインドウで開いてしまうことが無いよう、対策を強化」にまだ抜け道があったので
+		修正した。
+	* application/source/thread/CMRThreadLayoutTask.m
+	* application/source/thread/CMRThreadViewer-Action.m
+	* application/source/thread/CMRThreadViewer-MoveAction.m
+	* application/source/view/ThreadsListTable.m
+		微修正。
+2008-02-19 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/thread/CMRThreadComposingTask.m
+	* application/source/thread/CMRThreadFileLoadingTask.m
+	* application/source/thread/CMRThreadLayoutTask.m
+		ソースの整理。また、プログレスインジケータが出来るだけ床屋さんスタイルではなく棒グラフスタイルで表示できるよう、
+		データをしっかり提供するようにした。
+	* application/source/manager/CMRDocumentController.m
+	* application/source/thread/CMRAbstructThreadDocument.m
+	* application/source/thread/CMRThreadDocument.m
+	* application/source/thread/CMRThreadViewer.m
+		同じスレッドを同時に複数のウインドウで開いてしまうことが無いよう、対策を強化した。
+		- 今までの方法には不十分な部分があり、チェックをすり抜けてしまうことがあった。
+		- 判定部分を CMRDocumentController に移動させ、CMRThreadViewer.m や CMRThreadDocument.m から呼び出すように整理した。
+	* application/source/composer/CMRAttributedMessageComposer.m
+	* application/source/composer/CMRMessageComposer.[h|m]
+	* application/source/composer/CMRThreadDictReader.m
+	* application/source/composer/CMRThreadPlistComposer.m
+	* application/source/composer/CMXTextParser.m
+	* application/source/threaddata/CMRThreadMessage.[h|m]
+		二年ほど前に一時的に対応していた、特殊な日付表記（「皇紀xxxx年」とか「エロゲ暦xx年」など）と、VIP などでの 100分の一秒単位の秒数について、
+		それぞれの個別のデータとしてのログファイルへの記録を終了することにした。
+		即ち、ログファイルの ThreadPlistContentsDatePrefixKey（@"DatePrefix"）、ThreadPlistContentsMilliSecKey（@"MilliSec"）は
+		今後読み書きしない。これらのエントリが存在するログファイルを BathyScaphe 1.6.1 以降で開いて閉じると、これらのエントリは失われる。
+		これらのデータの記録を終了しても、日付の文字列としての表現（ThreadPlistContentsDateRepKey、@"DateRepresentation"）がスレッドの
+		表示時に使われるため、問題は無いし、多くのユーザはこの変更を意識する必要は無いだろう。
+	* application/Resources/Japanese.lproj/CMRTaskDescription.strings
+2008-02-18 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/view/popup/CMXPopUpWindowController.m
+		ロックされたポップアップをクローズボタンをクリックして閉じた時は、poof animation を表示しないようにした。
+	* application/subproj/previewer/BSIPIFullScreenController.m
+	* application/subproj/previewer/Japanese.lproj/BSIPIFullScreen.nib
+		プレビューインスペクタ：2008-02-17 の変更（フルスクリーン表示時の進捗状況表示用 NSTextField を BSIPIHUDTextField に変更）をやめ、
+		背景色に応じて進捗状況表示用 NSTextField の文字色を黒または白にセットして視認性を確保するように変更した。
+	* application/source/thread/CMRThreadComposingTask.m
+	* application/source/thread/CMRThreadDownloadTask.m
+	* application/source/thread/CMRThreadFileLoadingTask.m
+	* application/source/thread/CMRThreadLayoutTask.m
+	* application/source/thread/CMRThreadViewer.m
+	* application/source/view/CMRThreadView.m
+		スレッドの内容表示時に使用されるすべての task（CMRThreadほげほげTask）について、CMRMainMessenger を用いてスレッド間のメッセージ
+		受け渡しをしていた部分をすべて -[NSObject performSelectorOnMainThread:withObject:waitUntilDone:] を使って実行するように
+		変更した。この変更は安定性の向上と、CMRMainMessenger (-> SGInternalMessenger) への依存率低下を目指して行なったものだが、
+		動作検証を慎重に行なう必要がある（取りあえず手元では安定しているように見えるが）。
+		CMRTaskManager への通知のポストも performSelectorOnMainThread:withObject:waitUntilDone: で行なうようにしたので、
+		ナビゲーションバーの描画が今までと少し違って見えるかもしれない。
+	* application/source/CMRAppDelegate.m
+	* application/source/bbs/BoardManager-SettingTxt.m
+	* application/source/browser/Browser.m
+	* application/source/manager/CMRMainMenuManager.m
+	* application/source/thread/CMRAbstructThreadDocument.m
+	* application/source/window/CMRReplyMessenger.m
+		「掲示板」＞「ローカルルールを表示」メニュー項目は Mac OS X 10.3.9 では表示させないようにした。これに伴い、Menu item の
+		validation を簡素化した。
+2008-02-17 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Resources/Japanese.lproj/BSLocalRulesPanel.nib
+	* application/source/bbs/BSLocalRulesCollector.m
+	* application/source/bbs/BoardManager-SettingTxt.m
+	* application/source/window/BSLocalRulesPanelController.m
+		「ローカルルールを表示」に関して、Tiger での問題を回避するために以下の対策を実施した：
+		- nib ファイルであらかじめ NSTextView の attributedString にバインディングしておくことはしない。
+		- 替わりに、コード中で NSObjectController に setContent: してから、バインディングを確立するようにした。
+		- さらに、BSLocalRulesCollector の init 時に localRulesAttrString にダミーの NSAttributedString をセットし、
+		　nil の状態でバインドされることのないようにした。
+		さらに、ローカルルールを取得できない時のエラーメッセージの表示を見直した。
+	* application/source/browser/Browser.m
+		お気に入りやスマート掲示板を表示中にも「ファイル」＞「新規スレッド…」が選択できていたのを修正。
+	* application/source/preferences/BSHostLivedoorHandler.m
+	* application/source/preferences/CMRHostHTMLHandler.m
+	* application/source/preferences/CMRHostHandler.m
+	* application/source/preferences/CMRHostHandler_p.h
+		CMRMachibbsaHandler を CMRMachibbsHandler にスペル修正。また、このサブクラスの implementation 部を
+		CMRHostHandler.m から CMRHostHTMLHandler.m に移動させた。
+		また、CMRHostHTMLHandler.m と BSHostLivedoorHandler.m で一部の NSLog() を UTIL_DEBUG_WRITE1() に変更した。
+	* application/Resources/Japanese.lproj/Localizable.strings
+	* application/Resources/Japanese.lproj/ThreadViewer.strings
+	* application/Resources/Japanese.lproj/ThreadsList.strings
+	* application/Resources/Japanese.lproj/ToolbarItems.strings
+		ローカライズ文字列の一部見直しと、使われなくなった文字列を削除。また、一部の文字列を ThreadViewer.strings から
+		ThreadsList.strings へ移動。
+2008-02-16 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/thread/CMRThreadViewer-Download.m
+		間違ったスレッドに「dat 落ち」印がつく可能性があった部分を修正。
+	* application/subproj/previewer/Japanese.lproj/BSIPIFullScreen.nib
+	* application/subproj/previewer/Japanese.lproj/BSImagePreviewInspector.nib
+		プレビューインスペクタ：
+		- フルスクリーン表示時の進捗状況表示用 NSTextField を BSIPIHUDTextField に変更して視認性を向上。
+		- コンテクストメニューの「イメージを別名で保存…」NSMenuItem の
+		  alternating menu item 属性を解除。
+	* application/source/CMRAppDelegate.m
+	* application/source/browser/CMRBrowser-Action.m
+	* application/source/thread/CMRThreadViewer-Action.m
+		履歴メニューからスレッドを開く処理の実装方法を変更。
+	* application/source/bbs/BSBoardInfoInspector.m
+	* application/source/browser/BSDBThreadList.m
+	* application/source/browser/CMRBrowser-List.m
+		微修正。
+	* application/source/browser/Browser.m
+	* application/source/browser/CMRBrowser.m
+		ウインドウタイトルの表示コードを整理。基本的に Browser (NSDocument) の -displayName で済ませてしまうようにした。
+	* application/source/browser/CMRThreadsList.h
+	* application/source/browser/CMRThreadsList.m
+	* application/source/thread/CMRThreadViewer.m
+		ソースの整理と不要なヘッダ宣言のコメントアウト推進。
+	* application/source/thread/CMRAbstructThreadDocument.m
+	* application/source/thread/CMRThreadViewer-Action.m
+	* application/source/thread/CMRThreadViewer-Validation.m
+		-openInBrowser: アクションを CMRThreadViewer(NSWindowController) から CMRAbstructThreadDocument(NSDocument) に持ち替えた。
+	* application/source/view/ThreadsListTable.m
+		-openInBrowser:（Web ブラウザで開く）のアクションをここにも書いた。responder chain の仕組みを使って 3ペイン時の target 振り分けを
+		行なう際により簡潔に処理できる。
+	* application/source/window/CMRReplyControllerTbDelegate.m
+		「ローカルルールを表示」ツールバー項目は -[NSToolbarItem palettelabel] と -[NSToolbarItem label] で違う文字列をセットしていたが、
+		これが原因で描画に不具合が発生するケースが確認されたため、とりあえず両方とも同じ文字列にした。
+	* application/source/window/CMRReplyMessenger.m
+		1st responder が CMRReplyMessenger (or its subclass) のとき、「掲示板」＞「ローカルルールを表示」の menu item validation が
+		不適切だった問題を修正。
+		あと、書き込みウインドウ（または新規スレッド作成ウインドウ）でも「掲示板」＞「掲示板を Web ブラウザで開く」が使えるようにした。
+=================================================
+2008-02-14 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/thread/CMRThreadViewer.m
+		「表示」環境設定で「AA フォントを自動的に適用する」が「切」になっていると、「迷惑レス」環境設定で「AA を迷惑レスとして扱う」を「入」にしても
+		動作しない問題を修正。
+	* application/source/preferences/BSHostLivedoorHandler.m
+	* application/source/preferences/CMRHostHandler.m
+	* application/source/window/BSNewThreadMessenger.m
+		livedoorしたらばでスレ立てが出来ない問題を修正（未検証だが理論的には多分OK）。まちBBSは自信が無い。これでいけるように見えるのだけど…
+2008-02-13 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/window/CMRBrowserTbDelegate.m
+		Leopard 以前のシステムでも BSQuickLookButton.nib を読み込んでしまっていた問題を修正した。
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		各種アプリケーションを参考に検討した結果、「ファイル」＞「新規スレッド...」のショートカットを command-option-N から command-shift-N に変更した。
+	* application/source/browser/Browser.m
+	* application/source/thread/CMRAbstructThreadDocument.m
+	* application/source/window/CMRReplyMessenger.m
+		「ローカルルールを表示／隠す」が Panther で使用できないよう、適切に menu item/toolbar item の validation を実装した。
+	* application/source/bbs/BSLocalRulesCollector.m
+	* application/source/window/BSLocalRulesPanelController.m
+	* application/Resources/Japanese.lproj/BSLocalRulesPanel.nib
+		ローカルルール・パネルの仕上げ。「再読み込み」ボタンが使えるようになり、ローカルルールの取得日時がパネル下部に表示されるようになり、
+		取得エラー時はメッセージがパネル下部に表示されるようになった。
+	* application/source/composer/BSDateFormatter.m
+	* application/source/CMRAppDelegate.m
+		BSDateFormatter.[h|m] に居候して、NSValueTransformer のサブクラス BSStringFromDateTransformer を書いた。
+		色々な所で利用できるよう、-applicationWillFinishLaunching: のタイミングで登録するようにした。
+		今はローカルルール・パネルでのみ使用している。
+2008-02-13 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/bbs/BoardManager-SettingTxt.m
+		ローカルルール・パネルを管理するメソッド群を追加した。
+	* application/source/browser/Browser.m
+	* application/source/thread/CMRAbstructThreadDocument.m
+	* application/source/window/BSNewThreadMessenger.m
+	* application/source/window/CMRReplyMessenger.m
+	* application/Resources/Japanese.lproj/Localizable.strings
+		「掲示板」＞「ローカルルールを表示／隠す」の IBAction や menu item validation を実装。
+	* application/source/window/CMRReplyControllerTbDelegate.m
+		書き込みウインドウ／新規スレッド作成ウインドウのツールバーに「ローカルルールを表示」を配置できるようにした。
+		また、「テンプレートを挿入」ツールバー項目の NSPopUpButton は、Leopard では NSTexturedRoundedBezelStyle を使用するようにした。
+	* application/Resources/Japanese.lproj/BSLocalRulesPanel.nib
+	* application/source/window/BSLocalRulesPanelController.[h|m]
+		[新規追加] ローカルルールを表示するパネルのウインドウコントローラと nib。
+		Tiger 以降でしか使えない Cocoa binding を複数使用。Panther 禁止。
+	* application/source/bbs/BSLocalRulesCollector.[h|m]
+	* application/Resources/Japanese.lproj/LocalRulesTemplate.html
+		[新規追加] 板のローカルルールが書かれたファイル（head.txt）を取得し、LocalRulesTemplate.html と合成してローカルルールの
+		html を生成。RTF に直して NSTextView に提供するクラス。
+		一度取得したデータはログフォルダ内に「板名/LocalRules.rtf」ファイルとして保存され、キャッシュされる。
+	* frameworks/CocoMonar/framework/src/CMRDocumentTypes.[h|m]
+		CocoMonar framework: head.txt のファイル名を表す定数を追加した。
+	* application/Resources/Japanese.lproj/BSReplyAlertSheet.nib
+		レイアウトの調整。
+	* application/Resources/text/HostProperties.plist
+		まちBBSとlivedoorしたらばで、スレ立て時のパラメータ値に誤りがあったので修正。
+		- これだけでは不十分で、さらなる修正を後日行なう予定。つまり今日の時点ではまだスレ立て出来ないので注意。
+2008-02-12 masakih <masakih@users.sourceforge.jp>
+	* application/source/manager/DatabaseManager.m:
+		データベースの初期化に失敗していたのを直した。
+=================================================
+2008-02-11 tsawada2 <ben-sawa@td5.so-net.ne.jp.
+	* application/source/window/BSNewThreadController.m
+		新規スレッド作成ウインドウの frame autosave 周りを実装（CMRReplyController と違い、「ウインドウの位置とサイズを記憶」は使用できない）。
+	* application/source/window/BSNewThreadMessenger.m
+	* application/source/window/CMRReplyControllerTbDelegate.m
+		「ローカルルールを表示」はまだ機能未実装なので、配置不可（＠ツールバー）、選択不可（＠メニュー）にしておいた。
+2008-02-10 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Resources/Japanese.lproj/Browser.nib
+		スレッド一覧のコンテクストメニューに「先頭のレスをクイックルック」を追加。
+		- 手抜き実装のため、Tiger 以前でもこのメニュー項目は表示されてしまう（選んでも何も起きない）。
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		- 「スレッド」＞「レスに移動」＞「指定日時のレス…」を削除。
+		- 「ファイル」＞「新規ブラウザ」を「新規ブラウザウインドウ」に表記変更。
+		- 「掲示板」＞「ローカルルールを表示」を追加。
+		- 「ファイル」＞「新規スレッド…」を追加。
+	* application/Resources/Japanese.lproj/BSReplyAlertSheet.nib
+	* application/source/window/BSReplyAlertSheetController.[h|m]
+		[新規追加] 長い書き込みエラーのメッセージをスクロールビューで表示できるようにするための、NSWindowController サブクラス、
+			  および nib ファイル。
+	* application/Resources/Japanese.lproj/Messenger.strings
+	* application/source/window/CMRReplyMessenger-Connector.m
+		書き込みエラーの表示時に NSAlert ではなく BSReplyAlertSheetController を使うように変更。
+	* application/source/window/CMRReplyMessenger.m
+		サブクラスとの関係で微修正。
+	* application/Resources/image/Emoticon.tiff
+		[新規追加]「ローカルルールを表示」ツールバーボタンのアイコン。ルールを守って笑顔で書き込み。
+	* application/Resources/Japanese.lproj/Acknowledgments.rtf
+		Emoticon.tiff の使用に伴う内容追加。
+	* application/source/window/CMRReplyControllerTbDelegate.m
+	* application/Resources/Japanese.lproj/ToolbarItems.strings
+		BSNewThreadController 用にツールバーのデリゲートのサブクラス BSNewThreadControllerTbDelegate を作った。
+		これについては別ファイル立てにせず、CMRReplyControllerTbDelegate.m に同居している。
+		また、ツールバーに「ローカルルールを表示」ボタンを追加できるように準備した。
+	* application/source/browser/CMRThreadsList-DataSource.m
+	* application/source/browser/BSDBThreadList.m
+	* application/source/browser/BSThreadListItem.m
+		スレタイから CMRThreadSignature を得るためのメソッド・関数を追加した（スレ立て後にスレッドを自動的に開くために使う）。
+	* application/source/browser/Browser.m
+		スレ立て用の IBAction などを実装。
+	* application/source/preferences/CMRHostHandler.m
+	* application/Resources/text/HostProperties.plist
+		スレ立てに必要なパラメータを提供できるように拡張した。
+	* application/source/window/BSNewThreadController.[h|m]
+	* application/source/window/BSNewThreadMessenger.[h|m]
+	* application/Resources/Japanese.lproj/BSNewThreadWindow.nib
+		[新規追加] スレ立て用の、CMRReplyController サブクラスと、CMRReplyMessenger サブクラス、および nib ファイル。
+	* application/source/browser/CMRBrowser-Action.m
+	* application/source/browser/CMRBrowser-Delegate.m
+		微修正。
+	* application/source/thread/CMRThreadViewer-MoveAction.m
+	* application/source/thread/CMRThreadViewer-Validation.m
+		「指定日時のレスに移動」関連の部分をコメントアウト。
+		- BSTimeMachine.nib はターゲットから外した。
+	* application/source/composer/BSAsciiArtDetector.m
+	* application/source/preferences/AppDefaults-Filter.m
+	* application/source/preferences/CMRPreferencesDefautValues.h
+		「AA を迷惑レスとして扱う」ことができるようにした。
+	* application/subproj/preference/Japanese.lproj/FilterPreferences.nib
+		「AA を迷惑レスとして扱う」チェックボックスを追加。
+=================================================
+2008-02-05 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/object/BS2chQuickLookObject.m
+	* application/Resources/text/KeyValueTemplates.plist
+		2ch の未取得スレッドを「クイックルック」するとき、何バイトデータを取得するかを設定できるよう、KeyValueTemplates.plist に
+		"Browser - QuickLook2chBytesLimit" キーを設けてその内容を読むようにした。現在デフォルト値は3071（3KB）。
+		- まちBBS、livedoorしたらばは rawmode.cgi で>>1の範囲だけを取得しにいくので、この値は使われない。
+	* application/source/object/BSQuickLookObject_p.h
+		[新規追加] ソース整理の関係で新規追加。
+	* application/Resources/Japanese.lproj/BSQuickLookPanel.nib
+	* application/source/window/BSQuickLookPanelController.m
+		HUD パネルを閉じたときに、BSQuickLookPanel.nib にある NSObjectController が保持している BSQuickLookObject を
+		release するようにした。
+2008-02-04 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/CMRAppDelegate.m
+	* application/source/manager/CMRMainMenuManager.m
+	* application/source/view/ThreadsListTable.m
+	* application/source/window/CMRBrowserTbDelegate.m
+		Tiger 以前では「クイックルック」を呼び出すインタフェース（ツールバーのボタン、メニュー項目）を表示しないようにした。
+		また、Tiger 以前では -[ThreadsListTable quickLook:] を呼び出しても何もしないようにした。
+2008-02-03 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/object/BS2chQuickLookObject.[h|m]
+	* application/source/object/BSHTMLQuickLookObject.[h|m]
+		[新規追加] BSQuickLookObject のサブクラス。
+	* application/source/object/BSQuickLookObject.m
+		BSQuickLookObject クラスの構造を変更して、2ch 以外の掲示板でもクイックルックできるようにした。
+	* application/source/view/BSNSControlTbItem.m
+	* application/source/window/CMRBrowserTbDelegate.m
+		ツールバーを「テキストのみ」にしていると、「クイックルック」ボタンが使用できない問題を修正。
+2008-02-03 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	<<全般的な注意>>
+	本日追加の新機能「先頭のレスをクイックルック」について：
+	- スレの >>1 の本文だけをサッと HUD panel で表示します。
+	- 呼び出し方法：スレッド一覧で選択したスレッド（選択行は1行であること）に対して、
+	-- スペースバー
+	-- ツールバーの「クイックルック」ボタン
+	-- 「スレッド」＞「先頭のレスをクイックルック」
+	　で。
+	- この機能は、コア部分は Leopard specific なコードは全く用いていませんが、インタフェースは Leopard only な部品をいっぱい使いました。
+	　そういうわけで、Leopard で BathyScaphe を使用しているとき「のみ」この機能を利用可能にします。Tiger 以前では利用させません。
+	　しかし、今日のコミット時点ではまだ「Tiger 以前で利用させない」ための作業を行っていませんので、Tiger 以前の環境の人はご注意ください。
+	- あと、Leopard の「Quick Look」フレームワークとは一切関係ありません。
+	<<以上>>
+	* application/Resources/text/BrowserKeyBindings.plist
+		スレッド一覧のデフォルトのキーバインドに「スペースバーで quickLook:」を追加した。
+	* application/source/view/ThreadsListTable.m
+		スレッド一覧のテーブルビューに -(IBAction)quickLook:(id)sender; を実装した。つまり、スレッド一覧が first responder のとき「だけ」
+		「クイックルック」機能が利用可能になるということに注意せよ。
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		「スレッド」＞「先頭のレスをクイックルック」を追加。
+	* application/source/window/CMRBrowserTbDelegate.m
+		ブラウザウインドウのツールバーに「クイックルック」を追加できるようにした。
+		- 注意：今の時点では Tiger 以前のことを「わかってて無視」している。Leopard 以外ではブラウザウインドウのツールバーをカスタマイズしようと
+		　しないこと（後で片付けますので！）。つまり、「クイックルック」ツールバー項目は Leopard-only な部品を使っている訳で。
+	* application/source/object/BSQuickLookObject.[h|m]
+		[新規追加] スレッドの >>1 だけをさっと見る「クイックルック」機能の一部で、コアの部分。>>1 を dat から読んできたり、ログファイルがあるなら
+		そこから引っ張ってきたりする役割を持つ。
+		- 最低限のエラー処理はしたが、まだ荒削り。また、今の段階では 2ch 以外の掲示板を想定していないが、これも後でもう少し調整します。
+	* application/source/window/BSQuickLookPanel.[h|m]
+		[新規追加] スペースバーで performClose: できるようにするため「だけ」に用意した NSPanel サブクラス。
+	* application/Resources/Japanese.lproj/BSQuickLookPanel.nib
+	* application/source/window/BSQuickLookPanelController.[h|m]
+		[新規追加] スレッドの >>1 だけをさっと見る「クイックルック」機能の一部で、表示用の HUD パネルの nib とそのコントローラ。
+		- 注意：BSQuickLookPanel.nib は Interface Builder 3.0 用のフォーマットになっている上、Leopard-only なパーツを使っているので
+		　Tiger では開けません。
+	* application/Resources/Japanese.lproj/BSQuickLookButton.nib
+		[新規追加] 「クイックルック」ツールバー項目の中身を収めた nib。
+		- 注意：BSQuickLookButton.nib は Interface Builder 3.0 用のフォーマットになっている上、Leopard-only なパーツを使っているので
+		　Tiger では開けません。
+	* application/source/view/BSNSControlTbItem.[h|m]
+		[新規追加] NSControl を view item として持つツールバー項目を簡単に validation するための、NSToolbarItem のサブクラス。		
+2008-01-28 masakih <masakih@users.sourceforge.jp>
+	* application/source/manager/DatabaseUpdater.m:
+		データベースファイルバージョン3->4へのアップデート時の
+		-[DatabaseUpdater updateDB]が常にNOを返すようになっていた。
+		そのためデータベースファイルバージョン3->5のアップデートで4->5を行わずに終了していた。
+		これを修正。
+=================================================
+2008-01-26 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/subproj/previewer/BSIPIToken.m
+	* application/subproj/previewer/Japanese.lproj/Localizable.strings
+		プレビューインスペクタ：
+		- イメージではないリソースが返ってきたときに（「404 Not Found」と書かれた html とか）、0*0 ピクセルのイメージが表示される
+		　問題を修正。ダウンロードの失敗と同等に処理するようにした。
+		- NSURLError の場合、エラーコードではなく localizedDescription を表示するようにした。
+	* application/source/view/CMRThreadView.m
+		透明あぼーん時の poof effect の発生タイミング、位置、および大きさの変更により、体感軽快度を向上。
+		また、ソースの一部構造を見直して効率化。
+		さらに、2008-01-09 の「複数のレスを同時に「透明あぼーん」したあとに取り消しても、一つのレスしか取り消しされない」問題は解消した。
+	* application/source/thread/CMRThreadViewer-Link.m
+		option キーを押しながら外部リンクをクリックすることで一時的に「リンク」環境設定の「外部リンクをクリックしたときの動作」を
+		逆転できる機能を復活した。Leopard ではなく私の勘違いミス。
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		「ファイル」＞「お気に入りを読み込む...」「お気に入りを書き出す...」をいったん取り外した。
+2008-01-09 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Resources/Japanese.lproj/InfoPlist.strings
+	* application/subproj/previewer/Japanese.lproj/InfoPlist.strings
+		(c) 2005-2007 を (c) 2005-2008 に順次更新していく。
+	* application/source/thread/CMRThreadViewer-Link.m
+	* application/subproj/preference/Japanese.lproj/LinkPreferences.nib
+		option キーを押しながら外部リンクをクリックすることで一時的に「リンク」環境設定の「外部リンクをクリックしたときの動作」を
+		逆転できる機能を廃止した。どうも Leopard で装飾キーを押しながらのリンククリックがキャッチできない感じなので。
+		コンテクストメニューで代替してください。
+ 	* application/source/threaddata/CMRThreadMessage-UndoSupport.m
+		[新規追加] ソースいじりの都合上別ファイル立てにした。
+	* application/source/thread/CMRThreadViewer.m
+	* application/source/threaddata/CMRThreadMessage.m
+	* application/source/threaddata/CMRThreadMessage_p.h
+	* application/source/view/CMRThreadView.m
+		レスの属性指定（via コンテクストメニュー or レス番クリックのメニュー）の「取り消し」をサポート。
+		- あるレスの「迷惑レス」指定を取り消しても、そこから連鎖的に迷惑レス認定されたレスは元に戻らない（どちらかというと仕様）。
+		- 複数のレスを同時に「透明あぼーん」したあとに取り消しても、一つのレスしか取り消しされない（原因不明）。レスの数だけ「取り消し」する必要有り。
+2008-01-07 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Resources/Japanese.lproj/Messenger.strings
+	* application/Resources/Japanese.lproj/CMRReplyWindow.nib
+	* application/source/window/CMRReplyMessenger-Connector.m
+	* application/source/window/CMRReplyMessenger.m
+	* application/source/window/CMRReplyController-ViewAccessor.m
+	* application/source/window/CMRReplyController.m
+		2007-12-24 および 2008-01-05 の修正を行なっても、なお書き込みウインドウでの「取り消し」サポート、および NSDocument の
+		「dirty」（未保存）フラグの状態制御、そしてテキストフィールドのフォーカス制御についてスッキリした挙動が得られていなかった。
+		これを解決するためさらに各部を修正。ようやくまともになった（と思う）。
+2008-01-05 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Resources/Japanese.lproj/MainMenu.nib
+	* application/source/thread/CMRThreadViewer-MoveAction.m
+	* application/source/thread/CMRThreadViewer-Validation.m
+		「スレッド」＞「レスに移動」＞「指定日時のレス...」を追加。日時を（BSDatePicker を使って）指定すると、その日時以降の最初のレスに
+		スクロールする（見つからなければ単に Beep）。たまーに使い道がある。と思う（tsawada2 は使う必要があったので急遽実装した）。
+	* application/Resources/Japanese.lproj/BSTimeMachine.nib
+	* application/source/thread/BSTimeMachineController.[h|m]
+		[新規追加] 「スレッド」＞「レスに移動」＞「指定日時のレス...」で表示される日付入力用パネルの nib とそのコントローラ・クラス。
+	* application/source/window/CMRReplyMessenger-Connector.m
+	* application/source/window/CMRReplyMessenger.m
+	* application/source/window/CMRReplyController-ViewAccessor.m
+	* application/source/window/CMRReplyController.m
+		「下書きとして保存」するたびに、テキストビュー／テキストフィールドからフォーカスが外れる問題（v233 で混入）を修正。
+		その他、微調整。
+2007-12-24 masakih <masakih@users.sourceforge.jp>
+	* application/source/manager/DatabaseManager.[h|m]:
+	* application/source/manager/DatabaseUpdater.m:
+		データベースファイルバージョンを5に。
+		BoardThreadInfoView を変更。
+		isCached, isUpdated, isNew, isHeadModified カラムを追加
+2007-12-23 masakih <masakih@users.sourceforge.jp>
+	* application/source/browser/BSDBThreadList.m:
+	* application/source/browser/BSThreadListUpdateTask.m:
+		ソートをsqlite側ではなく、Cocoa側でやるように変更。
+	* application/source/browser/BSThreadListItem.[h|m]:
+		データキャッシュが正しく行われていなかったため逆に足を引っ張っていた。
+		正しくキャッシュするように変更。
+	* application/source/manager/DatabaseManager-DatabaseAccess.m:
+	* application/source/manager/DatabaseManager.h:
+		boardId と boardName の対応マップをパージするメソッドの追加。
+	* application/source/bbs/BoardListItem/ConcreteBoardListItem.m:
+	* application/source/bbs/BoardListItem/SmartBoardList.m:
+		警告抑制。
+2007-12-19 masakih <masakih@users.sourceforge.jp>
+	* application/source/composer/CMRAttributedMessageComposer.m:
+		NSLog() が残っていたのでUTILDebugWrite()に変更。
+	* application/source/bbs/BoardListItem/FavoritesBoardListItem.[h|m]:
+		データベースファイルバージョン4にあわせて変更。
+		お気に入りをキャッシュするように変更。（ただし、未稼働）
+	* application/source/manager/DatabaseManager-DatabaseAccess.m:
+	* application/source/manager/DatabaseManager.[h|m]:
+	* application/source/manager/DatabaseUpdater.m:
+		データベースファイルバージョンを4に。
+		ThreadInfoTableにIsFavoriteカラムを追加し、お気に入りの表示の高速化。
+		FavoritesTableは並べ替え実装に必要と思われるので残留させている。
+=================================================
+2007-12-25 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/subproj/preference/BSRTTArrayController.m
+	* application/subproj/preference/Japanese.lproj/ReplySetting.nib
+		「書き込み」環境設定：「テンプレート」タブのリストで、「＋」（追加）ボタンをクリックした際にすぐにテキストを入力できるよう、
+		BSRTTArrayController を BSAdvancedPaneArrayController のサブクラスにした。
+	* application/subproj/previewer/BSIPIPathTransformer.h
+		@import の誤りを修正。
+2007-12-24 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/subproj/previewer/BSImagePreviewInspector-Settings.m
+	* application/subproj/previewer/BSImagePreviewInspector.m
+	* application/subproj/previewer/BSIPIFullScreenController.m
+	* application/subproj/previewer/Japanese.lproj/Localizable.strings
+	* application/subproj/previewer/Japanese.lproj/BSIPIPreferences.nib
+		プレビューインスペクタ（2.7.2 -> 2.7.3）：
+		- フルスクリーンの背景色を設定できるようにした。
+	* application/source/bbs/BoardManager-BSAddition.m
+	* application/source/browser/CMRBrowser-Delegate.m
+	* application/source/thread/CMRAbstructThreadDocument.m
+		細部の修正。
+	* application/subproj/preference/BSPreferencesPaneInterface.h
+		スペルミスがあったので修正。
+	* application/subproj/preference/reply/CMRReplyDefaultsController.m
+	* application/subproj/preference/Japanese.lproj/ReplySetting.nib
+		「書き込み」環境設定に「テンプレート」タブを追加し、テンプレートリストのカスタマイズを行えるようにした。
+		Cocoa binding 多用。
+	* application/source/preferences/AppDefaults.m
+		環境設定のプラグインから BSReplyTextTemplateManager へアクセスする入口を用意した。
+	* application/source/thread/CMRThreadViewer-Action.m
+	* application/source/window/CMRReplyMessenger-Connector.m
+	* application/source/window/CMRReplyMessenger.m
+	* application/source/window/CMRReplyController-ViewAccessor.m
+	* application/source/window/CMRReplyController.m
+	* application/Resources/Japanese.lproj/CMRReplyWindow.nib
+	* application/Resources/Japanese.lproj/Messenger.strings
+		CMRReplyMessenger <--> CMRReplyController 間の役割見直し。とくに CMRReplyController がスリム化された。
+		また、書き込みウインドウで Cocoa binding の利用箇所を増やしたことにより、コードを少々削減した。
+	* application/source/CMRAppDelegate.m
+		「テンプレートを挿入」メニューから「テンプレートリストのカスタマイズ...」を選んだときの action を CMRAppDelegate に追加した
+		（このアクションは書き込みウインドウが最前面に無くても利用できるので）。
+	* application/source/manager/CMRMainMenuManager.m
+	* application/source/CMRAppDelegate+Menu.m
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		「編集」＞「テンプレートを挿入」サブメニューを追加した。書き込みウインドウのツールバー項目である「テンプレートを挿入」
+		ポップアップボタンと同内容。
+	* application/source/window/BSReplyControllerValueTransformer.[h|m]
+		[新規追加] 書き込みウインドウでの Cocoa-binding で使用する NSValueTransformer のサブクラス。
+	* application/Resources/image/deleteMail2.tiff
+		[新規追加] 書き込みウインドウで使用する画像リソース。deleteMail.png の置き換え。
+	* application/subproj/preference/BSRTTArrayController.[h|m]
+		[新規追加] 「書き込み」環境設定の「テンプレート」タブ内で使用する、Drag and Drop をサポートするための NSArrayController サブクラス。
+	* application/source/manager/BSReplyTextTemplateManager.[h|m]
+		[新規追加] BSReplyTextTemplate を管理するクラス。ReplyTextTemplates.plist への読み書きなどを担当。
+		また、このファイルに居候して BSBugReportingTemplate クラス (BSReplyTextTemplate のサブクラス) のコード有り。
+		BSBugReportingTemplate は以前のバージョンの「不具合の報告」テンプレートを表すクラスで、CMRReplyController に書いてあったコードを
+		移植してきた。 
+	* application/source/manager/BSReplyTextTemplate.[h|m]
+		[新規追加] 書き込みテンプレートを表すオブジェクト。（主としてメニューアイテム用の）表示名、text-completion 用のキーワード、および
+		テンプレートの内容自体から成る。CMRPropertyListCoding プロトコル準拠。
+	* frameworks/SGAppKit/framework/src/custom/bathyscaphe/BSReplyTextView.m
+		SGAppKit:
+		BSReplyTextView クラスについて、completion 機能の拡張を行った（特定のキーワードに対する completion では、候補を表示せず
+		直接対応するテキストを挿入する機能を追加した）。
+	* frameworks/CocoMonar/framework/src/CMRFiles.h
+		CocoMonar Framework:
+		書き込み欄のテンプレートデータのファイル名（ReplyTextTemplates.plist）を定義した。
+2007-12-19 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/bbs/BoardManager-BSAddition.m
+		SETTING.TXT をスレッド読み込み時に解析した際、「掲示板オプション」パネルの表示にすぐに反映されないことがあった問題を修正。
+		また、同じ名無しさんを重複して追加することはしないようにした。
+	* application/Resources/Japanese.lproj/AddBoardSheet.nib
+	* application/Resources/Japanese.lproj/EditBoardSheet.nib
+	* application/source/browser/AddBoardSheetController.m
+	* application/source/browser/EditBoardSheetController.m
+		掲示板の追加や削除時のインタフェースを少し改善し、不正な入力にはリアルタイムで警告を赤字で表示するようにした。
+		警告が出ているときは「OK」ボタンを押すことはできない。
+	* application/source/bbs/BSBoardInfoInspector.m
+	* application/source/bbs/BoardManager-SettingTxt.m
+	* application/source/thread/CMRThreadViewer.m
+		「掲示板オプション」パネルから「SETTING.TXT を解析」ボタンを押して解析しようとし、かつオフラインモードの場合、
+		不適切な確認ダイアログが表示されていた問題を修正。すぐに SETTING.TXT のダウンロードと解析を行うようにした。
+	* application/source/CMRAppDelegate.m
+	* application/source/manager/CMRMainMenuManager.m
+	* application/source/manager/CMROpenURLManager.m
+		CMRAppDelegate.m のソース整理、及び一部コードを CMRMainMenuManager や CMROpenURLManager に移動。
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		ターゲット／アクション接続の細かな見直し。
+	* application/Resources/Japanese.lproj/BoardListEditor.strings
+		[新規追加] ThreadViewer.strings から一部の内容を分離。
+	* application/source/extensions/NSApplication+BSScriptingSupport.[h|m]
+		[新規追加] CMRAppDelegate.m から AppleScript サポート部分を分離。
+=================================================
+2007-12-16 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Makefile
+		ターゲット名を変更して、make で正しくビルドできるようにした。
+	* application/source/extensions/NSApplication+BSScriptingSupport.[h|m]
+		[新規追加] CMRAppDelegate.m に間借りしていた NSApplication のカテゴリ（AppleScriptサポート用）を別ファイルに独立。
+	* application/source/CMRAppDelegate.m
+	* application/source/preferences/CMRPreferencesDefautValues.h
+	* application/source/preferences/AppDefaults-Background.m
+	* application/Resources/BathyScaphe.scriptSuite
+	* application/Resources/BathyScaphe.scriptTerminology
+		掲示板リストの、ウインドウが main window でないときのカラーも AppleScript から変更できるようにした。
+		その他、ソースの整理、メソッド名の変更を少々。
+	* application/source/thread/CMRThreadViewer-Find.m
+	* application/source/thread/CMRThreadViewer-Validation.m
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		「編集」＞「検索」＞「検索...」の target を CMRAppDelegate から CMRThreadViewer に変更した。
+	* frameworks/SGFoundation/framework/source/classes/files/SGFileRef.m
+	* frameworks/CocoMonar/framework/src/CMRFileManager.m
+	* frameworks/SGFoundation/SGFoundation.xcodeproj
+		フレームワークの改良:
+		CMRFileManager@CocoMonar Framework と SGFileRef@SGFoundation の間で一部機能の配置換えを行った。
+		SGFoundation のビルド設定を見直し、AppKit をリンクしなくても正しくビルドできるようにした。不要なプロトコルを廃止した。
+2007-12-12 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/bbs/BoardManager-BSAddition.m
+	* application/source/bbs/BoardManager-SettingTxt.m
+	* application/source/bbs/BoardManager.m
+	* application/source/bbs/BoardWarrior.m
+	* application/source/bbs/BoardListItem/ConcreteBoardListItem.m
+	* application/source/bbs/BoardListItem/SmartBoardList.m
+	* application/source/manager/DatabaseManager-DatabaseAccess.m
+		掲示板の URL を自分で書き換えても記憶されなかったり、サーバ移転で自動書き換えしても記憶されなかったり、
+		勝手に古い URL に戻ってしまう問題を解消するため悪戦苦闘。
+		- URL を書き換える時は userList と defaultList を常に両方書き換えるようにした。
+		- boardInfoHistoryTable からの探索は、場合によっては行わないようにしてみた。
+		-- -[DatabaseManager(DatabaseAccess) boardIDForURLStringExceptingHistory:] の追加。
+		- URL を書き換える方法が色々あるが、-[BoardManager(UserListEditorCore) editBoardItem:newURLString:] の呼び出しに
+		  統一して、保守性を向上させた。 
+	* application/source/bbs/BSBoardInfoInspector.m
+	* application/Resources/Japanese.lproj/BSBoardInfoInspector.nib
+		「掲示板オプション」パネルのインタフェースを見直した。
+		- 掲示板の URL を編集する方法を掲示板リストでのそれと同じ方法にした。
+		- 名無しさんの名前は追加／削除ボタンのみとし、「編集...」ボタンは廃止した。
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		「表示」＞「欄」を「表示項目」に名称変更（Leopard Mail マナー）。
+		「ファイル」＞「お気に入りを読み込む...」「お気に入りを書き出す...」を追加。
+	* application/source/browser/CMRFavoritesManager.m
+	* application/source/browser/Browser.m
+		お気に入りを読み込み／書き出しできるようにした。
+		今のところ、もっぱら「BSDataImporter でデータベースを再構築する前後のお気に入りバックアップ／リストア用」である。
+		即ち、
+		1. お気に入りを書き出す
+		2. BSDataImporter でデータベース再構築（→お気に入りは消えてしまう）
+		3. 再起動後、1. のお気に入りを読み込ませて復帰させる
+		しかしまだ不完全な部分もあり、1.6.1 正式版でどうするかは未定。
+	* application/Resources/Japanese.lproj/BSFavoritesProgressPanel.nib
+		[新規追加] お気に入りの読み込み／書き出し中に表示される進行状況パネル。
+	* application/source/object/CMRThreadSignature.m
+		ソースの整理と軽いリファクタリング。
+		- メソッド名の変更に伴い、該当メソッドを呼び出しているいくつかのソースファイルに修正が入っている。
+	* application/source/thread/CMRThreadLayout-MessageRange.m
+	* application/source/thread/CMRThreadViewer-Link.m
+	* application/source/thread/CMRThreadViewer-Validation.m
+		逆参照ポップアップは、スレッド全体からアンカーを含むレスを探すようにした（以前は、逆参照の対象レスより
+		後ろのレスからしか探していなかった）。また、CMRThreadLayout のコード整理。
+	* application/Resources/image/Action.tiff
+	* application/Resources/image/Action_Pressed.tiff
+	* application/Resources/image/AddBoard.tiff
+	* application/Resources/image/AddBoard_Pressed.tiff
+	* application/Resources/image/SplitterHandle.tiff
+		微妙に画像リソースを修正。
+	* application/source/view/BSTsuruPetaView.m
+		（SGAppKit 持ち）BSTsuruPetaView は、Spacer.tiff を敷き詰めるのではなくグラフィック関数で
+		色を塗るようにした。Spacer.tiff はターゲットから外した。
+	* application/source/window/CMRThreadViewerTbDelegate.m
+	* application/source/preferences/AppDefaults.m
+	* application/source/preferences/CMRPreferencesDefautValues.h
+		「戻る／進む」ボタンにポップアップメニューを付ける隠しオプション "DisablesHistoryButtonPopupMenu" を
+		廃止した（不安定なため）（参考：2007-09-16 の変更）。
+		また、以前に User Defaults から未使用になったエントリを削除する意図で書いたコードが正しく動作していなかった部分を
+		修正した。
+	* application/source/task/CMRTaskManager.h
+	* application/source/thread/CMRThreadViewer_p.h
+		CMRTask プロトコルの定義がどうたらと、ビルド時に警告が出ない書き方に改めた。
+================================================= 1.6(v218.1) / Twincam Angel / CVS Tag : v160_FINAL
+2007-11-30 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/subproj/reply/Japanese.lproj/LoginWindow.nib
+		ダイアログの文面を修正。
+	* application/source/preferences/CMRPreferencesDefautValues.h
+		「必要なときに自動的に●ログインする」設定のデフォルト値を NO に修正。
+================================================= 1.6(v218) / Twincam Angel
+2007-11-30 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Resources/Japanese.lproj/board_default.plist
+		最新のものに更新。
+	* application/Resources/Japanese.lproj/BathyScapheHelp/sty/top.css
+		ほんのちょっと修正。
+	* frameworks/SGFoundation/framework/source/support/NSBundle+AppSupport.[h|m]
+	* frameworks/SGFoundation/framework/source/extensions/string/NSMutableString-XMLEntitySupport_imp.m
+	* frameworks/SGFoundation/framework/source/extensions/string/NSString+Japanese.[h|m]
+	* frameworks/SGFoundation/framework/source/extensions/string/NSString-Extensions.old.m
+	* frameworks/SGFoundation/framework/source/extensions/data/NSCoder-SGExtensions.[h|m]
+	* frameworks/SGFoundation/framework/source/extensions/data/NSData-SGExtensions.[h|m]
+	* frameworks/SGFoundation/framework/source/extensions/data/SGBase64.[c|h]
+	* frameworks/SGFoundation/framework/source/classes/keychain/
+	* frameworks/SGFoundation/framework/source/references/
+	* frameworks/SGFoundation/SGFoundation.pbproj
+	* frameworks/SGFoundation/performance/
+		[削除] かなり昔から未使用なので刈り込み。
+	* frameworks/SGFoundation/SGFoundation.xcodeproj
+		SGFoundation:
+		ビルド設定にミスがあったので修正。
+=================================================
+2007-11-30 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/browser/BSDBThreadsListDBUpdateTask2.m
+		TEC を直接呼ぶのではなく CMXTextParser を経由して subject.txt をデコードするように
+		変更。
+	* application/Resources/Japanese.lproj/BathyScapheHelp/
+		ヘルプコンテンツのアップデート。
+2007-11-25 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/subproj/preference/SyncPaneController.m
+	* application/subproj/preference/Japanese.lproj/SyncPane.nib
+	* application/source/bbs/BoardWarrior.m
+	* application/Resources/Japanese.lproj/BoardWarrior.strings
+		BoardWarrior のリファクタリング。
+	* frameworks/CocoMonar/framework/src/CMRFileManager.m
+		CocoMonar Framework:
+		CMRFileManager に、~/Library/Logs フォルダへのパスを取得するメソッドを追加した。
+	* application/source/CMRAppDelegate.m
+	* application/subproj/preference/abstract/PreferencesController.m
+	* application/subproj/preference/pane/PreferencesPane-PCManagement.m
+	* application/subproj/preference/pane/PreferencesPane.m
+	* application/subproj/preference/PreferencePanes_Prefix.h
+	* application/source/preferences/AppDefaults-Bundle.m
+		環境設定周りのリファクタリング。
+	* application/subproj/preference/BSPreferencesPaneInterface.h
+		[新規追加] PreferencesPane.plugin のインタフェースを明確にするため、 BSPreferencesPaneProtocol
+		プロトコルを定義した。
+2007-11-24 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* frameworks/SGAppKit/framework/src/custom/container/SGContainerTableView.m
+		「進行状況」パネルのグリッドは、SGContainerTableView で描くようにした。
+		今までは、CMRTaskItem.nib で水平線の NSBox を配置してごまかしていた（！）。
+	* application/Resources/Japanese.lproj/CMRTaskItem.nib
+	* application/Resources/Japanese.lproj/CMRTaskManager.nib
+		レイアウトの修正。
+		- nib のフォーマットの関係で、CMRTaskItem.nib/objects.nib が remove され、CMRTaskItem.nib/keyedobjects.nib が
+		　add されているので注意。
+	* frameworks/SGAppKit/TestContainerTableView/
+	* frameworks/SGAppKit/SGAppKit.pbproj
+		[削除] 削除。
+2007-11-23 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* frameworks/SGNetwork 以下
+		[削除] もう使われていないので削除。
+	* application/BachyScaphe.xcode
+	* metadataimporter/BathyScaphe/BathyScapheMDI.xcode
+	* application/subproj/previewer/BSIPIDownload.[h|m]
+	* application/subproj/preference/Japanese.lproj/FontsAndColors.nib
+		[削除] もう使われていないので削除。
+	* application/subproj/preference/Japanese.lproj/AdvancedPane.nib
+		ツールチップを補ったほか、レイアウト上のミスを修正。
+	* application/subproj/preference/Japanese.lproj/Localizable.strings
+	* application/subproj/preference/LinkPrefController.m
+	* application/source/manager/BSLinkDownloadManager.m
+		「リンク」環境設定から拡張子を入力する際のエラーチェック方法の改良に伴う変更。
+	* application/subproj/preference/BSPathExtensionFormatter.[h|m]
+		[新規追加] 「リンク」環境設定で使用する NSFormatter のサブクラス。
+	* application/subproj/previewer/BSImagePreviewInspector-View.m
+	* application/subproj/previewer/BSImagePreviewInspector.m
+		プレビューインスペクタ (2.7.1 -> 2.7.2)：
+		環境設定パネルを単独の nib ファイルにしたことに伴う内部の修正。
+	* application/subproj/previewer/Japanese.lproj/BSIPIPreferences.nib
+		[新規追加] プレビューインスペクタの環境設定パネルは、単独の nib ファイルにした。
+	* application/source/view/CMRThreadView.m
+		「n 個のリンクをプレビュー」は、プレビュープラグインがこの機能に対応していない時はメニューに表示しないことにした。
+2007-11-21 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/subproj/reply/account/w2chAuthenticater.m
+		●のユーザーIDが未設定だが、「必要なときに●ログインする」が「入」のときは、今まで●ログインしないものと解釈していたが、
+		ユーザーID とパスワードをその場で入力するダイアログを表示するようにした。
+	* application/subproj/preference/account/AccountController.m
+	* application/subproj/preference/Japanese.lproj/AccountPane.nib
+		「アカウント」環境設定について、●アカウントの設定インタフェースをシンプルにして分かりやすくした。
+		パスワード関連の要素は取り除いた。パスワードはキーチェーンが既にあればそこから自動的に読みに行くし、
+		キーチェーンがなければ●ログインしようとする時に入力ダイアログを表示する（そこでキーチェーン作成の設定もできる）。
+	* application/source/thread/CMRThreadViewer-Link.m
+		2007-11-20 の変更で、「Web ブラウザを背面で開く」オプションが反映されなくなっていた問題を修正。
+	* application/subproj/previewer/Japanese.lproj/BSImagePreviewInspector.nib
+		-[NSArrayController remove:] を実行したときに Tiger で問題が起きる可能性があった部分を修正（たぶん）。
+=================================================
+2007-11-21 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Resources/Japanese.lproj/Messenger.strings
+	* application/source/window/CMRReplyController.m
+		「不具合の報告」テンプレートの内容で、プレビュープラグインのバージョン情報をより詳しく挿入するように変更。
+	* application/source/window/CMRReplyController-ViewAccessor.m
+		「テンプレートを挿入」ポップアップブタンの表示が Leopard で意図通りにならない問題を修正。
+	* application/Resources/image/Folder.png
+		掲示板リストのカテゴリのアイコンを Leopard 風に差し替え。
+2007-11-20 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Resources/Japanese.lproj/CMRReplyWindow.nib
+		2007-11-11 の変更で、UI のレイアウトがずれていた問題を修正。
+	* application/source/thread/CMRThreadLayout-MessageRange.m
+	* application/source/thread/CMRThreadLinkProcessor.m
+	* application/source/thread/CMRThreadViewer-Link.m
+	* application/source/view/CMRThreadView.m
+		コードの見直しと近代化（NSIndexSet を活用したい）。
+		また、-[NSString pathExtension] のかわりに CFURLCopyPathExtension() を使うように変更。
+	* application/subproj/previewer/BSImagePreviewInspector.m
+		-[NSString pathExtension] のかわりに CFURLCopyPathExtension() を使うように変更。
+	* application/subproj/preference/Japanese.lproj/LinkPreferences.nib
+		一部表記と Tool tip の文言修正。
+2007-11-16 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/bbs/BoardListItem/FavoritesBoardListItem.m
+		2ch スレに書き込まれた修正を反映。
+	* application/source/CMRAppDelegate.m
+	* application/subproj/preference/pane/PreferencesPane-PCManagement.m
+	* application/subproj/preference/pane/PreferencesPane-Toolbar.m
+	* application/subproj/preference/pane/PreferencesPane.m
+	* application/subproj/preference/abstract/PreferencesController.m
+		環境設定の骨組みを整理した。
+		フルキーボードアクセスで環境設定のペインを切り替えたときに、ツールバーの選択項目が正しく同期するようにした。
+		フルキーボードアクセスで環境設定のペインを切り替えたときに、key loop を auto-recalucurate するようにした（Tiger 以降）。		
+2007-11-15 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/subproj/BWAgent/
+		[削除] 以下のファイル／フォルダ「以外」は削除：
+		- SJIS2UTF8_source/
+		- rosetta.pl
+		- SJIS2UTF8
+		- sora.pl
+		ただし、SJIS2UTF8_source/SJIS2UTF8.xcode を削除し、SJIS2UTF8.xcodeproj を新規追加。
+	* application/subproj/preference/LinkPrefController.[h|m]
+	* application/subproj/preference/Japanese.lproj/LinkPreferences.nib
+	* application/subproj/preference/rsrc/LinkPreferences.tiff
+		[新規追加] 環境設定の「詳細」および「一般」の一部内容を独立させて、「リンク」を新設した。
+	* application/subproj/preference/pane/PreferencesPane-PCManagement.m
+	* application/subproj/preference/pane/PreferencesPane-Toolbar.m
+	* application/subproj/preference/Japanese.lproj/AdvancedPane.nib
+	* application/subproj/preference/AdvancedPrefController.m
+		「詳細」ペインには、KeyValueTemplates.plist にあった「browser - delayForAutoReloadAtWaking」の
+		設定項目を追加した。また、スリープ解除時に一覧を更新するオプションを「一般」から移設した。
+	* application/subproj/preference/Japanese.lproj/Localizable.strings
+	* application/subproj/preference/Japanese.lproj/GeneralPreferences.nib
+		一部の項目が「詳細」と「リンク」ペインに移動した。
+	* application/subproj/previewer/Japanese.lproj/BSImagePreviewInspector.nib
+		レイアウトの調整、ツールチップの内容見直し、バージョン番号表示の廃止。
+	* application/subproj/previewer/Japanese.lproj/InfoPlist.strings
+		[新規追加] ImagePreviewer.plugin の Info.plist の一部項目をローカライズするために追加。
+	* application/source/preferences/AppDefaults.m
+	* application/source/browser/CMRBrowser-Delegate.m
+		KeyValueTemplates.plist にあった「browser - delayForAutoReloadAtWaking」の
+		設定を AppDefaults に移動した（KeyValueTemplates.plist をカスタマイズしていた場合、その設定値が
+		自動的に読み取られる。ただし、環境設定から一度この設定値を変更すると、jp.tsawada2.BathyScaphe.plist
+		の方に変更後の値が記録され、以後は jp.tsawada2.BathyScaphe.plist から値が読み出されるようになる）。
+	* application/source/preferences/AppDefaults-Bundle.m
+		プレビュープラグインの info dictionary へより柔軟にアクセスできるようにするため、プラグインバンドルの
+		info dictionary ではなく、プラグインバンドルそのものへのアクセサを用意するようにした。
+	* application/source/window/CMRReplyController.m
+		微修正。
+	* application/subproj/previewer/BSImagePreviewInspector-Tb.m
+	* application/subproj/previewer/BSImagePreviewInspector-View.m
+	* application/subproj/previewer/BSImagePreviewInspector.m
+	* application/subproj/previewer/BSImagePreviewerInterface.h
+		コードの整理、細部の修整など。
+2007-11-13 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/thread/CMRThreadViewer-ViewAccessor.m
+		Leopard 対策：ポップアップ内のテキスト・ビューで -[NSTextView setDisplaysLinkToolTips:] を NO にセットし忘れていたので修正。
+	* application/Info-editor.plist
+	* application/subproj/editor/ 以下
+		[削除] ひっそりばっさり削除。
+	* application/subproj/BSIPILeopardSlideshowHelper/BSIPILeopardSlideshowHelper.xcodeproj
+	* application/subproj/BSIPILeopardSlideshowHelper/BSIPILeopardSlideshowHelper_Prefix.pch
+	* application/subproj/BSIPILeopardSlideshowHelper/BSIPILeopardSlideshowHelper.[h|m]
+	* application/subproj/BSIPILeopardSlideshowHelper/Info.plist
+		[新規追加] Leopard で追加機能（ImageKit を利用したスライドショー）を利用するためのプラグインのソース。
+		- この BSIPILeopardSlideshowHelper.plugin を Release ターゲットでビルドしてから BathyScaphe.app をビルドすること。
+		　BathyScaphe.app のビルド時に、application/subproj/BSIPILeopardSlideshowHelper/build/Release/BSIPILeopardSlideshowHelper.plugin が
+		　BathyScaphe.app/Contents/PlugIns/ にコピーされるようになっている。
+		- プロジェクトファイルは Xcode 2.4 互換にしてあるが、Tiger では ImageKit がないのでビルドできない。
+		　Tiger で BathyScaphe.app をビルドする時に困らないよう、とりあえずビルド済みの BSIPILeopardSLideshowHelper.plugin も別途開発者用に配布する予定。 
+	* application/subproj/previewer/BSImagePreviewInspector-Settings.m
+		[新規追加] BSImagePreviewInspector-Tb.m から分離。
+	* application/subproj/previewer/BSIPIArrayController.[h|m]
+		[新規追加] プレビューインスペクタで使用する NSArrayController のサブクラス。
+	* application/subproj/previewer/BSIPIFullScreenController.m
+	* application/subproj/previewer/BSIPIHistoryManager.m
+	* application/subproj/previewer/BSImagePreviewInspector-View.m
+	* application/subproj/previewer/BSImagePreviewInspector-Tb.m
+	* application/subproj/previewer/BSImagePreviewInspector.m
+	* application/subproj/previewer/Japanese.lproj/BSImagePreviewInspector.nib
+	* application/subproj/previewer/Japanese.lproj/Localizable.strings
+		プレビューインスペクタ (2.6.4 -> 2.7)：
+		- 内部構造を見直し、Key-value Observing をさらに活用するようにした。
+		- フルスクリーン表示の操作性を向上
+		　・スクロールホイールの感度を設定できるようにした。
+		　・フルスクリーン表示中にイメージを保存したときのフィードバックを改善した。
+		- リスト・ビューの選択行が変化したときは、選択行が見える位置に自動的にスクロールするようにした。
+		- 環境設定パネルは、シートではなく普通のパネルとして表示するようにした。レイアウトも見直した。
+		- Mac OS X 10.5 では、フルスクリーン表示の替わりに OS 標準の (ImageKit/IKSlideshow) スライドショー
+		　を使用できるようにした（「環境設定」で選択）。
+		　・互換性を確保するため、ImageKit フレームワークをリンクしなければならない部分は別のバンドル
+		　　（BSIPILeopardSlideshowHelper.plugin）に分離し、必要な時にロードするようにしてみた。
+2007-11-11 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/browser/CMRBrowser-Action.m
+		BrowserKeyBindings.plist で使用できるアクションに "selectThreadOnly:" を追加した。
+		スレッドを選択した時に何もしない、というアクション。
+	* application/source/network/CMRDATDownloader.m
+	* application/source/network/CMRDownloader.m
+		ステータス 416 で「再取得が必要です」アラートが表示された直後にクラッシュする問題を修正。
+		- switch 文で break を書き忘れたばっかりに… orz
+	* application/source/window/CMRReplyController-ViewAccessor.m
+	* application/source/window/CMRReplyController.m
+	* application/source/window/CMRReplyControllerTbDelegate.m
+	* application/Resources/Japanese.lproj/CMRReplyWindow.nib
+	* application/Resources/Japanese.lproj/Messenger.strings
+	* application/Resources/Japanese.lproj/ToolbarItems.strings
+		書き込みウインドウのツールバーに「テンプレートを挿入」プルダウンボタンを追加した。
+		書き込み本文に定型文を挿入できる。
+		BathyScaphe 1.6 では「不具合の報告」内蔵テンプレートのみサポートするが、当然、今後のバージョンでは
+		ユーザによるテンプレートの追加をサポートする（だから、ポップアップボタンで選択するインタフェースなのだ）。
+	* application/source/preferences/AppDefaults-Bundle.m
+	* application/source/preferences/AppDefaults.m
+		プレビュープラグインの info dictionary (info.plist) にアクセスするメソッドを追加。
+=================================================
+2007-11-01 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/bbs/BoardManager.m
+		defaultList の無駄なセットアップを抑制。
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		「編集」＞「検索」＞「選択部分を抽出に使用」を追加。command-option-E。
+	* application/source/bbs/BoardListItem/ConcreteBoardListItem.m
+		掲示板リストの同期を実行しても、ユーザ定義リストの URL が適切に書き変わらないことがある問題を修正。
+		また、English 板が bbspink の English 板と混同される問題を暫定的に解決するため、bbspink の English 板は
+		board_default.plist にあっても無視する（boardBoardListItem のインスタンスを生成しない）ようにした。
+	* application/source/browser/CMRBrowser-Action.m
+	* application/source/browser/CMRBrowser-ViewAccessor.m
+	* application/source/browser/CMRBrowser.m
+		ツールバーの「一覧の検索」は、これまで「テキストのみ」または「ツールバーが非表示」「ツールバーから検索フィールドが溢れていて見えない」
+		「ツールバーに検索フィールドを置いていない」ような場合にはシートを出していたが、Leopard でシートが上手く使用可能にならなくなったことと、
+		シートの使用自体が、インタフェース的に好ましくない（シートにブロックされてスレッド一覧などを操作できない！）ため、この方法を廃止した。
+		かわりに、自動的にツールバーを「アイコンとテキスト」に切り替えてから検索フィールドにフォーカスを移すようにした。
+		- 「ツールバーから検索フィールドが溢れていて見えない」「ツールバーに検索フィールドを置いていない」場合は Beep が鳴るだけになったが、
+		　　これは勘弁ということで。将来余力があれば、もう少し工夫する。
+		- CMRAccessorySheetsController クラスは未使用になり、ソースファイルはターゲットから外した。
+	* application/source/browser/CMRBrowser-Validation.m
+		ブラウザウインドウで、IndexField が First Responder かどうか判定するコードをより適切なものに変更。
+		今までのコードは、とくに Leopard ではコンソールにエラーを吐くことがあった。
+	* application/source/thread/CMRThreadViewer.m
+		特定の状況で、スレッドを CMRHistoryManager に登録しようとした時点でスレッドタイトルがセットされていないため、スレッドを
+		履歴に登録できず、このために http://pc11.2ch.net/test/read.cgi/mac/1193398125/253 のような問題が発生していた。
+		これを、DatabaseManager にスレッドタイトルを問い合わせることでできるだけ履歴に登録することを試みるように改良。
+	* application/source/browser/BSTitleRulerView.m
+		Leopard マナー：スレッドタイトルバーのパスポップアップメニューは、command-click に加えて右クリックでも出すようにした。
+2007-10-31 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/thread/CMRThreadViewer-Find.m
+		Leopard Only：「次を検索」「前を検索」「最初から検索」などで、見つかった語句を Safari 3 で検索した時のように強調表示
+		するようにした。
+	* application/source/thread/CMRThreadViewer-ViewAccessor.m
+	* application/source/thread/CMRThreadViewer.m
+	* application/source/preferences/AppDefaults-Background.m
+	* application/source/preferences/AppDefaults-FontColor.m
+	* application/source/preferences/AppDefaults.m
+		スレッドのテーマを切り替えた際のスレッドの表示更新の方法を見直し。
+2007-10-30 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/subproj/reply/connector/SG2chConnector.m
+		Leopard 対策：まちBBS で書き込みに成功した後、「ERROR」シートが表示されてしまう問題を解決。
+		- これも -[NSObject(NSURLConnectionDelegate) connection:willSendRequest:redirectResponse:] の挙動の変化が
+		　原因。
+	* application/source/browser/CMRBrowser-ViewAccessor.m
+		Leopard 対策：-[NSTableView allowsTypeSelect] がデフォルトで YES となっているため、スレッド一覧で一部のキー操作
+		（例えば page up/down によるスクロール）に対する反応が鈍くなっていた。-[NSTableView setAllowsTypeSelect:NO] と
+		して、この問題を解決。
+	* application/source/preferences/AppDefaults-ThreadViewer.m
+	* application/subproj/previewer/BSImagePreviewInspector-Tb.m
+	* frameworks/CocoMonar/framework/src/CMRFileManager.m
+		Leopard マナー：Leopard では、「リンク先のファイルをダウンロード」及び「プレビューインスペクタでのイメージの保存先」の
+		デフォルトのフォルダを「ダウンロード」フォルダにした。また、CMRFileManager に「ダウンロード」フォルダのパスを取得する
+		メソッドを追加した (Tiger 以前では、今まで同様「デスクトップ」フォルダを返す）。
+	* application/source/network/CMRDownloader.m
+		開発中に一時的に試していたコードが中途半端に残っていたために、10.3.9 でスレッドを更新するとクラッシュするようになっていた
+		問題を修正。
+=================================================
+2007-10-29 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* docs/old_changelog/changelog_until_starlight_breaker_final.txt
+		[新規追加] changelog.txt が長くなってきたので、1.5 より前の部分は別のファイルに切り離すことにした。
+	* application/source/preferences/CMRPreferencesDefautValues.h
+		掲示板リストのデフォルトの「行の高さ」を 19 pixels から 20 pixels に変更。
+	* application/Resources/BSTitleRulerAppearance.plist
+		スレッドタイトルバーのカラーを Leopard の Mail.app の RSS 表示を参考に調整。また、タイトルのテキストは
+		デフォルトでは文字を彫り込んだような効果を付けないように変更。
+	* frameworks/SGAppKit/SGAppKit.xcodeproj/project.pbxproj
+		SGAppKit:
+		ビルド設定の見直し。
+	* frameworks/SGAppKit/framework/src/custom/bathyscaphe/BSBoardListView.m
+		SGAppKit:
+		コードのリファクタリング。
+	* frameworks/SGAppKit/framework/src/event/SGKeyBindingSupport.m
+	* frameworks/SGAppKit/framework/src/extensions/NSEvent-SGExtensions.h
+	* frameworks/SGAppKit/framework/src/extensions/image/NSImage-SGExtensions.m
+	* frameworks/SGAppKit/framework/src/extensions/layoutmanager/NSLayoutManager+CMXAdditions.m
+	* frameworks/SGAppKit/framework/src/extensions/pasteboard/NSPasteboard-SGExtensions.m
+	* frameworks/SGAppKit/framework/src/extensions/scrollview/NSScrollView-SGExtensions.m
+	* frameworks/SGAppKit/framework/src/extensions/textview/NSTextView-SGExtensions.m
+	* frameworks/SGAppKit/framework/src/extensions/userdefaults/NSUserDefaults+SGAppKitExtensions.m
+		SGAppKit:
+		細部の修整。
+	* frameworks/SGAppKit/framework/src/custom/BSTitleRulerAppearance.m
+	* application/source/browser/BSTitleRulerView.m
+		SGAppKit:
+		スレッドタイトルバーのアピアランスについて、「タイトルの文字に彫り込んだような効果を付けるか」の設定、及び
+		「BathyScaphe によって dat 落ちと判断されました。」メッセージのテキストカラーを設定できるよう内部の準備をした。
+	* application/source/browser/CMRBrowser-Action.m
+		Leopard 対策：Leopard では、RBSplitView を Expand/Collapse したとき、きちんと表示に反映されないことが
+		あるようだ。Expand/Collapse 直後にもう一度明示的に -[RBSplitView adjustSubviews] を呼び出して、この問題を
+		回避するように修正。
+	* application/source/browser/CMRBrowser-Delegate.m
+		Leopard マナー：Leopard の NSTableView は何もしなくても省略表示されたセルの内容をポップアップ表示するので、
+		ツールチップで省略表示されたセルの内容を表示する機能@スレッド一覧は、Leopard では off になるようにした。
+	* application/source/network/CMRDownloader.m
+		Leopard 対策：NSURLConnection の挙動が変わったようで、dat を読みにいった時にこれまでは HTTP ステータスコード 302 が
+		帰ってきていたものが、勝手に「人大杉」のページにリダイレクトされてしまうようになった。この影響で●による dat 落ちログの
+		取得が出来なくなっていた問題を修正。
+		Leopard 対策：また、[Bug 11205] を回避するよう修正。 
+	* application/source/network/BSLoggedInDATDownloader.m
+	* application/source/bbs/BSSettingTxtDetector.m
+	* application/source/bbs/BoardWarrior.m
+	* application/source/view/SGLinkCommand.m
+	* application/subproj/previewer/BSIPIToken.m
+	* application/subproj/previewer/BSImagePreviewInspector.m
+		BSIPIDownload クラスを使用していたものを BSURLDownload クラスの使用に変更。
+		また、SGNetwork フレームワークのヘッダを import している部分をすべて SGFoundation の import に変更。
+	* application/source/bbs/BoardManager-SettingTxt.m
+	* application/source/browser/CMRBrowser-Validation.m
+	* application/source/browser/CMRBrowser-BLEditor.m
+	* application/source/browser/EditBoardSheetController.m
+		掲示板リストのコンテクストメニューの validation、およびそこから呼び出される action での処理対象の取得処理について
+		方法とコードを整理、再構築。
+	* application/source/browser/CMRBrowser-ViewAccessor.m
+		掲示板リストの背景色が、「環境設定」>「表示」を開いた時に不適切に変わってしまう問題を修正。
+	* application/source/preferences/AppDefaults-Background.m
+		掲示板リストの背景色が、main window でないとき、Tiger 以前で縞模様の window background color になってしまう
+		問題を修正。
+	* application/source/view/popup/CMXPopUpWindowController.m
+		ポップアップをロックした時に、表示位置を補正するように改良(タイトルバーの高さ分だけポップアップウインドウの下端を下げる)。
+
+	* frameworks/SGFoundation/SGFoundation.xcodeproj/project.pbxproj
+	* frameworks/SGFoundation/framework/source/SGFoundation.h
+	* frameworks/SGFoundation/framework/source/classes/SGFoundationClasses.h
+	* frameworks/SGFoundation/framework/source/classes/xml/SGXmlPullParser.m
+	* frameworks/SGFoundation/framework/source/extensions/string/NSString+TEC.m
+	* frameworks/SGFoundation/framework/source/utilities/SGFoundationUtils.m
+		SGFoundation:
+		- コードの整理、未使用のカテゴリやヘッダ、クラス、関数などを削除。
+		SGNetwork フレームワークは BathyScaphe のどのコンポーネントでもリンクされなくなり、未使用になった。
+	* frameworks/SGFoundation/framework/source/classes/SGHTTPDefines.h
+		[新規追加] SGNetwork から SGFoundation に移動した。
+	* frameworks/SGFoundation/framework/source/classes/url-loading/BSURLDownload.[h|m]
+		[新規追加] SGNetwork の BSIPIDownload クラスを一部改良し、クラス名を BSURLDownload に変更して、
+		SGFoundation に組み込んだ。
+=================================================
+2007-10-27 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/CMRExports.h
+		暫定的に #define NSAppKitVersionNumber10_4 をここに書いた。
+	* frameworks/SGAppKit/framework/src/custom/bathyscaphe/BSIconAndTextCell.m
+	* application/source/preferences/CMRPreferencesDefautValues.h
+	* application/source/browser/CMRBrowser-Delegate.m
+	* SGAppKit/framework/src/custom/bathyscaphe/BSBoardListView.m
+		SGAppKit フレームワーク、及び BathyScaphe 本体：
+		Leopard マナー：掲示板リストの配色を Leopard 風に調整。また、掲示板リストは、メインウインドウでないときは灰色で表示
+		するようにした。
+	* application/subproj/previewer/BSIPIDownload.m
+		SGNetwork フレームワーク：
+		Leopard 対策：なぜか -[NSObject(NSURLDownloadDelegate) download:willSendRequest:redirectResponse:] が実際の
+		リダイレクトでなくても送られるようなので、redirectResponse が nil のときはそのまま request を返して続行するようにした。
+	* application/source/manager/BSScriptsMenuManager.m
+	* application/source/bbs/BoardListItem/SmartBLIEditorHelper.m
+	* application/source/browser/CMRBrowser-ViewAccessor.m
+	* application/subproj/previewer/BSImagePreviewInspector-Tb.m
+	* application/subproj/previewer/BSImagePreviewInspector-View.m
+		Leopard マナー：id<NSMenuItem> は、NSMenuItem * に変更。
+	* application/source/browser/BSDownloadTask.m
+		Leopard 対策：なぜか -[NSObject(NSURLConnectionDelegate) connection:willSendRequest:redirectResponse:] が実際の
+		リダイレクトでなくても送られるようなので、redirectResponse が nil のときはそのまま request を返して続行するようにした。
+	* application/source/composer/CMRMessageAttributesTemplate.m
+	* application/source/composer/CMRAttributedMessageComposer.m
+		Leopard 対策：リンク文字列、レス番号部分でマウスカーソルを人差し指型に変化させる仕組みが今までのものだとうまくいかないようなので、
+		NSAttributedString の属性辞書の一要素として指定するようにしてみた。
+2007-10-26 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Resources/Japanese.lproj/board_default.plist
+		最新のものに更新。
+	* application/Resources/Japanese.lproj/AlertPanel.strings
+	* application/source/manager/CMRKeychainManager.m
+	* application/source/preferences/AppDefaults-Account.m
+		使われていなかったリソースや #define をいくつか削除したほか、コードを整理。
+2007-10-25 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/thread/CMRThreadViewer-Action.m
+	* application/source/thread/CMRThreadViewer-OwnHistory.m
+	* application/source/view/BSIndexingPopupper.m
+	* application/source/view/SGHTMLView.m
+	* application/source/view/SGLinkCommand.m
+		メソッド名の綴りを変更。
+	* application/source/view/popup/CMXPopUpWindowController.m
+		ポップアップ・ロック機能の細かい改良。
+	* application/source/view/CMRThreadView.m
+		実装の一部を SGAppKit 側に移した。
+	* frameworks/SGAppKit/SGAppKit.xcodeproj/project.pbxproj
+	* frameworks/SGAppKit/framework/resource/English.lproj/InfoPlist.strings
+	* frameworks/SGAppKit/framework/src/SGAppKit.h
+	* frameworks/SGAppKit/framework/src/extensions/pasteboard/NSPasteboard-SGExtensions.m
+	* frameworks/SGAppKit/framework/src/extensions/workspace/NSWorkspace-SGExtensions.m
+		SGAppKit:
+		AppKit のカテゴリ群のうち、未使用のものをターゲットから外してスリム化した。
+		その一方で、NSWorkspace のカテゴリには新しいメソッドを追加した。
+2007-10-24 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/view/CMRThreadView.m
+	* application/source/view/SGHTMLView.m
+	* application/Resources/Japanese.lproj/HTMLView.strings
+		選択テキストのコンテクストメニューに「n 個のリンクを Web ブラウザで開く」「n 個のリンクをプレビュー」を追加した。
+		選択テキストの中に含まれるリンクを抽出し、Web ブラウザまたはプレビュープラグインにまとめて渡す。
+		- 選択テキスト中に適切なリンクが含まれないときは、これらのメニュー項目は (両方、あるいは片方)表示されない。
+		- プレビュープラグインが -(BOOL)showImageWithURLs:(NSArray)urls; を pricipal class に実装していないと
+		　「n 個のリンクをプレビュー」は使用できない(淡色表示になる)。
+		- 複数のリンクを一度に受け取った後の、Web ブラウザ or プレビュープラグインの挙動については、当然、彼らの実装に依存する。
+	* application/subproj/previewer/BSImagePreviewInspector.m
+	* application/subproj/previewer/BSImagePreviewerInterface.h
+	* application/subproj/previewer/BSIPIFullScreenWindow.h
+		プレビューインスペクタ (2.6.2 -> 2.6.3)：
+		複数の URL を一度にプレビューインスペクタに渡せるようになった。
+2007-10-23 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/view/popup/CMXPopUpWindowController+View.m
+	* application/source/view/popup/CMXPopUpWindowController.m
+		ポップアップウインドウをロックした際に、レイアウトがずれたり、移動できなくなる問題を修正。
+	* application/source/manager/DatabaseManager-DatabaseAccess.m
+		指定した boardID を持つ掲示板レコードを、boardInfoTable から DELETE するためのメソッドを追加した。
+2007-10-20 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/subproj/reply/account/w2chAuthenticater.m
+		コードを整理したほか、UserAgent は CocoMonar.framework で取得できるものを使用する方法に一本化した。
+	* application/source/view/SGHTMLView.m
+		外部リンクを control-クリックしてコンテクストメニューを表示しようとするとき、リンク全体を選択状態にする
+		挙動を復帰させた。(See 2007-08-12)
+	* application/source/thread/CMRThreadViewer-Download.m
+	* application/Resources/Japanese.lproj/ThreadViewer.strings
+		「●ログインして取得」ボタンは、2ch のスレッドでのみアラートに表示されるようにした。
+	* application/source/view/CMRThreadView.m
+		スレッドのコンテクストメニューの動作の信頼性を改善。
+	* frameworks/SGFoundation/framework/source/classes/files/MoreFilesX.[c|h]
+		MoreFilesX 1.0.2 に更新(いままでは、1.0.1 だった)。
+	* frameworks/SGFoundation/framework/source/classes/files/SGFileRef.m
+		ビルド時の警告が出ないよう、適切な書き方に改めたり(完全ではない)、deprecated なメソッドを使用している部分を修正。
+	* frameworks/SGFoundation/framework/source/extensions/string/NSCharacterSet-SGExtensions.[h|m]
+	* application/source/extensions/NSCharacterSet+CMXAdditions.[h|m]
+		NSCharacterSet のサブクラスを内部で作って使っていた部分は、すべてサブクラスを使わないよう(かつ、同等の
+		機能を実現できるよう)修正。
+	* application/Resources/text/HostProperties.plist
+	* frameworks/CocoMonar/framework/src/CMRHostTypes.(h|m)
+	* application/source/composer/CMXTextParser.m
+		古すぎて時代にそぐわないいくつかの関数や定義、すでに存在しないいくつかの外部掲示板のサポートを廃止した。
+	* application/source/manager/CMRHistoryManager.m
+	* application/source/preferences/CMRHostHandler.m
+	* application/source/window/CMRReplyMessenger-Connector.m
+	* application/subproj/reply/connector/w2chReply_shita.m
+	* application/subproj/reply/error/SG2chErrorHandler.m
+		上記変更に伴う微修正。
+	* frameworks/SGFoundation/framework/source/extensions/string/NSString-SGExtensions.m
+	* frameworks/SGFoundation/framework/source/extensions/string/String+Utils.m
+		未使用メソッドの廃止と、deprecated なメソッドを使用している部分の修正。
+	* frameworks/SGFoundation/SGFoundation.xcodeproj/project.pbxproj
+	* frameworks/SGFoundation/framework/source/extensions/SGFoundationAdditions.h
+		いくつかの未使用なカテゴリをターゲットから外した。
+=================================================
+2007-10-16 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* misc/sqlite/os_unix.c
+		試験的に、#define SQLITE_ENABLE_LOCKING_STYLE 0 のコメントアウトを解除した。
+		==[参考]=========
+		 http://bathyscaphe.sourceforge.jp/cgi-bin/wiki.cgi?p=til504
+		 http://www.sqlite.org/cvstrac/chngview?cn=3459
+		 http://www.mail-archive.com/sqlite-users@sqlite.org/msg21123.html
+		=================
+		ネットワーク上にログフォルダのエイリアスを置いて、BathyScaphe 1.5 or later が使えないと嘆く人の声が…
+		これで解決するのかどうか?
+	* application/source/preferences/AppDefaults-Bundle.m
+	* application/subproj/reply/connector/w2chConnect.h
+		●ログイン用の session-id を取得するためのクラスは 2chConnector.plugin に含まれているが、これを呼び出しやすくした。
+		- 以前は、SG2chConnector クラスからの呼び出ししか考慮されていなかった。
+	* application/source/thread/CMRThreadViewer-Download.m
+	* application/source/thread/CMRThreadViewer.m
+	* application/Resources/Japanese.lproj/ThreadViewer.strings
+		取得しようとした dat が見つからないとき、「●ログインして取得」を試みることができるようにした。
+		また、コードを少し整理し、アラートの文面も一部見直した。
+	* application/source/network/BSLoggedInDATDownloader.[h|m]
+		[新規追加] ●ログインして dat 落ちしたスレッドの内容を取得するための、ThreadTextDownloader のサブクラス。
+2007-10-15 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/thread/CMRThreadViewer-Action.m
+	* application/source/thread/CMRThreadViewer-Link.m
+	* application/source/window/CMRReplyMessenger-Connector.m
+	* application/source/window/CMRReplyMessenger.m
+	* application/Resources/Japanese.lproj/Messenger.strings
+		書き込み周りのコード整理、およびサウンドエフェクトを「なし」にしていると書き込み完了時に自動更新されない
+		v173 での問題を修正。また、書き込み時のエラーで、モーダルアラートで表示していたものの一部をシートで
+		表示するように改良。
+	* application/subproj/reply/connector/SG2chConnector.m
+	* application/subproj/reply/connector/w2chConnect.h
+	* application/subproj/reply/error/SG2chErrorHandler.m
+		2chConnector.plugin の内部をリファクタリング。とくに、現代的な API の利用と、使われていないコードの
+		削除や整理を行なった。
+=================================================
+2007-10-14 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/thread/CMRThreadViewer-Action.m
+	* application/source/thread/CMRThreadViewer-Validation.m
+	* application/source/thread/TextFinder.m
+	* application/Resources/Japanese.lproj/CMRThreadMenu.nib
+		テキストを選択したときのコンテクストメニューに「抽出」を追加した。
+		選択された語句を使って、名前・メール・本文を対象に抽出を実行する(検索パネルは表示しない)。
+	* application/Resources/Japanese.lproj/CMRThreadMenu.nib/keyedobjects.nib
+		[新規追加] CMRThreadMenu.nib の「Mac OS X 10.2 or later」フォーマットへの更新に伴うもの。
+	* application/Resources/Japanese.lproj/CMRThreadMenu.nib/objects.nib
+		[削除] 同上。
+2007-10-11 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/preferences/AppDefaults-Filter.m
+	* application/subproj/preference/filter/CMRFilterPrefController.m
+	* application/source/composer/CMRSpamFilter.m
+		迷惑レスフィルタの内容が変更されていないか5分おきにタイマーでチェックして、変更されている場合には BSSpamFilter.plist や
+		NGExpressions.plist に書き込むようにした。
+2007-10-10 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/CMRAppDelegate.m
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		スクリプトメニューに「用語説明を開く」を追加した。
+	* application/source/browser/Browser.m
+	* application/source/window/CMRReplyMessenger.m
+	* application/Resources/BathyScaphe.scriptSuite
+	* application/Resources/BathyScaphe.scriptTerminology
+		AppleScript サポートの改良：
+		ブラウザウインドウ(browser)でも selected text プロパティが取得できるようにした。
+		また、書き込みウインドウ(reply document)で selected text プロパティを取得および set できるようにした。
+		- selected text を set することは、すでに選択されているものを置換することを意味する。
+2007-10-08 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/object/TS2SoftwareUpdate.m
+		インターネットに接続していない状態で BathyScaphe を起動したとき、自動的にアップデートを確認する設定になっていると
+		「アップデートを確認できませんでした」とエラーのアラートが表示されてしまうが、これはうっとうしいので表示しないようにした。
+	* application/source/bbs/BoardListItem/BoardListItem.m
+		サーバ移転検知機能が、まれに hoge.u.la ホストへのサーバ移転であると誤認識してしまう問題を修正。
+	* application/source/browser/BSDownloadTask.m
+	* application/source/browser/BSThreadsListOPTask.m
+	* application/Resources/Japanese.lproj/ThreadsList.strings
+		スレッド一覧のダウンロード時に、
+		- NSURLConnection のエラーで失敗した時のアラートを改良し、エラーの内容を分かりやすくした。
+		- ダウンロード中に「中止」したときに、スレッド一覧が真っ白になってしまう問題を修正した。
+2007-10-07 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/CMRAppDelegate.m
+	* application/Resources/BathyScaphe.scriptSuite
+	* application/Resources/BathyScaphe.scriptTerminology
+		AppleScript の新しい命令「remove from database」を追加した。
+		- パラメータに alias を取る。その alias に対応するスレッドの情報を BathyScaphe データベースから削除する。
+		- BathyScaphe 以外の手段で（Finder とか）ログファイルを捨てたとき、この命令を実行すればデータベースの内容にも反映できる、と。
+		- この命令は実際にログファイルを削除することはしないので注意すること（ログファイルを削除せず、この命令だけ実行することは良くない）。
+	* application/source/browser/Browser.m
+	* application/Resources/Japanese.lproj/ThreadsList.strings
+	* application/source/manager/CMRDocumentFileManager.m
+		dat 落ちしたスレッドのログファイルを一度にゴミ箱に入れる機能を追加した。
+		- 「掲示板」＞「dat 落ちしたスレッドのログを削除...」
+		- ただし、「お気に入り」に登録されているスレッドのログは除外される。
+		- dat 落ちしているかどうかは、単に「スレッド一覧に表示されているかどうか？」で判断される。このため、スレッド一覧で何か検索しているとき
+		　（フィルタリングされているとき）は、このメニュー項目は選択できないようになっている。また、スマート掲示板や「お気に入り」でも選択できない
+		　ようになっている。
+		- もちろん、対応する .cmreply ファイルもゴミ箱に移動する。
+	* application/source/browser/CMRBrowser-List.m
+	* application/source/browser/CMRBrowser-ViewAccessor.m
+	* application/source/bbs/BoardManager-BSAddition.m
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		掲示板ごとにスレッド一覧のカラム状態を個別に設定する能力は、不安定なため 1.6 では搭載しないことにした。1.5 以前の仕様に復帰させた。
+2007-09-20 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/thread/CMRThreadViewer-Download.m
+		あぼーんなどが発生した場合に表示される「削除して再取得」シートについて、シートの表示中やボタンをクリックした際に不意に
+		クラッシュする問題を修正。retain/release/autorelease 絡みの問題。
+	* application/Makefile
+		ターゲット名を Twincam Angel に変更したので Makefile もそのように修正。
+=================================================
+2007-09-18 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/browser/CMRBrowser-Delegate.m
+	* application/source/preferences/AppDefaults-ThreadsList.m
+		スレッド一覧のテーブルカラムの状態の復帰時に問題が発生する可能性があった箇所を引き続き修正。
+2007-09-17 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/browser/CMRBrowser-List.m
+		スレッド一覧のテーブルカラムの状態の復帰時に問題が発生する可能性があった箇所を修正。
+	* application/source/browser/CMRThreadsList-DataSource.m
+		スレッド一覧からスレッドをゴミ箱にドラッグ＆ドロップしても削除されなくなっていた問題を修正。
+	* application/source/view/CMRThreadView.m
+	* application/source/view/popup/CMXPopUpWindowController.m
+		とくにポップアップ内に表示されている抽出／フィルタリングされたレスなどに対して、コンテクストメニューの表示内容が
+		不適切だったり、違うレスに属性が適用されてしまう問題を修正。
+2007-09-16 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/browser/BSTitleRulerView.m
+		[SGAppKit] スレッドタイトルバー：タイトルの文字を描画する際、影のような効果を付けるようにした。
+		- NSShadow ではなく、（BSIconAndTextCell のように）先に1ピクセル下にずらして、グレー色にした同じ文字列を描いたもの。
+		　視認性の向上を狙っているが、まだ調整／検討が必要か。
+	* application/source/window/CMRThreadViewerTbDelegate.m
+	* application/source/preferences/AppDefaults.m
+	* application/source/preferences/CMRPreferencesDefautValues.h
+		Hidden Option "DisablesHistoryButtonPopupMenu" を追加。省略時の値は YES であり、このときは
+		「戻る／進む」ツールバー項目をクリック＆ホールドしてもポップアップメニューを表示しない（一部の環境でクラッシュする問題を
+		回避するため）。度胸のある人は、このオプションを NO にセットすれば、ポップアップメニューを表示して利用できる。
+	* application/source/network/CMRDownloader.m
+	* application/source/composer/CMRSpamFilter.m
+		デバッグ用の NSLog() が残っていたのを削除した。
+	* application/Resources/Japanese.lproj/Browser.nib
+		掲示板リスト下部の「追加（＋）」ボタンの Action 接続が切れていたのを直した。
+=================================================
+2007-09-08 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/browser/CMRBrowser-Delegate.m
+	* application/source/bbs/BoardManager-BSAddition.m
+		スレッド一覧のカラムの状態の保存に関するコードの修正。
+	* application/subproj/BWAgent/SJIS2UTF8
+		Universal Binary のものに更新した（すっかり忘れていた）。
+	* application/subproj/reply/connector/w2chReply_2ch.m
+		2ch に書き込む時にテキストのエンコーディングを試みる順番を変えた。
+		今までは kCFStringEncodingMacJapanese → kCFStringEncodingDOSJapanese → kCFStringEncodingShiftJIS の順で
+		試し、エンコードに成功したらそのエンコーディングで書き込んでいたが、これを
+		kCFStringEncodingShiftJIS → kCFStringEncodingDOSJapanese → kCFStringEncodingMacJapanese の順で
+		試すように変更した。
+2007-09-07 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/view/CMRThreadView.m
+	* application/source/view/CMRThreadView-Drop.m
+	* application/source/thread/CMRThreadViewer-ViewAccessor.m
+	* application/source/thread/CMRThreadViewer-Link.m
+		スレッドのコンテクストメニュー／レス番クリックのメニューの構成・内容を見直し。
+		---- 長文解説 ----
+		スレッドのコンテクストメニュー／レス番クリックのメニューは以下のように分類できる：
+		1. レス番クリックのメニュー　(A)
+		2. スレッドの内容表示領域での「何気ない右クリックによる」コンテクストメニュー (B)
+		3. スレッドの内容表示領域での「外部リンクに対する」コンテクストメニュー (C)
+		4. スレッドの内容表示領域での「選択されたテキストがあり、その選択テキスト上で右クリックした」コンテクストメニュー
+			4-1. テキストの選択範囲が「複数のレスにまたがっている」(D)
+			4-2. テキストの選択範囲が「ひとつのレスの中で完結している」
+				4-2-1. 選択範囲が「複数行に渡る」(E)
+				4-2-2. 選択範囲が「一行の中で完結している」(F)
+		5. スレッドの内容表示領域での「選択されたテキストがあるけど、その選択テキストの外部で右クリックした」コンテクストメニュー (G)
+
+		このうち、(G) は (B) と同様に扱い、(B) と同じ内容のメニューを表示する。
+		(D) は、BathyScaphe のイディオムでは「複数のレスの属性を同時に設定する」ことを意味するので、相応のメニュー項目を用意する。
+		(E) と (F) は似ているが、(E) では「禁止語句に追加」「Google で検索」「Wikipedia で表示」は使わない（はず）なので、
+		(E) と (F) のメニュー内容は異なるという訳。
+		(B) では、いままでほとんど「スレッド」メニューの内容をコピーして表示していたが、大胆に削減し、絞り込んだ。
+		その一方で、(B) でも (A) と同等の操作が行えるよう、今までサブメニューに入れていた項目を第一階層で表示するようにした。
+		(C) は唯一、今回変更が入らなかったものである。
+		---- 解説終了 ----
+	* application/source/composer/BSNGExpression.m
+		文字列を修正しても正規表現のインスタンスが更新されなかった問題を修正。
+2007-09-04 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Resources/Japanese.lproj/CMRTaskDescription.strings
+		スレッド一覧のダウンロード中の進行状況メッセージのフォーマットを修整。
+	* application/source/browser/BSDownloadTask.m
+		ダウンロード済みのバイト数だけでなく、推定コンテンツサイズもステータスメッセージに表示するようにした。
+	* application/Resources/Japanese.lproj/MainMenu.nib/classes.nib
+	* application/source/manager/CMRMainMenuManager.m
+	* application/source/view/CMRThreadView.m
+	* application/source/thread/CMRThreadViewer-ViewAccessor.m
+	* application/Resources/Japanese.lproj/CMXMessageMenu.nib
+		スレッドのコンテクストメニュー、およびレス番クリックメニューの内容変更に伴う変更。
+		また、「スレッド」メニューの「レスのフィルタ」を「レスの属性」に変更。
+	* application/source/composer/BSNGExpression.m
+		正規表現オブジェクトの NGExpressions.plist への読み書きに不具合があったので修正。
+	* application/source/composer/CMRMessageFilter.m
+		迷惑レスフィルタの条件判定に一部間違いがあったので修正。
+	* application/Resources/BSTitleRulerAppearance.plist
+		[新規追加] デフォルトのスレッドタイトルバーアピアランス属性を収めたファイル。
+		- 注意：このファイルをユーザがテキストエディタや Property List Editor などで開いて
+		　カスタマイズすることは想定していないし、してはいけないし、できない。
+	* frameworks/SGAppKit/framework/src/custom/BSTitleRulerAppearance.[h|m]
+		[新規追加] スレッドタイトルバーの各種アピアランス属性を与えるオブジェクト。
+	* application/Resources/Japanese.lproj/Downloader.strings
+	* application/Resources/Japanese.lproj/ThreadViewer.strings
+		ローカライズ文字列の修整。
+	* application/Resources/Japanese.lproj/BSBoardInfoInspector.nib
+		インタフェースの細部の修整。
+	* application/source/browser/CMRBrowser-ViewAccessor.m
+	* application/Resources/Japanese.lproj/Browser.nib
+		CMRBrowser-ViewAccessor.m のコードで生成する部品と Browser.nib 内で
+		あらかじめアーカイブしておく部品を互いに持ち替えて調整。
+	* application/Resources/Japanese.lproj/CMRReplyWindow.nib
+	* application/Resources/Japanese.lproj/CMRThreadViewerComponents.nib
+		微修正。
+	* application/Resources/Japanese.lproj/MainMenu.nib
+		メニュー項目の追加（「ファイル」＞「Finder に表示」）、action 名の変更（「掲示板」メニュー
+		内の一部項目）、その他ソースコード側の変更に対応した細かい調整。
+	* application/source/manager/CMRMainMenuManager.m
+	* application/source/CMRAppDelegate+Menu.m
+		「表示」＞「欄」サブメニューをテーブルカラムヘッダのコンテクストメニューでも使用するため、
+		メニュー生成メソッドを使いやすいよう改良。
+	* application/source/bbs/BSBoardInfoInspector.m
+		CMRBrowser のコードの変更に伴い、影響を受ける箇所を修整。
+	* application/source/bbs/BoardManager-BSAddition.m
+		掲示板ごとにスレッド一覧のテーブルビューの状態を読み書きするためのメソッドを追加した他、
+		全体的にコードを細かく修整。
+	* application/source/browser/BSTitleRulerView.m
+		スレッドタイトルバーの実装を見直し、背景をグラフィック関数で塗るようにした。また、
+		BSTitleRulerView クラスは BathyScaphe 本体から SGAppKit に移動した。
+		- あと、command キーを押しながらスレッドタイトルバーをクリックすると、パス・ポップアップ・メニューを
+		　表示するようにした。
+	* application/source/thread/CMRAbstructThreadDocument.m
+	* application/source/browser/CMRBrowser-Delegate.m
+		開いているスレッドで「dat 落ち」印を付け／外したときは、通知を送ってすみやかにスレッド一覧の
+		表示にも反映させるようにした。
+	* application/source/browser/CMRBrowser-List.m
+	* application/source/browser/CMRBrowser-ViewAccessor.m
+	* application/source/browser/CMRBrowser.m
+		細部の修整。
+	* application/source/browser/CMRThreadsList.m
+		細部の修整。
+	* application/source/composer/CMRSpamFilter.m
+	* application/source/manager/CMROpenURLManager.m
+		細部の修整。
+	* application/source/network/CMRDATDownloader.m
+	* application/source/network/CMRDownloader-Task.m
+	* application/source/network/CMRThreadHTMLDownloader.m
+	* application/source/network/ThreadTextDownloader.m
+	* application/source/network/CMRDownloader.m
+		細部を見直し、無駄なメソッドの呼び出しを削除するなどして安定性と効率の向上を図った。
+		「ブラウザを立ち上げなおしてみてください。」エラーの原因の可能性があった、サーバからのレスポンスヘッダから
+		サーバの時刻を取得するメソッドの呼び出しタイミングが不適切に減少していた問題を修正した。
+	* application/source/preferences/AppDefaults-Filter.m
+		細部の修整。
+	* application/source/browser/CMRThreadsList-DataSource.m
+	* application/source/preferences/AppDefaults-FontColor.m
+	* application/subproj/preference/Japanese.lproj/ViewPane.nib
+		dat 落ちスレッドのフォント・カラーを設定できるようにした。
+	* application/source/task/CMRTask.h
+	* application/source/util/missing.h
+		ビルド時に「〜が実装されていないかもしれないよ」という警告がうっとうしいので
+		いくつかのメソッドを非形式プロトコルとして定義しておいた。
+	* application/source/thread/CMRAbstructThreadDocument.m
+	* application/source/view/ThreadsListTable.m
+	* application/source/window/CMRReplyMessenger.m
+		「Finder に表示」のサポート。
+	* application/source/thread/CMRThreadViewer-Action.m
+	* application/source/thread/CMRThreadViewer-Contents.m
+	* application/source/thread/CMRThreadViewer-Download.m
+		レス数が1001未満のスレッドでも、HTTP ステータス 302 が返ってきた場合は自動的に「dat 落ち」印を付けるようにした
+		（今までは確認のアラートを表示していた）。また、ソースコードを整理した。
+	* application/source/thread/CMRThreadViewer-Link.m
+	* application/source/thread/CMRThreadViewer-ViewAccessor.m
+	* application/source/thread/CMRThreadViewer.m
+		細部の修整。
+	* application/source/view/CMRThreadView.m
+		スレッドの内容表示領域に何かをドロップしたときの、ハイライトの色が間違っていたのを直した。
+	* application/source/window/CMRReplyController-ViewAccessor.m
+	* application/source/window/CMRReplyController.m
+	* application/source/window/CMRReplyMessenger-Connector.m
+		細部の修整。
+	* application/source/thread/CMRThreadViewer-OwnHistory.m
+	* application/source/window/CMRThreadViewerTbDelegate.m
+		「戻る／進む」ツールバー項目は、クリック＆ホールドで履歴をポップアップ表示するようにした。
+	* application/source/window/CMRBrowserTbDelegate.m
+	* application/source/view/BSNobiNobiToolbarItem.m
+		「掲示板リスト分のスペース」項目の高さを見直し、「小さいサイズ」でツールバーを表示したときに十分に
+		ツールバーの高さが低くならない問題を解消した。
+	* application/subproj/previewer/BSIPIToken.m
+		[プレビューインスペクタ] ダウンロードの進行具合をステータスメッセージでも表示するようにした。
+		（プログレスバーだけでは、低速回線の環境、あるいはダウンロード中にフルスクリーンにしたときなどに
+		　ダウンロードの進行状況がわかりにくかったため）。
+2007-08-18 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/network/CMRNetRequestQueue.[h|m]
+		[削除] 未使用につき削除。
+2007-08-15 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/composer/CMRMessageFilter.m
+		迷惑レスフィルタの効率化。OGRegularExpression は BSNGExpression が保持しているものを使用し、
+		非正規表現に関しては従来通り -[NSString rangeOfString:options:range:] でチェックするようにした。
+	* application/source/composer/BSNGExpression.m
+		BSNGExpression インスタンスは、isRegularExpression == YES の場合は自身で OGRegularExpression インスタンスを
+		生成・保持するようにした。OGRegularExpression インスタンスは NGExpressions.plist にアーカイブ化されて保存もされる。
+2007-08-14 masakih <masakih@users.sourceforge.jp>
+	* application/source/browser/BSDBThreadList.m:
+	* application/source/browser/CMRThreadsList-DataSource.m:
+		datOchi スレッドを [NSColor lightGrayColor] で表示するようにした。（### 要変更 ###）
+		表示のためのNSAttributedStringのアトリビュートが
+		「日付（新着）」「日付（普通）」「その他（新着）」「その他（普通）」で分けられていた物を、
+		「パラグラフスタイル（日付）」「パラグラフスタイル（その他）」
+		「フォント／カラー（新着）」「フォント／カラー（普通）」「フォント／カラー（Dat落ち）」で分け、
+		パラグラフスタイルを適応後、フォント／カラーを追加して適応するように変更した。
+	* application/source/browser/BSThreadListItem.[h|m]:
+	* application/source/manager/DatabaseManager-DatabaseAccess.m:
+	* application/source/thread/CMRThreadAttributes.m:
+		データベースのdatOchiを保存／使用をするようにした。
+	* misc/sqlite/*:
+		sqliteを3.4.1にバージョンアップ。
+		先日pragma.cに加えた修正は本家で既に修正済みだったため、先日の修正は破棄した。
+		不要な機能は出来る限り省いた。付け加えたプリプロセッサマクロは以下の通り。
+			SQLITE_OMIT_INCRBLOB=1
+			SQLITE_OMIT_UTF16=1
+			SQLITE_OMIT_AUTHORIZATION=1
+			SQLITE_OMIT_LOAD_EXTENSION=1
+		SQLITE_OMIT_VIRTUALTABLEも付け加えたかったが、コンパイル不能のため断念した。
+		不要なファイルも今後使う可能性もあるのでcvsに追加してある。
+2007-08-13 masakih <masakih@users.sourceforge.jp>
+	* 僕が作ったほとんどのファイル:
+		ファイルのヘッダコメントを正しい書式に直した。
+	* application/source/manager/DatabaseUpdater.[h|m]:
+		+[DatabaseUpdater updateFrom:to:]を追加。
+		    DatabaseManagerにややこしい処理をさせないように。
+		データベースファイルバージョン 3への変換処理追加。
+	* application/source/manager/DatabaseManager.[h|m]:
+		Version Table を廃止。
+		ThreadInfo Table に IsDatOchiColumn カラムを追加。
+		データベースファイルバージョンを 3 に変更。
+		データベースファイルバージョンを PRAGMA user_version に保存するようにした。（存在を完全に見落としてた。）
+	* misc/sqlite/pragma.c:
+		PRAGMA user_version; がカラム名を返さないので返すように変更。
+=================================================
+2007-08-12 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/composer/BSNGExpression.m
+		-[BSNGExpression<NSObject> isEqual:] および -[BSNGExpression<NSObject> hash] の実装。文字列が同じなら
+		イコールと見なすことにした（同じ語句の重複登録を防ぐことができるように）。
+	* application/Resources/Japanese.lproj/CMRThreadMenu.nib
+	* application/Resources/Japanese.lproj/CMXMessageMenu.nib
+	* application/Resources/Japanese.lproj/ThreadViewer.strings
+	* application/source/view/CMRThreadView.m
+	* application/source/view/SGHTMLView.m
+	* application/source/thread/CMRThreadViewer-Action.m
+		スレッドのコンテクストメニューの強化：
+		- コンテクストメニューから迷惑レスフィルタ用のいわゆる「NG ワード」を追加するメソッドを追加。
+		-- BathyScaphe の伝統的な「堅苦しさ」にのっとり、メニュー項目名は「NG ワードを追加」ではなく「禁止語句を追加」にした :-)
+		- 「レスのアクション」サブメニューを「レスの属性」に名称変更。
+		-- レスの属性、という言葉は既にオンラインヘルプ等で用いており、新しいものではない。
+		- コンテクストメニューを状況に応じて変化させるようにした。
+		-- 1.テキストが選択されていて、かつその選択テキスト上でコンテクストメニューを表示させたとき。→選択テキストに対する操作に特化
+		-- 2.外部リンク上で表示させたとき。→今まで通りリンク用のメニュー
+		-- 3.それ以外（注：テキスト選択時で、選択テキスト上「以外」で表示させたときもここに含まれる）→今までとほぼ同じメニュー
+		- 外部リンク上でコンテクストメニューを表示させるとき、リンク全体を選択するのを止めた。
+	* application/Resources/Japanese.lproj/MainMenu.nib
+	* application/source/thread/CMRThreadViewer-Link.m
+	* application/source/thread/CMRThreadViewer-Validation.m
+		「スレッド」＞「レスのフィルタ」サブメニューに「AA フォントの自動適用を実行」を追加。
+		「迷惑レスフィルタを実行」と同様に、手動で AAD を実行させたいときに使用する。
+	* application/source/manager/BSLinkDownloadManager.m
+	* application/source/composer/CMRSpamFilter.m
+	* application/source/composer/BSNGExpression.m
+		エラー処理の強化。また、BSSpamFilter.plist から NGExpressions.plist へデータをコンバートするようにした。
+	* application/source/preferences/AppDefaults-Filter.m
+		BSSpamFilter.plist から NSExpressions.plist へデータをコンバート済みかどうかを表すデフォルト値とそのアクセサを追加。
+2007-08-11 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/manager/BSLinkDownloadManager.m
+	* application/subproj/preference/BSAdvancedPaneArrayController.m
+	* application/subproj/preference/Japanese.lproj/AdvancedPane.nib
+		「詳細」ペイン用に用意したコードの一部を、「フィルタ」ペインでも使い回せるように一般化し、実際、使い回した。
+	* application/subproj/preference/Japanese.lproj/FilterPreferences.nib
+	* application/subproj/preference/filter/CMRFilterPrefController.m
+	* application/source/composer/CMRMessageFilter.m
+	* application/source/composer/CMRSpamFilter.m
+	* application/source/preferences/AppDefaults-Filter.m
+		迷惑レスフィルタの強化：
+		- いわゆる「NGワード」関連部分を強化した。
+		- NGワードと迷惑レスのサンプルは、いままで同じ BSSpamFilter.plist に同居していたが、NGワードについては新しく
+		　「NGExpressions.plist」に分離して記録するようにした。
+		- SpamFilter.plist から BSSpamFilter.plist への変更に伴う内容の自動引き継ぎは、もうそろそろいらないと思うので
+		　コードを削除した。BSSpamFilter.plist から NGExpressions.plist への自動（部分）引き継ぎは後で実装する。
+		- NGワードが含まれるかどうか調べる対象を、名前欄・メール欄・本文欄の一部またはすべてから選択指定できるようにした。
+		- NGワードに鬼車の正規表現を利用できるようにした（Powered by OgreKit）。
+		- NGワードの設定画面を作り直した。
+		- 「環境設定」＞「フィルタ」は、nib ファイルを含め全体的にコードを見直した。
+	* application/source/composer/BSNGExpression.[h|m]
+		[新規追加] いわゆる「NGワード」を表すオブジェクト。
+=================================================
+2007-08-08 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* frameworks/SGAppKit/framework/src/custom/bathyscaphe/BSBoardListView.m
+		Intel Mac で 掲示板リストの Type-To-Select が正しく動作しなかった問題を修正。
+		キーイベントを拾って文字列を復元する際に、日本語の文字がちゃんと取れなくなっていた。
+		エンディアンがらみか？typeUnicodeText ではなく typeUTF16ExternalRepresentation を指定することで解決。
+		ただし、typeUTF16ExternalRepresentation は Mac OS X 10.4 以降なので、10.3.x では typeUnicodeText のまま。
+		10.3.x+Intel Mac の組み合わせはあり得ないから、これでいいだろう。
+	* application/subproj/reply/error/SG2chErrorHandler.m
+		まちBBSに書き込むと、正常に書き込めているのに「データがありません」とエラーが表示されるようになっていた問題を修正。
+2007-08-07 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* frameworks/SGFoundation/framework/source/classes/xml/SGXMLEntityReference.m
+		遅ればせながら CocoMonar の修正を取り込み。
+		>2007-04-22 minamie <minamie@po.twin.ne.jp>
+		>土吉の数値文字参照がタミル文字になる現象に対応
+		>(26スレ目347番目のレス)
+	* application/subproj/previewer/BSImagePreviewInspector-Tb.m
+	* application/subproj/previewer/BSImagePreviewInspector-View.m
+	* application/subproj/previewer/BSImagePreviewInspector.m
+	* application/subproj/previewer/BSIPIToken.m
+	* application/subproj/previewer/Japanese.lproj/BSImagePreviewInspector.nib
+	* application/subproj/previewer/Japanese.lproj/Localizable.strings
+		プレビューインスペクタ（2.6→2.6.1）：
+		- イメージの「再読み込み」を行えるようにした。
+		- 上記に伴い、「保存／中止」ツールバーボタン・メニュー項目を「中止／再読み込み」ツールバーボタン・メニュー項目に変更し、
+		　「保存」ボタン・メニュー項目は独立させた。
+		- 「イメージを別名で保存...」メニュー項目は「イメージを保存」項目を option キーを押しながら選択したときに現れるように変更。
+		- その他細部の調整。
+	* frameworks/CocoMonar/framework/src/CMRFileManager.m
+		CocoMonar Framework: ユーザドメインのデスクトップフォルダの絶対パスを取得するメソッドを追加した（FSFindFolder() のラッパー）。
+	* application/source/manager/BSLinkDownloadManager.m
+		DownloadableLinkTypes.plist が存在しないときは、アプリケーションパッケージ内のものをコピーして配置するようにした。
+	* application/Resources/text/DownloadableLinkTypes.plist
+		[新規追加] アプリケーションパッケージに内包される DownloadableLinkTypes.plist のひな形。
+		~/Library/Application Support/BathyScaphe に同名ファイルが見つからない場合に、このファイルを自動的にコピーする。
+	* frameworks/CocoMonar/framework/src/CMRFiles.h
+		サポートファイルの名前を定義する定数をいくつか追加。
+2007-08-06 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	1.5 からの変更点の量・質を考慮すると、1.5.1 ではなく 1.6 とすべきと判断したので、次のバージョンは 1.6 とする。
+
+	* application/subproj/preference/AdvancedPrefController.m
+	* application/subproj/preference/Japanese.lproj/AdvancedPane.nib
+		ダウンロードするリンクの拡張子リストを編集するために、「環境設定」＞「詳細」ペインに必要なインタフェースを追加。
+	* application/source/manager/BSLinkDownloadManager.[h|m]
+		[新規追加] ※ BSLinkDownloadTicket クラスも同居して記述されている
+		リンクをクリックしたとき、直接リンク先をダウンロードするかどうかは、リンクの拡張子で決める。その拡張子のリストを
+		読み書きするためのクラス。
+		- 拡張子のリストは、DownloadableLinkTypes.plist という名前のファイル（例によって Application Support/BathyScaphe 内に
+		　作成される）に記述される。今のところ初回起動時にはこのファイルが無い＝拡張子のリストが空の状態。このへんはもう少し改善予定。
+	* application/subproj/preference/BSAdvancedPaneArrayController.[h|m]
+		[新規追加] NSArrayController のサブクラス。NSTableView とバインドして contentObject を編集する際の振る舞いを
+		より適切で気の利いたものにするために用意した。「環境設定」＞「詳細」＞「ダウンロードする拡張子を設定...」パネルで使用。
+	* application/source/view/SGHTMLView.m
+	* application/source/view/SGLinkCommand.m
+	* application/source/preferences/AppDefaults-ThreadViewer.m
+	* application/source/thread/CMRThreadViewer-Link.m
+	* application/Resources/Japanese.lproj/HTMLView.strings
+	* application/Resources/Japanese.lproj/CMRTaskDescription.strings
+		リンク先を直接ダウンロードする機能を追加した。
+		- リンクのコンテクストメニュー、または、適切な拡張子を持つリンクに対してはリンクの直接クリックで
+		　ダウンロードできる。進行状況および中止は「進行状況」パネルやナビゲーションバーで確認できる（CMRTask プロトコル準拠だから）。
+		- 拡張子ごとに、「ダウンロード後、ファイルを開くかどうか」を設定しておける。
+		- ダウンロードしたファイルの保存先は、「環境設定」＞「詳細」で設定しておける（デフォルト：デスクトップ）。
+=================================================
+2007-08-05 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/composer/CMRMessageFilter.m
+	* application/source/composer/CMRSpamFilter.m
+	* application/source/bbs/BoardManager-BSAddition.m
+	* application/source/bbs/BoardManager.h
+	* application/source/bbs/BSBoardInfoInspector.m
+		迷惑レスフィルタ周りの修正：
+		- 以前は、「名無しさんのリスト」をNSSet でやり取りし、名前がデフォルト名無しかどうかを -[NSSet containsObject:] として比較してきたが、
+		　NSSet のリファレンスによるとこれとは別に -[NSSet member:] というものもある。どうも member: でチェックした方が良さそうだ。
+		　それはともかく、名無しさんのリストに含まれる要素数は高々数個であろうし、NSSet にするメリットはそれほどないと判断したので通常の NSArray で
+		　やり取りするように変更した。
+		- 迷惑レスフィルタ周りのぐちゃぐちゃした作りにはうんざりしてきた。もっとシンプルなシステムでも使用上は問題ない気がするので、考えてみよう…
+	* application/source/thread/CMRThreadViewer-OwnHistory.m
+	* application/source/browser/CMRBrowser-Validation.m
+		2007-07-27 の変更で、「ツールバー上の NSSegmentedControl は、そのツールバーが属しているウインドウが現在キーウインドウでないときは
+		適切に disabled になるようにした」が、こうするとツールバーの「クリックスルー」原則に反してしまう（キーウインドウでなくても、ツールバーの
+		ボタンやコントロールはクリックスルーできる）に反してしまうため、この変更を取りやめた。
+	* application/source/thread/CMRThreadDocument.m
+		dat 番号が正しく読み取れないログファイルを開こうとしたときの挙動を改善した。
+	* application/source/window/CMRBrowserTbDelegate.m
+	* application/source/window/CMRReplyControllerTbDelegate.m
+	* application/source/window/CMRThreadViewerTbDelegate.m
+	* application/source/window/CMRToolbarDelegateImp.m
+		ツールバーデリゲート周りの変更：
+		- 2007-07-27 の変更で追加した「スレッド一覧／ログ一覧の切り替え」ボタンをツールバーに追加できないようにした。
+		　（実際の機能が実装されるまでの暫定措置。混乱を防ぐため）
+		- CMRToolbarDelegateImp と、各サブクラス間での重複メソッド整理などの軽いリファクタリング。
+		- コーディングスタイルの統一と更新。
+2007-08-01 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/view/SGHTMLView-Link.m
+		ポップアップがウインドウが一つでも開いていると、テキスト・ビュー内での cursor rects の更新が
+		ブロックされていたのを修正。
+		- ときどき「ポップアップができなくなる」「ポップアップの表示位置がずれる」という問題はここに
+		　原因があったのだと思う。Bug [10307] と [6067] は fixed, closed.
+	* application/source/view/popup/CMXPopUpWindowController+View.m
+	* application/source/view/popup/CMXPopUpWindowController.m
+	* application/source/view/popup/CMXPopUpWindowController_p.h
+		ポップアップ・ロック機能の大幅な改良：
+		- L キーかホイールクリックでロックされたポップアップは、
+		　タイトルバーをドラッグして自由に場所を移動できるようになった。
+		- ロックしたとき／ロック解除したときの視覚効果とサウンドエフェクトを追加して、これがれっきとした「機能」であることをわかりやすくした。
+		- ロック解除に「ポップアップの左上に追加されるクローズボタンをクリック」および「Esc キーを押す」の動作も可能にした。今まで通り
+		　L キー押下／ホイールクリックでもロック解除できる。
+	* frameworks/SGAppKit/framework/src/SGAppKit.h
+		SGAppKit に BSPopUpTitlebar が加わったことに伴う変更。
+	* frameworks/SGAppKit/framework/src/custom/bathyscaphe/BSPopUpTitlebar.[h|m]
+		[新規追加]ポップアップウインドウで使用するタイトルバー（のような）ビュー。
+2007-07-27 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/source/manager/CMRMainMenuManager.m
+	* application/source/CMRAppDelegate+Menu.m
+		不要になったメソッドをコメントアウト。
+	* application/source/browser/BSDBThreadList.m
+		とりあえず、BSDBThreadList に現在のスレッド表示モード（スレッド一覧／ログ一覧）を保持するインスタンス変数とアクセサメソッドを実装した。
+	* application/source/thread/CMRThreadViewer-OwnHistory.m
+		ツールバー上の NSSegmentedControl は、そのツールバーが属しているウインドウが現在キーウインドウでないときは適切に disabled になるようにした。
+	* application/source/window/CMRBrowserTbDelegate.m
+	* application/source/browser/CMRBrowser-Validation.m
+	* application/source/browser/Browser.m
+	* application/Resources/Japanese.lproj/Browser.nib
+		ブラウザウインドウのツールバーに「スレッド一覧／ログ一覧の切り替え」ボタンを追加できるようにした。
+	* frameworks/CocoMonar/framework/src/CMRAppTypes.h
+		BSThreadsViewModeType を定義した。
+	* frameworks/SGNetwork/src/SGNetwork.h
+		SGNetwork フレームワークは大幅に規模を縮小し、多くのクラスが使用停止となった。
+	* application/source/preferences/CMRPreferencesDefautValues.h
+	* application/source/preferences/AppDefaults.m
+	* application/source/preferences/AppDefaults-ThreadsList.m
+		スレッド表示モード（スレッド一覧／ログ一覧）の設定の読み書き対応。
+2007-07-22 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/subproj/reply/account/w2chAuthenticater.m
+		●ログイン周りも NSURLConnection ベースにしてみたが、今 tsawada2 は●アカウントを持っていないので検証は出来ていない。
+		いずれにせよこれでほぼレガシーな SGNetwork のクラス群とはオサラバできた。
+	* application/Info-reply.plist
+	* application/subproj/reply/connector/SG2chConnector.m
+	* application/subproj/reply/connector/w2chConnect.h
+	* application/source/window/CMRReplyMessenger-Connector.m
+		SG2chConnector クラスは、NSURLHandle ベースを脱却し、NSURLConnection ベースになった。
+		なお、Cookie 管理は今までどおり独自に行うこととし、WebKit に委ねる（＝他の WebKit アプリケーションと Cookie を共有）することは
+		しない。
+		- まだ●ログイン周りが NSURLConnection ベースになっていない。
+	* application/source/network/CMRNetRequestQueue.[h|m]
+		よく調べるとこのクラスは使われていなかったので、ターゲットから外した。いずれリポジトリからも削除する。
+	* application/source/CMRAppDelegate+Menu.m
+	* application/source/browser/CMRBrowser-Action.m
+	* application/source/browser/CMRBrowser-Validation.m
+	* application/source/browser/CMRBrowser.h
+	* application/source/browser/CMRBrowser.m
+	* application/source/manager/CMRMainMenuManager.m
+	* application/source/window/CMRBrowserTbDelegate.m
+	* application/source/window/CMRThreadViewerTbDelegate.m
+	* application/Resources/Japanese.lproj/MainMenu.nib
+	* application/subproj/preference/AdvancedPrefController.m
+	* application/subproj/preference/Japanese.lproj/AdvancedPane.nib
+	* application/subproj/preference/Japanese.lproj/GeneralPreferences.nib
+	* application/Resources/Japanese.lproj/Localizable.strings
+		<<「表示」メニューの変更：>>
+		- 「ブラウザの配置」サブメニューを廃止した。横置き／縦置きの切り替えは「環境設定」＞「一般」で行うようにした。
+		- 「一覧に表示するスレッド」サブメニューを試験的に廃止した。現在、この機能にアクセスする方法はないので
+		　現時点でのビルドを使用する前に、「一覧に表示するスレッド」の設定は「すべて」にしといた方がいいと思いますですよ。
+		- 「ブラウザを垂直（水平）方向に分割」メニューを追加。スプリットバーのダブルクリックと同じ。
+		　分割されているときは「分割表示を閉じる」に変わる。2ペインと3ペインのすばやい切り替え。
+		- 「スレッド一覧／ログ一覧に切り替え」メニューを追加。構想中であるが具体的には何も実装されていない。使用不可。
+		<<「ウインドウ」メニュー、およびツールバーの変更：>>
+		- ログ管理アプリケーションを起動するメニュー項目／ツールバー項目を廃止した。
+		- 「環境設定」＞「詳細」ペインからログ管理アプリケーションの選択インタフェースを取り除いた。
+	* application/source/network/CMRDATDownloader.m
+	* application/source/network/CMRDownloader-Task.m
+	* application/source/network/CMRDownloader.m
+	* application/source/network/CMRDownloader_p.h
+	* application/source/network/CMRThreadHTMLDownloader.m
+	* application/source/network/ThreadTextDownloader.m
+	* application/Resources/Japanese.lproj/Downloader.strings
+		CMRDownloader とそのサブクラス達は、NSURLHandle ベースを脱却し、NSURLConnection ベースになった。
+	* application/source/preferences/AppDefaults-Background.m
+	* application/source/preferences/AppDefaults-FontColor.m
+		微修正。
+	* application/source/view/popup/CMXPopUpWindowController+View.m
+	* application/source/view/popup/CMXPopUpWindowController.m
+	* application/source/view/popup/CMXPopUpWindowManager.m
+		内部構造の改修中。この影響でポップアップ・ロック機能が一部正常に動作しなくなっているが、後で直すので気にしないこと。
+	* application/Resources/Japanese.lproj/CMRThreadMenu.nib
+		「Google 検索」→「Google で検索」、「Wikipediaで表示」→「Wikipedia で表示」
+2007-06-29 tsawada2 <ben-sawa@td5.so-net.ne.jp>
+	* application/Info-bs-another-story.plist
+		Info.plist に CFBundleURLTypes を書き忘れていたのを修正。
+2007-06-26 masakih <masakih@users.sourceforge.jp>
+	* application/source/manager/DatabaseManager-Notifications.m:
+		[新規追加] DatabaseManager.m から分離
+	* application/source/manager/DatabaseManager.m:
+		Notification を別ファイルに分離。
+	* application/source/browser/BSDownloadTask.m:
+		不要な部分を削除。
+================================================= 1.5(v110) / Starlight Breaker / CVS Tag : v150_FINAL
+これより以前は、docs/old_changelog/changelog_until_starlight_breaker_final.txt を参照。

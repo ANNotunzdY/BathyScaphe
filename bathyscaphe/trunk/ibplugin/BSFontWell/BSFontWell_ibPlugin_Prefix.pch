@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'BSFontWell_ibPlugin' target in the 'BSFontWell_ibPlugin' project.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import <InterfaceBuilderKit/InterfaceBuilderKit.h>
+#endif

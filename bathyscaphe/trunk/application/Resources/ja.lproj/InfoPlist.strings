@@ -1,0 +1,10 @@
+/* Localized versions of Info.plist keys */
+NSHumanReadableCopyright = "© 2005-2012 tsawada2 & BathyScaphe Project\nAll Rights Reserved.";
+
+/* Help */
+CFBundleHelpBookName = "BathyScaphe ヘルプ";
+
+/* Document Types */
+"CocoMonar Log Format" = "BathyScaphe ログ書類";
+"CocoMonar 2ch Format" = "BathyScaphe 2ch Format";
+"CocoMonar Reply Format" = "BathyScaphe 下書き書類";

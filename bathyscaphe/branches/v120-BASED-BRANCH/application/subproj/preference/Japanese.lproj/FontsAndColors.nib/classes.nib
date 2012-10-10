@@ -1,0 +1,47 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                changeBoardListRowHeight = id; 
+                changeTableRowSpace = id; 
+                fixRowHeightToFont = id; 
+                fixRowHeightToFontOfBoardList = id; 
+            }; 
+            CLASS = FCController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_alternateFontButton" = NSButton; 
+                "_beProfileFontButton" = NSButton; 
+                "_hostFontButton" = NSButton; 
+                "_itemTitleFontButton" = NSButton; 
+                "_messageFontButton" = NSButton; 
+                "_newThreadFontButton" = NSButton; 
+                "_threadViewFontButton" = NSButton; 
+                "_threadsListFontButton" = NSButton; 
+                "m_BLrowHeightField" = NSTextField; 
+                "m_BLrowHeightStepper" = NSStepper; 
+                "m_BLtextFontButton" = NSButton; 
+                "m_replyFontButton" = NSButton; 
+                "m_rowHeightField" = NSTextField; 
+                "m_rowHeightStepper" = NSStepper; 
+            }; 
+            SUPERCLASS = PreferencesController; 
+        }, 
+        {
+            ACTIONS = {"" = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FontWell; LANGUAGE = ObjC; SUPERCLASS = NSButton; }, 
+        {CLASS = NSDatePicker; LANGUAGE = ObjC; SUPERCLASS = NSControl; }, 
+        {
+            ACTIONS = {openHelp = id; }; 
+            CLASS = PreferencesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {"_contentView" = NSView; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

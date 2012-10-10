@@ -1,0 +1,191 @@
+{
+	Classes = {
+		Browser = {
+			Attributes = {
+				boardNameAsString = {
+					Description = "Board name of the thread which the document shows.";
+					Name = "board name";
+				};
+				boardURLAsString = {
+					Description = "Board URL of the thread which the document shows.";
+					Name = "board URL";
+				};
+				selectedText = {
+					Description = "A selected text.";
+					Name = "selected text";
+					Sex = none;
+				};
+				textStorage = {
+					Description = "The text of the document.";
+					Name = text;
+				};
+				showsThreadDocument = {
+					Description = "Is 3-pane mode now? (false means 2-pane mode.)";
+					Name = threePane;
+				};
+				threadAttrDict = {
+					Description = "Attributes of the thread which the document shows.";
+					Name = "thread attributes";
+				};
+				labelOfThread = {
+					Name = "thread label";
+					Description = "Label of the thread which the document shows. Available values are 1 through 7, and 0 means the thread has no label.";
+				};
+				threadURLAsString = {
+					Description = "URL of the thread which the document shows.";
+					Name = "thread URL";
+				};
+				threadTitleAsString = {
+					Description = "Title of the thread which the document shows.";
+					Name = "thread title";
+				};
+				tListBoardName = {
+					Description = "Name of the board which current threads list shows.";
+					Name = "threads list board name";
+				};
+				tListBoardURL = {
+					Description = "URL of the board which current threads list shows.";
+					Name = "threads list board URL";
+				};
+			};
+			Description = "A BathyScaphe browser (i.e. threads list) window.";
+			Name = browser;
+			PluralName = browsers;
+		};
+		"CMRAbstructThreadDocument" = {
+			Attributes = {
+				boardNameAsString = {
+					Description = "Board name of the thread which the document shows.";
+					Name = "board name";
+				};
+				boardURLAsString = {
+					Description = "Board URL of the thread which the document shows.";
+					Name = "board URL";
+				};
+				selectedText = {
+					Description = "A selected text.";
+					Name = "selected text";
+				};
+				textStorage = {
+					Description = "The text of the document.";
+					Name = text;
+				};
+				threadAttrDict = {
+					Description = "Attributes of the thread which the document shows.";
+					Name = "thread attributes";
+				};
+				labelOfThread = {
+					Name = "thread label";
+					Description = "Label of the thread which the document shows. Available values are 1 through 7, and 0 means the thread has no label.";
+				};
+				threadTitleAsString = {
+					Description = "Title of the thread which the document shows.";
+					Name = "thread title";
+				};
+				threadURLAsString = {
+					Description = "URL of the thread which the document shows.";
+					Name = "thread URL";
+				};
+			};
+			Description = "A BathyScaphe thread document.";
+			Name = document;
+			PluralName = documents;
+		};
+		CMRReplyMessenger = {
+			Attributes = {
+				mail = {
+					Name = "mail field";
+					Description = "Mail field's text.";
+				};
+				name = {
+					Name = "name field";
+					Description = "Name field's text.";
+				};
+				boardNameAsString = {
+					Description = "Board name of the thread to which the document will reply.";
+					Name = "board name";
+				};
+				boardURLAsString = {
+					Description = "Board URL of the thread to which the document will reply.";
+					Name = "board URL";
+				};
+				selectedText = {
+					Description = "A selected text.";
+					Name = "selected text";
+					Sex = none;
+				};
+				textStorage = {
+					Description = "The text to reply.";
+					Name = text;
+				};
+				threadTitleAsString = {
+					Description = "Title of the thread to which the document will reply.";
+					Name = "thread title";
+				};
+				threadURLAsString = {
+					Description = "URL of the thread to which the document will reply.";
+					Name = "thread URL";
+				};
+			};
+			Description = "A BathyScaphe reply document.";
+			Name = "reply document";
+			PluralName = "reply documents";
+		};
+		NSApplication = {
+			Attributes = {
+				boardListColor = {
+					Description = "Background color of boards list, when browser is the main window.";
+					Name = "browserBoardListColor";
+				};
+				"boardListNonActiveColor" = {
+					Description = "Background color of boards list, when browser is not the main window.";
+					Name = "browserBoardListNonActiveColor";
+				};
+				"browserTableViewColor" = {
+					Description = "Background color of threads list table.";
+					Name = "browserTableViewColor";
+				};
+				isOnlineMode = {
+					Description = "Is online mode now?";
+					Name = onlineMode;
+				};
+			};
+			Description = "BathyScaphe application.";
+			Name = application;
+			PluralName = applications;
+		};
+	};
+	Commands = {
+		openURL = {
+			Description = "Directly open the thread specified by URL.";
+			IsVerb = YES;
+			Name = openURL;
+			UnnamedArgument = {
+				Description = "URL to open";
+			};
+		};
+		reloadList = {
+			Description = "Reload current thread list.";
+			IsVerb = YES;
+			Name = "reload list";
+			UnnamedArgument = {
+				Description = "a reference to browser(s)";
+			};
+		};
+		reloadThread = {
+			Description = "Reload current thread.";
+			IsVerb = YES;
+			Name = "reload thread";
+		};
+		removeFromDB = {
+			Description = "Remove any information of the thread from BathyScaphe's database, but this command does NOT delete the log file.";
+			IsVerb = YES;
+			Name = "remove from database";
+			UnnamedArgument = {
+				Description = "file to remove information";
+			};
+		};
+	};
+	Description = "BathyScaphe specific classes.";
+	Name = "BathyScaphe suite";
+}

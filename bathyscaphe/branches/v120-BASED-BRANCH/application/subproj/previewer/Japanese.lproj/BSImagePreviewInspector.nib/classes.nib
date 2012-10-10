@@ -1,0 +1,34 @@
+{
+    IBClasses = (
+        {CLASS = BSIPIImageView; LANGUAGE = ObjC; SUPERCLASS = NSImageView; }, 
+        {
+            ACTIONS = {
+                beginSettingsSheet = id; 
+                copyURL = id; 
+                endSettingsSheet = id; 
+                openImage = id; 
+                openImageWithPreviewApp = id; 
+                openOpenPanel = id; 
+                startFullscreen = id; 
+            }; 
+            CLASS = BSImagePreviewInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "m_actionBtn" = NSPopUpButton; 
+                "m_imageView" = NSImageView; 
+                "m_infoField" = NSTextField; 
+                "m_progIndicator" = NSProgressIndicator; 
+                "m_settingsPanel" = NSPanel; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            ACTIONS = {"" = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,12 @@
+/* 
+   NGExpressionsEditor.strings
+   BathyScaphe
+
+   Created by Tsutomu Sawada on 10/08/01.
+   Copyright 2010 BathyScaphe Project. All rights reserved.
+ */
+
+"Message Text App Scope" = "すべての掲示板に適用される禁止語句：";
+"Message Text Board %@ Scope" = "掲示板 “%@” に適用される禁止語句：";
+
+"Editor Help Anchor" = "bs_ngexpression";

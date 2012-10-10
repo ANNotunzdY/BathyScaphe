@@ -1,0 +1,249 @@
+{
+	AppleEventCode = BaSc;
+	Classes = {
+		Browser = {
+			AppleEventCode = brws;
+			Attributes = {
+				boardNameAsString = {
+					AppleEventCode = brdn;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+				boardURLAsString = {
+					AppleEventCode = brdU;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+				labelOfThread = {
+					Type = "NSNumber<Int>";
+					AppleEventCode = thla;
+					ReadOnly = NO;
+				};
+				selectedText = {
+					AppleEventCode = thst;
+					ReadOnly = YES;
+					Type = "NSTextSuite.NSTextStorage";
+				};
+				showsThreadDocument = {
+					AppleEventCode = brtp;
+					ReadOnly = YES;
+					Type = "NSNumber<Bool>";
+				};
+				textStorage = {
+					AppleEventCode = ctxt;
+					ReadOnly = YES;
+					Type = "NSTextSuite.NSTextStorage";
+				};
+				threadAttrDict = {
+					AppleEventCode = that;
+					ReadOnly = YES;
+					Type = NSDictionary;
+				};
+				threadTitleAsString = {
+					AppleEventCode = thti;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+				threadURLAsString = {
+					AppleEventCode = thUr;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+				tListBoardName = {
+					AppleEventCode = bwbn;
+					Type = NSString;
+				};
+				tListBoardURL = {
+					AppleEventCode = bwbU;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+			};
+			Superclass = "NSCoreSuite.NSDocument";
+			SupportedCommands = {
+				"BathyScaphe.reloadList" = "handleReloadListCommand:";
+				"BathyScaphe.reloadThread" = "handleReloadThreadCommand:";
+			};
+		};
+		"CMRAbstructThreadDocument" = {
+			AppleEventCode = docu;
+			Attributes = {
+				name = {
+					Type = NSString;
+					AppleEventCode = repN;
+					ReadOnly = NO;
+				};
+				mail = {
+					Type = NSString;
+					AppleEventCode = repM;
+					ReadOnly = NO;
+				};
+				boardNameAsString = {
+					AppleEventCode = brdn;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+				boardURLAsString = {
+					AppleEventCode = brdU;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+				labelOfThread = {
+					Type = "NSNumber<Int>";
+					AppleEventCode = thla;
+					ReadOnly = NO;
+				};
+				selectedText = {
+					AppleEventCode = thst;
+					ReadOnly = YES;
+					Type = "NSTextSuite.NSTextStorage";
+				};
+				showsThreadDocument = {
+					AppleEventCode = brtp;
+					ReadOnly = YES;
+					Type = "NSNumber<Bool>";
+				};
+				textStorage = {
+					AppleEventCode = ctxt;
+					ReadOnly = YES;
+					Type = "NSTextSuite.NSTextStorage";
+				};
+				threadAttrDict = {
+					AppleEventCode = that;
+					ReadOnly = YES;
+					Type = NSDictionary;
+				};
+				threadTitleAsString = {
+					AppleEventCode = thti;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+				threadURLAsString = {
+					AppleEventCode = thUr;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+				tListBoardName = {
+					AppleEventCode = bwbn;
+					Type = NSString;
+				};
+				tListBoardURL = {
+					AppleEventCode = bwbU;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+			};
+			"DefaultSubcontainerAttribute" = textStorage;
+			Superclass = "NSCoreSuite.NSDocument";
+			SupportedCommands = {
+				"BathyScaphe.reloadThread" = "handleReloadThreadCommand:";
+			};
+		};
+		CMRReplyMessenger = {
+			AppleEventCode = repd;
+			Attributes = {
+				mail = {
+					Type = NSString;
+					AppleEventCode = repM;
+					ReadOnly = NO;
+				};
+				name = {
+					Type = NSString;
+					AppleEventCode = repN;
+					ReadOnly = NO;
+				};
+				boardNameAsString = {
+					AppleEventCode = brdn;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+				boardURLAsString = {
+					AppleEventCode = brdU;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+				selectedText = {
+					AppleEventCode = thst;
+					Type = "NSTextSuite.NSTextStorage";
+				};
+				textStorage = {
+					AppleEventCode = ctxt;
+					Type = "NSTextSuite.NSTextStorage";
+				};
+				threadTitleAsString = {
+					AppleEventCode = thti;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+				threadURLAsString = {
+					AppleEventCode = thUr;
+					ReadOnly = YES;
+					Type = NSString;
+				};
+			};
+			"DefaultSubcontainerAttribute" = textStorage;
+			Superclass = "NSCoreSuite.NSDocument";
+		};
+		NSApplication = {
+			AppleEventCode = capp;
+			Attributes = {
+				boardListColor = {
+					AppleEventCode = bdCo;
+					Type = NSArray;
+				};
+				"boardListNonActiveColor" = {
+					AppleEventCode = bnCo;
+					Type = NSArray;
+				};
+				"browserTableViewColor" = {
+					AppleEventCode = brCo;
+					Type = NSArray;
+				};
+				isOnlineMode = {
+					AppleEventCode = onLn;
+					Type = "NSNumber<Bool>";
+				};
+			};
+			Superclass = "NSCoreSuite.NSApplication";
+			SupportedCommands = {
+				"BathyScaphe.openURL" = "handleOpenURLCommand:";
+				"BathyScaphe.removeFromDB" = "handleRemoveFromDBCommand:";
+			};
+		};
+	};
+	Commands = {
+		openURL = {
+			AppleEventClassCode = BaSc;
+			AppleEventCode = opnU;
+			CommandClass = NSScriptCommand;
+			UnnamedArgument = {
+				Type = NSString;
+			};
+		};
+		reloadList = {
+			AppleEventClassCode = BaSc;
+			AppleEventCode = rell;
+			CommandClass = NSScriptCommand;
+			UnnamedArgument = {
+				Type = "BathyScaphe.Browser";
+			};
+		};
+		reloadThread = {
+			AppleEventClassCode = BaSc;
+			AppleEventCode = relt;
+			CommandClass = NSScriptCommand;
+		};
+		removeFromDB = {
+			AppleEventClassCode = BaSc;
+			AppleEventCode = rmDB;
+			CommandClass = NSScriptCommand;
+			UnnamedArgument = {
+				Type = "NSString<FilePath>";
+			};
+		};
+	};
+	Name = BathyScaphe;
+	UsedFeatures = (
+		UnnamedArguments,
+	);
+}

@@ -1,0 +1,27 @@
+========================================
+ HOW TO BUILD
+========================================
+
+Update:2010-02-07
+
+BathyScaphe をビルドする方法を簡単に説明します。
+* 基本的に Mac OS X 10.6 + Xcode 3.2 以降の環境を前提にしています。
+
+
+■ビルド
+
+* Terminal でビルド
+--------------------------------
+1. ソースのディレクトリに移動します：
+	cd bathyscaphe
+2. Makefile が用意されているので、次のコマンドですぐビルドできます：
+	make
+3. すべてのターゲット（フレームワーク、関連コンポーネント、および BathyScaphe 本体）をクリーニングするためには、かわりに次のようにタイプ：
+	make clean
+
+* Xcode でビルド
+--------------------------------
+最新のビルド方法の説明は、以下の Web ページをご覧ください。
+
+"How to Build BathyScaphe"
+http://bathyscaphe.sourceforge.jp/cgi-bin/wiki.cgi?p=How+to+Build+BathyScaphe

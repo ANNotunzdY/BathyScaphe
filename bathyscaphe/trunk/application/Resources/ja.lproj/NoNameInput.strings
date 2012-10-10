@@ -1,0 +1,10 @@
+/* 
+   NoNameInput.strings
+   BathyScaphe
+
+   Created by Tsutomu Sawada on 10/10/18.
+   Copyright 2010 BathyScaphe Project. All rights reserved.
+ */
+
+"NoNameInput_Message" = "掲示板 “%@” の名無しさんの名前を入力してください。";
+"NoNameInput_HelpAnchor" = "bs_noname_input_dialog";

@@ -1,0 +1,17 @@
+"Not Found"		= "そんな板 or スレッドないです。";
+"Not Found %@"	= "スレッド一覧のダウンロードに失敗しました。%@";
+
+"Board Info Format" = "%u 件のスレッド";
+"Favorite Info Format" = "%u 件のお気に入り";
+
+"So could not add to your Boards List." = "同じ名前の掲示板を重複して登録することはできません。よって、掲示板を追加できませんでした。";
+
+"Boards list" = "bs_addboard_sheet";
+
+"ErrNamesSeparater" = "”、“";
+"ErrNamesCover" = "“%@”";
+
+"Same Name Exists" = "すでに同じ名前の項目が存在します。";
+"Cancel" = "OK";
+"%@ are not added to your Boards List." = "同じ名前の掲示板を重複して登録することはできません。よって、%@ は掲示板リストに追加できませんでした。";
+

@@ -1,0 +1,13 @@
+/* 
+   DatabaseUpdater.strings
+   BathyScaphe
+
+   Created by Hori,Masaki on 10/10/06.
+   Copyright 2010 masakih. All rights reserved.
+ */
+
+
+"prepare database" = "データベースを準備中";
+"register to new database" = "新しいデータベースに登録中";
+"finalize database" = "終了処理中";
+

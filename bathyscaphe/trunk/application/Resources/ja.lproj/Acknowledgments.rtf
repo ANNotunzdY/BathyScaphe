@@ -1,0 +1,463 @@
+{\rtf1\ansi\ansicpg932\cocoartf1138\cocoasubrtf470
+\readonlydoc1{\fonttbl\f0\fnil\fcharset128 HiraKakuPro-W3;\f1\fnil\fcharset0 LucidaGrande;\f2\fnil\fcharset128 HiraKakuProN-W3;
+\f3\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red76\green76\blue76;\red102\green102\blue102;\red0\green116\blue0;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw12240\paperh15840\vieww14460\viewh13380\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\f0\b\fs26 \cf0 \'8e\'d3\'8e\'ab
+\b0\fs24 \
+
+\f1\fs22 BathyScaphe 
+\f0 \'82\'cd\'88\'c8\'89\'ba\'82\'c9\'8b\'93\'82\'b0\'82\'e9\'90\'94\'81\'58\'82\'cc\'97\'44\'82\'ea\'82\'bd\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'82\'f0\'97\'98\'97\'70\'82\'b5\'82\'c4\'8a\'4a\'94\'ad\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42
+\f1\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+
+\b \cf0 Satoshi Nakagawa (CocoaOniguruma)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f0 \'82\'cd\'81\'41\'88\'c8\'89\'ba\'82\'cc\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'58\'82\'c9\'8a\'ee\'82\'c3\'82\'a2\'82\'c4
+\f1  CocoaOniguruma <{\field{\*\fldinst{HYPERLINK "http://limechat.net/cocoaoniguruma/"}}{\fldrslt http://limechat.net/cocoaoniguruma/}}> 
+\f0 \'82\'cc\'83\'5c\'81\'5b\'83\'58\'83\'52\'81\'5b\'83\'68\'82\'f0\'8e\'67\'97\'70\'82\'b5\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42\
+
+\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li300
+
+\f1\fs22 \cf2 Copyright (c) 2008-2010  Satoshi Nakagawa  <psychs AT limechat DOT net>\
+All rights reserved.\
+\
+Redistribution and use in source and binary forms, with or without\
+modification, are permitted provided that the following conditions\
+are met:\
+1. Redistributions of source code must retain the above copyright\
+   notice, this list of conditions and the following disclaimer.\
+2. Redistributions in binary form must reproduce the above copyright\
+   notice, this list of conditions and the following disclaimer in the\
+   documentation and/or other materials provided with the distribution.\
+\
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND\
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\
+ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE\
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\
+SUCH DAMAGE.\
+
+\b\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+\cf0 K.Kosako (OniGuruma)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f0 \'82\'cd\'81\'41\'88\'c8\'89\'ba\'82\'cc\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'58\'82\'c9\'8a\'ee\'82\'c3\'82\'a2\'82\'c4
+\f1  OniGuruma <{\field{\*\fldinst{HYPERLINK "http://www.geocities.jp/kosako3/oniguruma/"}}{\fldrslt http://www.geocities.jp/kosako3/oniguruma/}}> 
+\f0 \'82\'cc\'83\'5c\'81\'5b\'83\'58\'83\'52\'81\'5b\'83\'68\'82\'f0\'8e\'67\'97\'70\'82\'b5\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42\
+
+\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li280\fi20
+
+\f1\fs22 \cf2 /*-\
+ * Copyright (c) 2002-2007  K.Kosako  <sndgk393 AT ybb DOT ne DOT jp>\
+ * All rights reserved.\
+ *\
+ * Redistribution and use in source and binary forms, with or without\
+ * modification, are permitted provided that the following conditions\
+ * are met:\
+ * 1. Redistributions of source code must retain the above copyright\
+ *    notice, this list of conditions and the following disclaimer.\
+ * 2. Redistributions in binary form must reproduce the above copyright\
+ *    notice, this list of conditions and the following disclaimer in the\
+ *    documentation and/or other materials provided with the distribution.\
+ *\
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND\
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE\
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\
+ * SUCH DAMAGE.\
+ */\
+
+\b\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+\cf0 SQLite\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f0 \'82\'cd\'81\'41
+\f1 public domain 
+\f0 \'82\'cc
+\f1  SQLite <{\field{\*\fldinst{HYPERLINK "http://www.sqlite.org/"}}{\fldrslt http://www.sqlite.org/}}> 
+\f0 \'82\'f0\'8e\'67\'97\'70\'82\'b5\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42\'82\'b1\'82\'cc\'82\'b7\'82\'ce\'82\'e7\'82\'b5\'82\'a2\'83\'52\'81\'5b\'83\'68\'82\'f0
+\f1  public domain 
+\f0 \'82\'c9\'95\'f9\'82\'b0\'82\'c4\'82\'ad\'82\'ea\'82\'bd\'8a\'4a\'94\'ad\'8e\'d2\'82\'c9\'8a\'b4\'8e\'d3\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f1\b\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+
+\f0 \cf0 \'8c\'49\'93\'63\'93\'4e\'98\'59
+\f1  (FileTreeView - part of StationaryPalette)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f0 \'82\'cd\'81\'41\'8c\'49\'93\'63\'93\'4e\'98\'59\'8e\'81\'82\'c9\'82\'e6\'82\'e9
+\f1  FileTreeView.m 
+\f0 \'82\'cc\'83\'5c\'81\'5b\'83\'58\'83\'52\'81\'5b\'83\'68\'82\'f0\'97\'98\'97\'70\'82\'b5\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42
+\f1 FileTreeView.m 
+\f0 \'82\'cd\'8c\'49\'93\'63\'8e\'81\'82\'cc\'82\'b2\'8c\'fa\'88\'d3\'82\'c9\'82\'e6\'82\'e8\'81\'41\'93\'c1\'95\'ca\'82\'c9
+\f1  BathyScaphe 
+\f0 \'82\'c9\'91\'ce\'82\'b5\'82\'c4\'8f\'43\'90\'b3
+\f1  BSD 
+\f0 \'83\'89\'83\'43\'83\'5a\'83\'93\'83\'58\'82\'cc\'89\'ba\'82\'c5\'92\'f1\'8b\'9f\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42\
+
+\f1 FileTreeView.m 
+\f0 \'82\'cd\'81\'41\'8c\'49\'93\'63\'8e\'81\'82\'cc\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'82\'c5\'82\'a0\'82\'e9
+\f1  StationaryPalette <{\field{\*\fldinst{HYPERLINK "http://homepage.mac.com/tkurita/scriptfactory/Softwares/FinderHelpers/StationeryPalette/index.html"}}{\fldrslt http://homepage.mac.com/tkurita/scriptfactory/Softwares/FinderHelpers/StationeryPalette/index.html}}> 
+\f0\fs20 \'82\'cc\'88\'ea\'95\'94\'82\'c5\'82\'b7\'81\'42\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li280
+\cf0 \
+
+\b\fs22 \'8c\'49\'93\'63\'93\'4e\'98\'59\'8e\'81\'82\'cc
+\f1  Web 
+\f0 \'83\'54\'83\'43\'83\'67\'81\'75
+\f1 Script factory
+\f0 \'81\'76
+\f1 \
+{\field{\*\fldinst{HYPERLINK "http://homepage.mac.com/tkurita/scriptfactory/"}}{\fldrslt 
+\b0 http://homepage.mac.com/tkurita/scriptfactory/}}
+\f0\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\f1\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li280\fi20
+
+\fs22 \cf2 Copyright (c) 2007, 
+\f0 \'8c\'49\'93\'63\'93\'4e\'98\'59
+\f1 \uc0\u8232 All rights reserved.\
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li560\fi-260
+\ls1\ilvl0\cf2  \'95 Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\
+ \'95 Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\
+ \'95 Neither the name of the <ORGANIZATION> nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li280\fi20
+\cf2 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE\cf3 , \cf2 DATA\cf3 , \cf2 OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
+
+\b\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+\cf0 Takanori Ishikawa (CocoMonar)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f0 \'82\'cd\'81\'41\'88\'c8\'89\'ba\'82\'cc\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'58\'82\'c9\'8a\'ee\'82\'c3\'82\'a2\'82\'c4
+\f1  CocoMonar <{\field{\*\fldinst{HYPERLINK "http://sourceforge.jp/projects/cocomonar/"}}{\fldrslt http://sourceforge.jp/projects/cocomonar/}}> 
+\f0 \'82\'cc\'83\'5c\'81\'5b\'83\'58\'83\'52\'81\'5b\'83\'68\'82\'f0\'8e\'67\'97\'70\'82\'b5\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42\
+
+\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li280
+
+\f1\fs22 \cf2 Copyright (c) 2001-2003, Takanori Ishikawa.  All rights reserved.\
+\
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\
+\
+1. Redistributions of source code must retain the above copyright\
+   notice, this list of conditions and the following disclaimer.\
+2. Redistributions in binary form must reproduce the above copyright\
+   notice, this list of conditions and the following disclaimer in the\
+   documentation and/or other materials provided with the distribution.\
+3. The name of the author may not be used to endorse or promote products\
+   derived from this software without specific prior written permission.\
+\
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"\
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, \
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE\
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
+
+\b\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+
+\f0 \cf0 \'96\'bc\'8f\'cc\'96\'a2\'90\'dd\'92\'e8
+\f1  (BoardWarrior Components)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f0 \'82\'cd\'81\'41\'88\'c8\'89\'ba\'82\'cc\'96\'bc\'96\'b3\'82\'b5\'82\'b3\'82\'f1\'82\'c9\'82\'e6\'82\'c1\'82\'c4\'92\'f1\'8b\'9f\'82\'b3\'82\'ea\'82\'bd 
+\f1 \up2 perl
+\f0 \up0  \'83\'58\'83\'4e\'83\'8a\'83\'76\'83\'67\'8b\'79\'82\'d1\'8e\'c0\'8d\'73\'83\'74\'83\'40\'83\'43\'83\'8b\'82\'f0\'81\'41\'8c\'66\'8e\'a6\'94\'c2\'83\'8a\'83\'58\'83\'67\'82\'cc\'93\'af\'8a\'fa\'8b\'40\'94\'5c\'82\'cc\'88\'ea\'95\'94\'82\'c6\'82\'b5\'82\'c4\'8e\'67\'97\'70\'82\'b5\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li280\fi20
+
+\f1 \cf2 Core Perl Script by 406@CocoMonar 15th thread\
+Shift_JIS to UTF-8 tool by 494@CocoMonar 15th thread\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+\cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+
+\b\fs24 \cf0 M. Uli Kusterer (UKXattrMetadataStore)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f0 \'82\'cd\'81\'41\'88\'c8\'89\'ba\'82\'cc\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'58\'82\'c9\'8a\'ee\'82\'c3\'82\'a2\'82\'c4
+\f1  UKXattrMetadaStore
+\f0  <{\field{\*\fldinst{HYPERLINK "http://www.zathras.de"}}{\fldrslt 
+\f1 http://www.zathras.de}}>
+\f1  
+\f2 \'82\'f0\'8e\'67\'97\'70\'82\'b5\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42\'8d\'ec\'8e\'d2\'82\'cc 
+\f1 M. Uli Kusterer
+\f0  \'8e\'81\'82\'c9\'8a\'b4\'8e\'d3\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li280
+
+\f1 \cf2 (c) 2006 by M. Uli Kusterer. You may redistribute, modify, use in\
+commercial products free of charge, however distributing modified copies\
+requires that you clearly mark them as having been modified by you, while\
+maintaining the original markings and copyrights.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+\cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+
+\b\fs24 \cf0 masakih (XspfManager)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f0 \'82\'cd\'81\'41\'88\'c8\'89\'ba\'82\'cc\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'58\'82\'c9\'8a\'ee\'82\'c3\'82\'a2\'82\'c4
+\f1  XspfManager <{\field{\*\fldinst{HYPERLINK "http://sourceforge.jp/projects/xspfmanager/"}}{\fldrslt http://sourceforge.jp/projects/xspfmanager/}}> 
+\f0 \'82\'cc\'83\'5c\'81\'5b\'83\'58\'83\'52\'81\'5b\'83\'68\'82\'f0\'8e\'67\'97\'70\'82\'b5\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42\
+\pard\tx560\pardeftab560\pardirnatural
+
+\f3 \cf4 \CocoaLigature0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li280\fi20
+
+\f1 \cf2 \CocoaLigature1 /*\
+ This source code is release under the New BSD License.\
+ Copyright (c) 2009-2010, masakih\
+ All rights reserved.\
+ \
+ 
+\f2 \'83\'5c\'81\'5b\'83\'58\'83\'52\'81\'5b\'83\'68\'8c\'60\'8e\'ae\'82\'a9\'83\'6f\'83\'43\'83\'69\'83\'8a\'8c\'60\'8e\'ae\'82\'a9\'81\'41\'95\'cf\'8d\'58\'82\'b7\'82\'e9\'82\'a9\'82\'b5\'82\'c8\'82\'a2\'82\'a9\'82\'f0\'96\'e2\'82\'ed\'82\'b8\'81\'41\'88\'c8\'89\'ba\'82\'cc\'8f\'f0\'8c\'8f\'82\'f0\'96\'9e\'82\'bd\'82\'b7\'8f\'ea\'8d\'87\'82\'c9
+\f1 \
+ 
+\f2 \'8c\'c0\'82\'e8\'81\'41\'8d\'c4\'94\'d0\'95\'7a\'82\'a8\'82\'e6\'82\'d1\'8e\'67\'97\'70\'82\'aa\'8b\'96\'89\'c2\'82\'b3\'82\'ea\'82\'dc\'82\'b7\'81\'42
+\f1 \
+ \
+ 1, 
+\f2 \'83\'5c\'81\'5b\'83\'58\'83\'52\'81\'5b\'83\'68\'82\'f0\'8d\'c4\'94\'d0\'95\'7a\'82\'b7\'82\'e9\'8f\'ea\'8d\'87\'81\'41\'8f\'e3\'8b\'4c\'82\'cc\'92\'98\'8d\'ec\'8c\'a0\'95\'5c\'8e\'a6\'81\'41\'96\'7b\'8f\'f0\'8c\'8f\'88\'ea\'97\'97\'81\'41\'82\'a8\'82\'e6\'82\'d1\'89\'ba\'8b\'4c\'96\'c6\'90\'d3\'8f\'f0\'8d\'80\'82\'f0\'8a\'dc
+\f1 \
+ 
+\f2 \'82\'df\'82\'e9\'82\'b1\'82\'c6\'81\'42
+\f1 \
+ 2, 
+\f2 \'83\'6f\'83\'43\'83\'69\'83\'8a\'8c\'60\'8e\'ae\'82\'c5\'8d\'c4\'94\'d0\'95\'7a\'82\'b7\'82\'e9\'8f\'ea\'8d\'87\'81\'41\'94\'d0\'95\'7a\'95\'a8\'82\'c9\'95\'74\'91\'ae\'82\'cc\'83\'68\'83\'4c\'83\'85\'83\'81\'83\'93\'83\'67\'93\'99\'82\'cc\'8e\'91\'97\'bf\'82\'c9\'81\'41\'8f\'e3\'8b\'4c\'82\'cc\'92\'98\'8d\'ec\'8c\'a0\'95\'5c
+\f1 \
+ 
+\f2 \'8e\'a6\'81\'41\'96\'7b\'8f\'f0\'8c\'8f\'88\'ea\'97\'97\'81\'41\'82\'a8\'82\'e6\'82\'d1\'89\'ba\'8b\'4c\'96\'c6\'90\'d3\'8f\'f0\'8d\'80\'82\'f0\'8a\'dc\'82\'df\'82\'e9\'82\'b1\'82\'c6\'81\'42
+\f1 \
+ 3, 
+\f2 \'8f\'91\'96\'ca\'82\'c9\'82\'e6\'82\'e9\'93\'c1\'95\'ca\'82\'cc\'8b\'96\'89\'c2\'82\'c8\'82\'b5\'82\'c9\'81\'41\'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'82\'a9\'82\'e7\'94\'68\'90\'b6\'82\'b5\'82\'bd\'90\'bb\'95\'69\'82\'cc\'90\'e9\'93\'60\'82\'dc\'82\'bd\'82\'cd\'94\'cc\'94\'84\'91\'a3\'90\'69\'82\'c9\'81\'41
+\f1 \
+ 
+\f2 \'83\'52\'83\'93\'83\'67\'83\'8a\'83\'72\'83\'85\'81\'5b\'83\'5e\'81\'5b\'82\'cc\'96\'bc\'91\'4f\'82\'f0\'8e\'67\'97\'70\'82\'b5\'82\'c4\'82\'cd\'82\'c8\'82\'e7\'82\'c8\'82\'a2\'81\'42
+\f1 \
+ 
+\f2 \'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'82\'cd\'81\'41\'92\'98\'8d\'ec\'8c\'a0\'8e\'d2\'82\'a8\'82\'e6\'82\'d1\'83\'52\'83\'93\'83\'67\'83\'8a\'83\'72\'83\'85\'81\'5b\'83\'5e\'81\'5b\'82\'c9\'82\'e6\'82\'c1\'82\'c4\'81\'75\'8c\'bb\'8f\'f3\'82\'cc\'82\'dc\'82\'dc\'81\'76\'92\'f1\'8b\'9f\'82\'b3\'82\'ea\'82\'c4\'82\'a8\'82\'e8\'81\'41
+\f1 \
+ 
+\f2 \'96\'be\'8e\'a6\'96\'d9\'8e\'a6\'82\'f0\'96\'e2\'82\'ed\'82\'b8\'81\'41\'8f\'a4\'8b\'c6\'93\'49\'82\'c8\'8e\'67\'97\'70\'89\'c2\'94\'5c\'90\'ab\'81\'41\'82\'a8\'82\'e6\'82\'d1\'93\'c1\'92\'e8\'82\'cc\'96\'da\'93\'49\'82\'c9\'91\'ce\'82\'b7\'82\'e9\'93\'4b\'8d\'87\'90\'ab\'82\'c9\'8a\'d6\'82\'b7\'82\'e9\'88\'c3\'96\'d9\'82\'cc\'95\'db\'8f\'d8
+\f1 \
+ 
+\f2 \'82\'e0\'8a\'dc\'82\'df\'81\'41\'82\'dc\'82\'bd\'82\'bb\'82\'ea\'82\'c9\'8c\'c0\'92\'e8\'82\'b3\'82\'ea\'82\'c8\'82\'a2\'81\'41\'82\'a2\'82\'a9\'82\'c8\'82\'e9\'95\'db\'8f\'d8\'82\'e0\'82\'a0\'82\'e8\'82\'dc\'82\'b9\'82\'f1\'81\'42\'92\'98\'8d\'ec\'8c\'a0\'8e\'d2\'82\'e0\'83\'52\'83\'93\'83\'67\'83\'8a\'83\'72\'83\'85\'81\'5b\'83\'5e\'81\'5b
+\f1 \
+ 
+\f2 \'82\'e0\'81\'41\'8e\'96\'97\'52\'82\'cc\'82\'a2\'82\'a9\'82\'f1\'82\'f0\'96\'e2\'82\'ed\'82\'b8\'81\'41
+\f1  
+\f2 \'91\'b9\'8a\'51\'94\'ad\'90\'b6\'82\'cc\'8c\'b4\'88\'f6\'82\'a2\'82\'a9\'82\'f1\'82\'f0\'96\'e2\'82\'ed\'82\'b8\'81\'41\'82\'a9\'82\'c2\'90\'d3\'94\'43\'82\'cc\'8d\'aa\'8b\'92\'82\'aa\'8c\'5f\'96\'f1\'82\'c5\'82\'a0\'82\'e9\'82\'a9
+\f1 \
+ 
+\f2 \'8c\'b5\'8a\'69\'90\'d3\'94\'43\'82\'c5\'82\'a0\'82\'e9\'82\'a9\'81\'69\'89\'df\'8e\'b8\'82\'bb\'82\'cc\'91\'bc\'82\'cc\'81\'6a\'95\'73\'96\'40\'8d\'73\'88\'d7\'82\'c5\'82\'a0\'82\'e9\'82\'a9\'82\'f0\'96\'e2\'82\'ed\'82\'b8\'81\'41\'89\'bc\'82\'c9\'82\'bb\'82\'cc\'82\'e6\'82\'a4\'82\'c8\'91\'b9\'8a\'51\'82\'aa\'94\'ad\'90\'b6\'82\'b7\'82\'e9
+\f1 \
+ 
+\f2 \'89\'c2\'94\'5c\'90\'ab\'82\'f0\'92\'6d\'82\'e7\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'bd\'82\'c6\'82\'b5\'82\'c4\'82\'e0\'81\'41\'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'82\'cc\'8e\'67\'97\'70\'82\'c9\'82\'e6\'82\'c1\'82\'c4\'94\'ad\'90\'b6\'82\'b5\'82\'bd\'81\'69\'91\'e3\'91\'d6\'95\'69\'82\'dc\'82\'bd\'82\'cd\'91\'e3\'97\'70
+\f1 \
+ 
+\f2 \'83\'54\'81\'5b\'83\'72\'83\'58\'82\'cc\'92\'b2\'92\'42\'81\'41\'8e\'67\'97\'70\'82\'cc\'91\'72\'8e\'b8\'81\'41\'83\'66\'81\'5b\'83\'5e\'82\'cc\'91\'72\'8e\'b8\'81\'41\'97\'98\'89\'76\'82\'cc\'91\'72\'8e\'b8\'81\'41\'8b\'c6\'96\'b1\'82\'cc\'92\'86\'92\'66\'82\'e0\'8a\'dc\'82\'df\'81\'41\'82\'dc\'82\'bd\'82\'bb\'82\'ea\'82\'c9\'8c\'c0\'92\'e8
+\f1 \
+ 
+\f2 \'82\'b3\'82\'ea\'82\'c8\'82\'a2\'81\'6a\'92\'bc\'90\'da\'91\'b9\'8a\'51\'81\'41\'8a\'d4\'90\'da\'91\'b9\'8a\'51\'81\'41\'8b\'f4\'94\'ad\'93\'49\'82\'c8\'91\'b9\'8a\'51\'81\'41\'93\'c1\'95\'ca\'91\'b9\'8a\'51\'81\'41\'92\'a6\'94\'b1\'93\'49\'91\'b9\'8a\'51\'81\'41\'82\'dc\'82\'bd\'82\'cd\'8c\'8b\'89\'ca\'91\'b9\'8a\'51\'82\'c9\'82\'c2\'82\'a2
+\f1 \
+ 
+\f2 \'82\'c4\'81\'41\'88\'ea\'90\'d8\'90\'d3\'94\'43\'82\'f0\'95\'89\'82\'ed\'82\'c8\'82\'a2\'82\'e0\'82\'cc\'82\'c6\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f1 \
+ -------------------------------------------------------------------\
+ Copyright (c) 2009-2010, masakih\
+ All rights reserved.\
+ \
+ Redistribution and use in source and binary forms, with or without\
+ modification, are permitted provided that the following conditions\
+ are met:\
+ \
+ 1, Redistributions of source code must retain the above copyright\
+    notice, this list of conditions and the following disclaimer.\
+ 2, Redistributions in binary form must reproduce the above copyright\
+    notice, this list of conditions and the following disclaimer in\
+    the documentation and/or other materials provided with the\
+    distribution.\
+ 3, The names of its contributors may be used to endorse or promote\
+    products derived from this software without specific prior\
+    written permission.\
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS\
+ FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE\
+ COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\
+ INCIDENTAL, SPECIAL,EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,\
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\
+ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN\
+ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE\
+ POSSIBILITY OF SUCH DAMAGE.\
+*/\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+\cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+
+\b\fs24 \cf0 Matt Gemmell (NSImage+QuickLook)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f2 \'82\'c9\'93\'e0\'91\'a0\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'e9 \'81\'67\'83\'76\'83\'8c\'83\'72\'83\'85\'81\'5b\'83\'43\'83\'93\'83\'58\'83\'79\'83\'4e\'83\'5e\'81\'68 \'83\'76\'83\'8c\'83\'72\'83\'85\'81\'5b\'83\'76\'83\'89\'83\'4f\'83\'43\'83\'93\'82\'c5
+\f0 \'82\'cd\'81\'41\'88\'c8\'89\'ba\'82\'cc\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'58\'82\'c9\'8a\'ee\'82\'c3\'82\'a2\'82\'c4
+\f1  NSImage+QuickLook
+\f0  
+\f2 \'83\'5c\'81\'5b\'83\'58\'83\'52\'81\'5b\'83\'68\'82\'f0\'8e\'67\'97\'70\'82\'b5\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42\'8d\'ec\'8e\'d2\'82\'cc 
+\f1 Matt Gemmell
+\f0  \'8e\'81
+\f1  <{\field{\*\fldinst{HYPERLINK "http://mattgemmell.com/"}}{\fldrslt http://mattgemmell.com/}}> 
+\f0 \'82\'c9\'8a\'b4\'8e\'d3\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li280
+
+\f1 \cf2 License Agreement for Source Code provided by Matt Gemmell\
+\
+This software is supplied to you by Matt Gemmell in consideration of your agreement to the following terms, and your use, installation, modification or redistribution of this software constitutes acceptance of these terms. If you do not agree with these terms, please do not use, install, modify or redistribute this software.\
+\
+In consideration of your agreement to abide by the following terms, and subject to these terms, Matt Gemmell grants you a personal, non-exclusive license, to use, reproduce, modify and redistribute the software, with or without modifications, in source and/or binary forms; provided that if you redistribute the software in its entirety and without modifications, you must retain this notice and the following text and disclaimers in all such redistributions of the software, and that in all cases attribution of Matt Gemmell as the original author of the source code shall be included in all such resulting software products or distributions.\uc0\u8232 \
+Neither the name, trademarks, service marks or logos of Matt Gemmell or Magic Aubergine may be used to endorse or promote products derived from the software without specific prior written permission from Matt Gemmell. Except as expressly stated in this notice, no other rights or licenses, express or implied, are granted by Matt Gemmell herein, including but not limited to any patent rights that may be infringed by your derivative works or by other works in which the software may be incorporated.\
+\
+The software is provided by Matt Gemmell on an "AS IS" basis. MATT GEMMELL AND MAGIC AUBERGINE MAKE NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, REGARDING THE SOFTWARE OR ITS USE AND OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.\
+\
+IN NO EVENT SHALL MATT GEMMELL OR MAGIC AUBERGINE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION AND/OR DISTRIBUTION OF THE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF MATT GEMMELL OR MAGIC AUBERGINE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+
+\b\fs24 \cf0 The Chromium Authors  (HistoryOverlayController, ChromeRenderWidgetHostViewMacDelegate)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f2 \'82\'c5
+\f0 \'82\'cd\'81\'41\'88\'c8\'89\'ba\'82\'cc\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'58\'82\'c9\'8a\'ee\'82\'c3\'82\'a2\'82\'c4
+\f1  Chromium <{\field{\*\fldinst{HYPERLINK "http://www.chromium.org/Home"}}{\fldrslt http://www.chromium.org/Home}}>
+\f0  
+\f2 \'82\'cc\'83\'5c\'81\'5b\'83\'58\'83\'52\'81\'5b\'83\'68\'82\'cc\'88\'ea\'95\'94\'82\'f0\'8e\'67\'97\'70\'82\'b5\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'81\'42
+\f0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li280
+
+\f1 \cf2 // Copyright (c) 2011 The Chromium Authors. All rights reserved.\
+//\
+// Redistribution and use in source and binary forms, with or without\
+// modification, are permitted provided that the following conditions are\
+// met:\
+//\
+//    * Redistributions of source code must retain the above copyright\
+// notice, this list of conditions and the following disclaimer.\
+//    * Redistributions in binary form must reproduce the above\
+// copyright notice, this list of conditions and the following disclaimer\
+// in the documentation and/or other materials provided with the\
+// distribution.\
+//    * Neither the name of Google Inc. nor the names of its\
+// contributors may be used to endorse or promote products derived from\
+// this software without specific prior written permission.\
+//\
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\
+// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\
+// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\
+// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\
+// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\
+// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\
+// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\
+// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\
+// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+
+\b\fs24 \cf0 mtakagi (Quick Look Generator Components)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f2 \'82\'c9\'93\'e0\'91\'a0\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'e9 
+\f1 Quick Look 
+\f2 \'83\'76\'83\'89\'83\'4f\'83\'43\'83\'93
+\f0 \'82\'cd\'81\'41
+\f1 mtakagi
+\f0  \'8e\'81\'82\'c9\'82\'e6\'82\'c1\'82\'c4\'8c\'f6\'8a\'4a\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'e9 
+\f1 dat.qlgenerator <{\field{\*\fldinst{HYPERLINK "http://outofboundary.web.fc2.com/dat_quicklook.html"}}{\fldrslt http://outofboundary.web.fc2.com/dat_quicklook.html}}>
+\f2 \'82\'f0\'81\'41
+\f1 BathyScaphe
+\f2  \'97\'70\'82\'c9\'83\'72\'83\'8b\'83\'68\'82\'b5\'82\'bd\'82\'e0\'82\'cc\'82\'c5\'82\'b7\'81\'42\'82\'b1\'82\'cc\'91\'66\'90\'b0\'82\'e7\'82\'b5\'82\'a2\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'82\'f0\'8a\'4a\'94\'ad\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'e9 
+\f1 mtakagi
+\f2  \'8e\'81
+\f0 \'82\'c9\'8a\'b4\'8e\'d3\'82\'b5\'82\'dc\'82\'b7\'81\'42\'83\'49\'83\'8a\'83\'57\'83\'69\'83\'8b\'82\'cc 
+\f1 dat.qlgenerator
+\f0  \'83\'5c\'81\'5b\'83\'58\'83\'52\'81\'5b\'83\'68\'82\'cd {\field{\*\fldinst{HYPERLINK "http://bitbucket.org/mtakagi/dat-qlgenerator"}}{\fldrslt 
+\f1 http://bitbucket.org/mtakagi/dat-qlgenerator}} \'82\'a9\'82\'e7\'93\'fc\'8e\'e8\'82\'c5\'82\'ab\'82\'dc\'82\'b7\'81\'42\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li280\fi20
+
+\f1 \cf2 dat version 0.0.2, Copyright (c) 2010 http://outofboudary.web.fc2.com/\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+\cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+
+\b\fs24 \cf0 BathyScaphe Project\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640
+
+\b0\fs22 \cf0 BathyScaphe 
+\f0 \'83\'76\'83\'8d\'83\'57\'83\'46\'83\'4e\'83\'67\'83\'81\'83\'93\'83\'6f\'81\'5b\'81\'46
+\f1 masakih, nmatz, imait, 1024jp, and tsawada2\
+BathyScaphe 
+\f0 \'83\'77\'83\'8b\'83\'76
+\f1  
+\f0 \'90\'a7\'8d\'ec\'8b\'a6\'97\'cd\'81\'46\'8d\'5a\'90\'b3\'8e\'6d
+\f1 , Helpman, and 602@4th thread
+\f0 \
+
+\f1 BathyScaphe 
+\f0 \'82\'cc\'83\'41\'83\'76\'83\'8a\'83\'50\'81\'5b\'83\'56\'83\'87\'83\'93\'83\'41\'83\'43\'83\'52\'83\'93\'81\'69\'83\'6f\'81\'5b\'83\'57\'83\'87\'83\'93
+\f1  1.7 
+\f0 \'82\'dc\'82\'c5\'81\'6a\'81\'45\'8b\'79\'82\'d1\'82\'bb\'82\'cc\'91\'bc\'82\'cc\'8a\'65\'8e\'ed\'83\'41\'83\'43\'83\'52\'83\'93\'97\'de\'81\'69\'83\'6f\'81\'5b\'83\'57\'83\'87\'83\'93 
+\f1 2.0.5
+\f0  \'82\'dc\'82\'c5\'81\'6a\'82\'cd\'81\'41
+\f1 109@1st thread 
+\f0 \'8e\'81\'82\'cc\'92\'f1\'8b\'9f\'82\'c9\'82\'e6\'82\'e9\'82\'e0\'82\'cc\'82\'c5\'82\'b7\'81\'42\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl480\slmult1
+
+\f1 \cf0 2012-07 BathyScaphe\
+}

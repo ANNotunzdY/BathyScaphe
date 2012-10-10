@@ -1,0 +1,126 @@
+/* BathyScaphe Help Style Sheet (Top) */
+/* For Panther, Tiger, and Leopard Help Viewer -- actually, it uses the Webkit! -- */
+/* 2007-11-30 */
+
+body {
+	font-family: Lucida Grande;
+	font-size: 70%;
+	line-height: 160%;
+	margin: 0 0 1em 0;
+	padding: 0;
+}
+
+#contents {
+	margin: 3em 3% 0 3%;
+}
+
+h1 {font-size: 150%; margin: 1em 0;}
+h2 {font-size: 100%; line-height: 110%; margin-top: 0; margin-bottom: 0.5em; clear: both;}
+
+#leftbox {
+	float: left;
+	width: 50%;
+	margin: 0 0 20px 0;
+	padding: 0;
+}
+
+#rightbox {
+	float: left;
+	width: 50%;
+	margin: 0;
+	padding: 0;
+}
+
+#hot_topics {
+	border:1px solid #cccccc;
+	padding:1em;
+    -webkit-border-radius: 12px;
+    -webkit-box-shadow: 1px 2px 4px #cccccc;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0.5em 1em 0.5em 0.5em;
+	clear: both;
+	border-bottom: 1px solid #cccccc;
+}
+
+li {margin-bottom: 0.5em; font-weight:bold;}
+
+dl {
+    height: 100%;
+    padding: 0 0 0 0;
+    margin: 1em 1em 1em 0;
+}
+
+dt {
+	font-size: 120%;
+	font-weight: bold;
+	margin-top: 1em;
+	line-height: 150%;
+}
+
+dd {
+	font-size: 100%;
+	line-height: 150%;
+	margin-left: 0;
+}
+
+#navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: -2px 6px 0;
+	border-bottom: 1px solid #939393;
+	background-color: #dddddd;
+	background-repeat: no-repeat;
+	float: left;
+	font-size: 85%;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#e9e9e9), to(#d1d1d1), color-stop(0.5, #d1d1d1));
+	-webkit-background-origin: border;
+}
+
+#home {
+	position: absolute;
+	top: 2px;
+	left: 10px;
+}
+
+#index {
+	top: 2px;
+	right: 12px;
+	width: auto;
+	padding: 2px 25px 1px 8px;
+	background-color: #dddddd;
+/*	border-left: 1px solid #bfbfbf;*/
+	float: right;
+	text-shadow: #FFFFFF 0px 1px 0;  
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#e9e9e9), to(#d1d1d1), color-stop(0.5, #d1d1d1));
+	-webkit-background-origin: border;
+}
+
+
+img#h1icon {
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 8px;
+	margin-bottom: -8px;
+}
+
+a {
+        text-decoration : none ;
+        color: #3366cc;
+}
+
+a:hover {
+        text-decoration : underline ;
+}
+
+div#home a {
+	color: black;
+}
+
+div#index a {
+	color: black;
+}

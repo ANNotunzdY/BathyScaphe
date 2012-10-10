@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BBSList - IndentationPerLevel</key>
+	<integer>16</integer>
+	<key>Browser - ListViewAction</key>
+	<string>selectThread:</string>
+	<key>Browser - ListViewDoubleAction</key>
+	<string>openSelectedThreads:</string>
+	<key>Browser - ListViewInterCellSpacing</key>
+	<string>{3.0, 2.0}</string>
+	<key>Browser - QuickLook2chBytesLimit</key>
+	<integer>3071</integer>
+	<key>PopUp - BecomesKeyOnlyIfNeeded</key>
+	<integer>1</integer>
+	<key>PopUp - BorderType</key>
+	<integer>0</integer>
+	<key>PopUp - FloatingPanel</key>
+	<integer>1</integer>
+	<key>PopUp - HasShadow</key>
+	<integer>1</integer>
+	<key>PopUp - MaxWidthReductionRate</key>
+	<real>0.7</real>
+	<key>PopUp - TextInset</key>
+	<string>{5, 5}</string>
+	<key>PopUp - TimeWeight</key>
+	<real>0.08</real>
+	<key>PopUp - TrackingInsetWidth</key>
+	<integer>5</integer>
+	<key>Reply - Ninja FirstWaitSeconds</key>
+	<integer>120</integer>
+	<key>System - 2channel Auth URL</key>
+	<string>https://2chv.tora3.net/futen.cgi</string>
+	<key>System - AvailableURLCFEncodings</key>
+	<array>
+		<integer>1056</integer>
+		<integer>1</integer>
+		<integer>2561</integer>
+		<integer>2336</integer>
+	</array>
+	<key>System - BBON Info URL</key>
+	<string>http://info.2ch.net/wiki/index.php?%A4%C8%A4%AB%A4%B2%A4%CE%BF%AC%C8%F8%C0%DA%A4%EA%A1%A6%A5%D0%A1%BC%A5%DC%A5%F3%A5%CF%A5%A6%A5%B9</string>
+	<key>System - BBON Page URLs</key>
+	<array>
+		<string>http://www2.2ch.net/403/</string>
+		<string>http://qb7.2ch.net/_403/</string>
+	</array>
+	<key>System - Delete Unused Thread Informations</key>
+	<true/>
+	<key>System - DoubleClickThreshold</key>
+	<integer>0</integer>
+	<key>System - SQLite Cache Size</key>
+	<integer>0</integer>
+	<key>System - Software Update Check URL</key>
+	<string>http://bathyscaphe.sourceforge.jp/download/updatecheck.plist</string>
+	<key>System - Software Update Download Page URL</key>
+	<string>http://bathyscaphe.sourceforge.jp/download/</string>
+	<key>System - be2ch Profile URL</key>
+	<string>http://be.2ch.net/test/p.php?i=%@&amp;u=d:%@</string>
+	<key>System - be2ch Auth URL</key>
+	<string>http://be.2ch.net/test/login.php</string>
+	<key>System - be2ch Auth Format</key>
+	<string>m=%@&amp;p=%@&amp;submit=登録</string>
+	<key>Thread - AAD Regular Expression</key>
+	<string>(?:　{4}|(?: 　){2}|[─￣＿]{4})</string>
+	<key>Thread - AA Font Search List</key>
+	<array>
+		<string>IPAMonaPGothic</string>
+		<string>MS-PGothic</string>
+		<string>Mona</string>
+	</array>
+	<key>Thread - AA Font Default Size</key>
+	<integer>16</integer>
+	<key>Thread - CopyThreadFormat</key>
+	<string>%%%ThreadTitle%%%
+%%%ThreadURL%%%
+</string>
+	<key>Thread - FieldSeparater</key>
+	<string>: </string>
+	<key>Thread - GoogleQuery</key>
+	<string>http://www.google.com/search?q=%%%Query%%%&amp;ie=UTF-8&amp;oe=UTF-8</string>
+	<key>Thread - GoogleMenuItemTitle</key>
+	<string>Google で検索</string>
+	<key>Thread - Host Format</key>
+	<string>[ %@ ]</string>
+	<key>Thread - IndexFormat</key>
+	<string>%lu</string>
+	<key>Thread - MailIconAlignment</key>
+	<integer>5</integer>
+	<key>Thread - SpotlightMenuItemShown</key>
+	<false/>
+	<key>Thread - WikipediaQuery</key>
+	<string>http://ja.wikipedia.org/wiki/%E7%89%B9%E5%88%A5:Search?search=%%%Query%%%</string>
+	<key>Thread - WikipediaMenuItemTitle</key>
+	<string>Wikipedia で検索</string>
+</dict>
+</plist>

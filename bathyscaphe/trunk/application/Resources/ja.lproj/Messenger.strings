@@ -1,0 +1,49 @@
+"Send Message to %@..." = "%@ に書き込み中";
+"EndPost" = "終了";
+
+"ERROR Send Message"	= "ネットワーク接続に問題が発生したため、書き込みできませんでした。";
+"Send Message"			= "送信";
+
+"Try Again"				= "書き込む";
+"Cancel"				= "キャンセル";
+
+"ErrorAlertNoContributionInfoText" = "以下の理由により、書き込みできませんでした。";
+"ErrorAlertContributionInfoText" = "書き込みを行なう前に、以下の内容を確認してください。";
+"k2chBeLoginErrorAlertInfo" = "“書き込む” をクリックすると、自動的に Be ログインをやり直してから書き込みます。";
+
+"Reply Error Sheet Help Anchor" = "bs_reply_err_alert";
+
+"Window Title" = "Re: %@";
+"Window Title (New Thread)" = "%@ に新規スレッドを作成";
+"submit" = "書き込む";
+
+"quotation marks" = ">";
+
+"Be Login On" = "Be：有効";
+"Be Login Off" = "Be：無効";
+
+"BeLoginOnToolTip" = "現在、Be を有効にして書き込むことを選択しています。クリックすると Be を無効にします。";
+"BeLoginOnNeededToolTip" = "現在、Be を有効にして書き込むことを選択しています。この掲示板では Be ログインが必須のため、無効にすることはできません。";
+"BeLoginOffToolTip" = "現在、Be を有効にしていません。クリックすると Be を有効にします。";
+"BeLoginOffTrivialToolTip" = "この掲示板は２ちゃんねるの掲示板ではないため、Be は無効になっています。";
+"BeLoginOffCantLoginToolTip" = "環境設定で Be アカウントが設定されていないため、Be は無効になっています。";
+
+"Save Menu Item" = "下書きとして保存";
+"setName_Undo_Name" = "名前欄への入力";
+"setMail_Undo_Mail" = "メール欄への入力";
+"setTitle_Undo_Title" = "タイトル欄への入力";
+
+"CantReadDocErr_Reason_201" = "必要な内容の一部がファイルから失われているため、下書き書類を開けませんでした。";
+"CantReadDocErr_Suggestion_20x" = "ファイル %@ を削除してから、やり直してみてください。";
+"CantReadDocErr_Reason_202" = "下書き書類を開けませんでした。ファイルが空か、内容が壊れています。";
+
+"BugReportTemplate" = "【Mac OS X】%@
+【BathyScaphe】%@ (%@)
+【プレビュープラグイン】%@ (%@/%@)
+【不具合の内容】%@
+【再現手順】";
+"BugReportMarker" = "ここに不具合の内容を書いてください…";
+
+"Bug Report" = "不具合の報告";
+"BugReporterDescription" = "このテンプレートは編集／削除できません。";
+"Customize Templates" = "テンプレートリストのカスタマイズ…";

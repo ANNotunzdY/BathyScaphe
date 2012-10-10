@@ -1,0 +1,41 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                changeAddressField = id; 
+                changeCodeField = id; 
+                changeShouldLoginBe2chAnytime = id; 
+                changeShouldLoginIfNeeded = id; 
+                changeShouldSavePassword = id; 
+                saveAccount = id; 
+            }; 
+            CLASS = AccountController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "m_beCodeField" = NSTextField; 
+                "m_beMailAddressField" = NSTextField; 
+                "m_passwordField" = NSSecureTextField; 
+                "m_saveButton" = NSButton; 
+                "m_shouldLoginBe2chCheckBox" = NSButton; 
+                "m_shouldLoginCheckBox" = NSButton; 
+                "m_shouldSavePWCheckBox" = NSButton; 
+                "m_userIDField" = NSTextField; 
+            }; 
+            SUPERCLASS = PreferencesController; 
+        }, 
+        {
+            ACTIONS = {"" = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {openHelp = id; }; 
+            CLASS = PreferencesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {"_contentView" = NSView; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

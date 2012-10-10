@@ -1,0 +1,32 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                "" = id; 
+                findAll = id; 
+                findAllByFilter = id; 
+                findFirstText = id; 
+                findNextText = id; 
+                findPreviousText = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = TextFinder; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_findAllBtn" = NSButton; 
+                "_findFromHeadBtn" = NSButton; 
+                "_findNextBtn" = NSButton; 
+                "_findPopupBtn" = NSButton; 
+                "_findPrevBtn" = NSButton; 
+                "_findTextField" = NSTextField; 
+                "_notFoundField" = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,45 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                changeOpenLinkInBg = id; 
+                changeProxyPort = id; 
+                changeProxyURL = id; 
+                changeQuietDeletion = id; 
+                chooseApplication = id; 
+                enableProxy = id; 
+                enableProxyWhenPOST = id; 
+                syncSystemConfigProxy = id; 
+            }; 
+            CLASS = AdvancedPrefController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_appNameField" = id; 
+                "_chooseAppButton" = NSButton; 
+                "_openLinkInBgCheckBox" = NSButton; 
+                "_proxyPortField" = NSTextField; 
+                "_proxyURLField" = NSTextField; 
+                "_proxyWhenPOSTCheckBox" = NSButton; 
+                "_quietDeletionCheckBox" = NSButton; 
+                "_usesProxyCheckBox" = NSButton; 
+                "_usesSystemConfigProxyCheckBox" = NSButton; 
+            }; 
+            SUPERCLASS = PreferencesController; 
+        }, 
+        {CLASS = BSIconTextFieldCell; LANGUAGE = ObjC; SUPERCLASS = NSTextFieldCell; }, 
+        {
+            ACTIONS = {"" = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {openHelp = id; }; 
+            CLASS = PreferencesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {"_contentView" = NSView; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

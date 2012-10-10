@@ -1,0 +1,30 @@
+﻿/* localized strings for Board List Editing */
+"Edit Board Msg" = "掲示板 “%@” の新しい URL を入力してください。";
+"Edit Category Msg" = "カテゴリ “%@” の新しい名前を入力してください。";
+"Add Category Msg" = "新しく追加するカテゴリの名前を入力してください。";
+
+"Validation Error 1" = "URL は http:// から始まっていなければなりません";
+"Validation Error 2" = "URL は / で終わっていなければなりません";
+"Validation Error 3" = "掲示板の名前が入力されていません";
+"Validation Error 4" = "URL が入力されていません";
+
+"Same Name Exists" = "すでに同じ名前の項目が存在します。";
+"Add Board Error Msg info2chnet" = "この URL で掲示板を追加することはできません。";
+
+"Edit Board Error Msg info2chnet" = "この URL に変更することはできません。";
+"Edit Board Error Info info2chnet" = "%@ は、BathyScaphe で閲覧可能な掲示板ではありません。";
+
+"Boards list" = "bs_addboard_sheet";
+"Edit Board HelpAnchor" = "bs_editboard_sheet_editboard";
+"Edit Category HelpAnchor" = "bs_editboard_sheet_category";
+"Add Category HelpAnchor" = "bs_editboard_sheet_category"; /* same as edit category */
+
+"So could not add to your Boards List." = "同じ名前の掲示板を重複して登録することはできません。よって、掲示板を追加できませんでした。";
+
+"ErrNamesSeparater" = "”、“";
+"ErrNamesCover" = "“%@”";
+
+"%@ are not added to your Boards List." = "同じ名前の掲示板を重複して登録することはできません。よって、%@ は掲示板リストに追加できませんでした。";
+
+"So cannot change name." = "同じ名前のカテゴリを複数作ることはできません。よって、カテゴリの名前を変更できませんでした。";
+"So cannot add category." = "同じ名前のカテゴリを複数作ることはできません。よって、カテゴリを作成できませんでした。";

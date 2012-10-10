@@ -1,0 +1,16 @@
+/* Localizable Strings For Alert Panels */
+
+/* Buttons */
+"OK" = "OK";
+"Cancel" = "キャンセル";
+
+/* ====== KeyChain ====== */
+"Delete Keychain Message" = "パスワードをキーチェーンから削除してもよろしいですか？";
+"Delete Keychain Informative" = "この操作は取り消しできません。";
+
+"Create Keychain Err Message"	= "ユーザー名またはパスワードが入力されていません。";
+"Create Keychain Err Informative" = "正しく入力してから、やり直してみてください。";
+
+"Delete Keychain Err Message" = "キーチェーンからパスワードを削除できませんでした。";
+"Create Keychain Err 2 Message" = "キーチェーンにパスワードを追加できませんでした。";
+"Keychain Err Informative" = "キーチェーンに問題が発生している可能性があります。";

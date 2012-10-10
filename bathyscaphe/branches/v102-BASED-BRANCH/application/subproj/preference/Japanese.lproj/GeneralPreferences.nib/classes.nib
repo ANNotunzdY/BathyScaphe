@@ -1,0 +1,43 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {"" = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                changeAutoscrollMask = id; 
+                changeCollectByNew = id; 
+                changeIgnoreCharacters = id; 
+                changeLinkType = id; 
+                changeMailAddressShown = id; 
+                changeMailAttachShown = id; 
+                changeOpenInBrowserType = id; 
+                changeShowsAll = id; 
+            }; 
+            CLASS = GeneralPrefController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_autoscrollMaskCheckBox" = NSMatrix; 
+                "_collectByNewCheckBox" = NSButton; 
+                "_ignoreCharsField" = NSTextField; 
+                "_isMailShownCheckBox" = NSButton; 
+                "_mailAttachCheckBox" = NSButton; 
+                "_openInBrowserPopUp" = NSPopUpButton; 
+                "_resAnchorActionPopUp" = NSPopUpButton; 
+                "_showsAllCheckBox" = NSButton; 
+            }; 
+            SUPERCLASS = PreferencesController; 
+        }, 
+        {
+            ACTIONS = {openHelp = id; }; 
+            CLASS = PreferencesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {"_contentView" = NSView; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

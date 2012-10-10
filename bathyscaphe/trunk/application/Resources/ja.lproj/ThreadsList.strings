@@ -1,0 +1,48 @@
+"Not Found"		= "そんな板 or スレッドないです。";
+"Not Found %@"	= "%@ をダウンロードできなかったため、スレッド一覧を更新できませんでした。";
+"Not Found %@ %@" = "%@ をダウンロードできませんでした。%@";
+"TLDownloadErrorButton1" = "OK";
+"TLDownloadErrorButton2" = "もう一度試す";
+
+"Browser Title (Thread Mode)" = "%lu 件のスレッド";
+"Browser Title (Log Mode)" = "%lu 件のログ";
+
+"Toggle View Mode To Log" = "ログ一覧に切り替え";
+"Toggle View Mode To Thread" = "スレッド一覧に切り替え";
+
+"Search Thread Result" = "%lu 件見つかりました";
+"Search Thread Not Found" = "見つかりません";
+
+"DragDropTrashAlert" = "ゴミ箱にドラッグしたスレッドのログファイルを削除してもよろしいですか？";
+"DragDropTrashMessage" = "“お気に入り” からゴミ箱にドラッグした場合、そのスレッドが “お気に入り” から削除されるだけでなく、ログファイルもゴミ箱に移動されます。";
+"DragDropTrashOK" = "OK";
+"DragDropTrashCancel" = "キャンセル";
+
+/* BSBoardListItemHEADCheckTask */
+"Updating database" = "データベースを更新中";
+"Reseting new threads status." = "ステータスを再設定中";
+"Collecting infomation of thread" = "スレッドの情報を収集中";
+"%ld/%ld (%ld skiped)" = "%ld/%ld 件完了 — %ld 件のスレッドはスキップされました";
+"Checking thread" = "チェック中";
+"ProgressBoardListItemHEADCheck." = "更新チェックを実行中";
+"Checking SmartBoard(%@)." = "スマート掲示板 “%@” の更新チェック";
+
+"Updating Thread(%@)" = "“%@” のスレッド一覧を更新中";
+"Update threads list. %@" = "“%@” のスレッド一覧を更新中";
+
+/* BSSmartBoardUpdateTask */
+"Downloding and Analyzing subject.txt of %@" = "%@のsubject.txtをダウンロードして解析中";
+"Collecting Board informations" = "板情報を収集中";
+"Begin download subject.txt" = "subject.txtのダウンロードを開始";
+/* "Updating database" = "データベースを更新中"; same as BSBoardListItemHEADCheckTask's one */
+
+/* Browser */
+"CleanupDatochiFilesAlert(BoardName %@)" = "掲示板 “%@” の dat 落ちしたスレッドのログファイルを、ゴミ箱に移動してもよろしいですか？";
+"CleanupDatochiFilesMessage" = "スレッド一覧に無いスレッドはすべて dat 落ちしたものと見なします。ただし、“お気に入り” に登録されているスレッドのログファイルは削除されません。";
+"CleanupDatochiFilesHelpAnchor" = "bs_cleanup_alert";
+
+"RebuildThreadsListAlert(BoardName %@)" = "掲示板 “%@” のスレッド一覧データベースを再構築してもよろしいですか？";
+"RebuildThreadsListMessage" = "スレッドのステータスやレス数などの情報が正しくない場合に、この操作を実行すると問題を解決できる可能性があります。";
+"RebuildThreadsListHelpAnchor" = "bs_rebuild_alert";
+
+"RebuildingEndAlert" = "データベースの再構築が完了しました。";

@@ -1,0 +1,50 @@
+"Title" 		= "“%@” %@";
+"Message"		= "%@ からダウンロード中";
+"Download"		= "%@ のダウンロード";
+"Not Loaded"	= "接続中";
+"Error"			= "エラーで終了しました";
+"Download Canceled"		= "処理の途中でキャンセルされました";
+"Not Modified"	= "前回のダウンロード時から更新されていませんでした";
+"Detect Dat Ochi" = "dat 落ちの可能性があります";
+"Success"		= "ダウンロードは正常に終了しました";
+
+"Couldnt_Load_Data_Msg" = "ネットワークの問題が発生したため、%@ からデータを取得できませんでした。";
+
+/* BSDownloadTask */
+"Download url(%@) (%.0fk of %.0fk)" = "%@ をダウンロード中（%.0f KB / %.0f KB）";
+"Download url(%@) (%.0fk)" = "%@ をダウンロード中（%.0f KB）";
+"Download url(%@)" = "%@ をダウンロード中";
+"Download." = "ダウンロード";
+
+/* Error Recovery Options */
+"ConnectionFailedDescription" = "スレッド “%@” のダウンロード中にネットワークの問題が発生しました。";
+
+"ConnectionFailedSuggestionRetrieving" = "\n“キャンセル” をクリックすると、再取得を行う前の状態にログを復元します。";
+
+"PartialContentsDescription" = "スレッド “%@” で一部のレスが削除（あぼーん）された可能性があります。";
+"PartialContentsSuggestion" = "新着レスを取得するためには、スレッド全体を再取得する必要があります。";
+"PartialContentsHelpAnchor" = "bs_invalid_partial_contents_alert";
+
+"DatOchiDescription" = "スレッド “%@” は dat 落ちしたか、URL が間違っている可能性があります。";
+"DatOchiDescription2" = "このスレッドは dat 落ちしたか、URL が間違っている可能性があります。";
+"DatOchiSuggestion2" = "URL: %@\n";
+"DatOchiSuggestion" = "● アカウントをお持ちの場合は、● を使ってログの取得を試みることもできます。";
+"DatOchiHelpAnchor" = "bs_notfound_alert";
+
+"DatOchiSuggestionRetrieving" = "“キャンセル” をクリックすると、再取得を行う前の状態にログを復元します。● アカウントをお持ちの場合は、● を使ってログの取得を試みることもできます。";
+
+"MaruFailDescription" = "● を使ってログを取得することができませんでした。";
+"MaruFailSuggestion" = "サーバは次のメッセージを返しました：-ERR そんな板orスレッドないです。";
+
+"MaruFailSuggestionRetrieving" = "サーバは次のメッセージを返しました：-ERR そんな板orスレッドないです。\n“キャンセル” をクリックすると、再取得を行う前の状態にログを復元します。";
+
+"BBONDescription" = "あなたは、現在バーボンまたはボボン規制を受けている可能性があります。";
+"BBONSuggestion" = "規制を受けている間はスレッドまたはレスを取得できません。2時間程度待ってから、やり直してみてください。";
+
+"ErrorRecoveryCancel" = "キャンセル";
+"PartialContentsRetry" = "再取得";
+"DatOchiRetry" = "● ログインして取得";
+"BBONInfo" = "バーボン／ボボン規制とは？";
+
+/* CMRDATDownloader */
+"maruNotExists" = "-ERR そんな板orスレッドないです。";

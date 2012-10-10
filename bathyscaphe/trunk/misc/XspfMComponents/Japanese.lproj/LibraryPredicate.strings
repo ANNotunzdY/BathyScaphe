@@ -1,0 +1,149 @@
+"%[All]@ of the following are true" = "%[すべて]@ の条件が一致したら";
+"%[Any]@ of the following are true" = "%[いずれか]@ の条件が一致したら";
+
+"%[boardName]@ %[contains]@ %@" = "%1$[掲示板の名前が]@ %3$@ %2$[を含む]@";
+"%[boardName]@ %[not contains]@ %@" = "%1$[掲示板の名前が]@ %3$@ %2$[を含まない]@";
+"%[boardName]@ %[begins with]@ %@" = "%1$[掲示板の名前が]@ %3$@ %2$[で始まる]@ ";
+"%[boardName]@ %[ends with]@ %@" = "%1$[掲示板の名前が]@ %3$@ %2$[で終わる]@ ";
+"%[boardName]@ %[is]@ %@" = "%1$[掲示板の名前が]@ %3$@ %2$[である]@ ";
+"%[boardName]@ %[is not]@ %@" = "%1$[掲示板の名前が]@ %3$@ %2$[でない]@ ";
+
+"%[threadName]@ %[contains]@ %@" = "%1$[スレッドタイトルが]@ %3$@ %2$[を含む]@";
+"%[threadName]@ %[not contains]@ %@" = "%1$[スレッドタイトルが]@ %3$@ %2$[を含まない]@";
+"%[threadName]@ %[begins with]@ %@" = "%1$[スレッドタイトルが]@ %3$@ %2$[で始まる]@ ";
+"%[threadName]@ %[ends with]@ %@" = "%1$[スレッドタイトルが]@ %3$@ %2$[で終わる]@ ";
+"%[threadName]@ %[is]@ %@" = "%1$[スレッドタイトルが]@ %3$@ %2$[である]@ ";
+"%[threadName]@ %[is not]@ %@" = "%1$[スレッドタイトルが]@ %3$@ %2$[でない]@ ";
+
+"%[rating]@ %[is]@ %@" = "%1$[レートが]@ %3$@ %2$[である]@ ";
+"%[rating]@ %[is greater than or equal to]@ %@" = "%1$[レートが]@ %3$@ %2$[以上]@ ";
+"%[rating]@ %[is greater than]@ %@" = "%1$[レートが]@ %3$@ %2$[より大きい]@ ";
+"%[rating]@ %[is less than]@ %@" = "%1$[レートが]@ %3$@ %2$[より小さい]@ ";
+"%[rating]@ %[is less than or equal to]@ %@" = "%1$[レートが]@ %3$@ %2$[以下]@ ";
+
+"%[threadLabel]@ %[is]@ %@" = "%1$[ラベルが]@ %3$@ %2$[である]@ ";
+"%[threadLabel]@ %[is not]@ %@" = "%1$[ラベルが]@ %3$@ %2$[でない]@ ";
+
+"%[numberOfAll]@ %[is]@ %@" = "%1$[レス数が]@ %3$@ %2$[である]@";
+"%[numberOfAll]@ %[is not]@ %@" = "%1$[レス数が]@ %3$@ %2$[でない]@";
+"%[numberOfAll]@ %[is greater than]@ %@" = "%1$[レス数が]@ %3$@ %2$[より大きい]@";
+"%[numberOfAll]@ %[is less than]@ %@" = "%1$[レス数が]@ %3$@ %2$[より小さい]@";
+"%[numberOfAll]@ %[between]@ %@ %[and]@ %@" = "%1$[レス数が]@ %3$@ %4$[〜]@ %5$@ %2$[の範囲]@";
+
+"%[numberOfRead]@ %[is]@ %@" = "%1$[既取得レス数が]@ %3$@ %2$[である]@";
+"%[numberOfRead]@ %[is not]@ %@" = "%1$[既取得レス数が]@ %3$@ %2$[でない]@";
+"%[numberOfRead]@ %[is greater than]@ %@" = "%1$[既取得レス数が]@ %3$@ %2$[より大きい]@";
+"%[numberOfRead]@ %[is less than]@ %@" = "%1$[既取得レス数が]@ %3$@ %2$[より小さい]@";
+"%[numberOfRead]@ %[between]@ %@ %[and]@ %@" = "%1$[既取得レス数が]@ %3$@ %4$[〜]@ %5$@ %2$[の範囲]@";
+
+"%[numberOfDifference]@ %[is]@ %@" = "%1$[未取得レス数が]@ %3$@ %2$[である]@";
+"%[numberOfDifference]@ %[is not]@ %@" = "%1$[未取得レス数が]@ %3$@ %2$[でない]@";
+"%[numberOfDifference]@ %[is greater than]@ %@" = "%1$[未取得レス数が]@ %3$@ %2$[より大きい]@";
+"%[numberOfDifference]@ %[is less than]@ %@" = "%1$[未取得レス数が]@ %3$@ %2$[より小さい]@";
+"%[numberOfDifference]@ %[between]@ %@ %[and]@ %@" = "%1$[未取得レス数が]@ %3$@ %4$[〜]@ %5$@ %2$[の範囲]@";
+
+
+"%[threadID]@ %[is the date]@ %@" = "%1$[スレッド作成日が]@ %3$@ %2$[である]@ ";
+"%[threadID]@ %[is not the date]@ %@" = "%1$[スレッド作成日が]@ %3$@ %2$[でない]@ ";
+"%[threadID]@ %[is after the date]@ %@" = "%1$[スレッド作成日が]@ %3$@ %2$[より新しい日付]@ ";
+"%[threadID]@ %[is before the date]@ %@" = "%1$[スレッド作成日が]@ %3$@ %2$[より古い日付]@ ";
+"%[threadID]@ %[is in the range]@ %@ to %@" = "%1$[スレッド作成日が]@ %3$@ ~ %4$@ %2$[の期間内]@";
+
+"%[threadID]@ %[is today]@" = "%1$[スレッド作成日が]@ %2$[今日]@ ";
+"%[threadID]@ %[is yesterday]@" = "%1$[スレッド作成日が]@ %2$[昨日]@ ";
+"%[threadID]@ %[is this week]@" = "%1$[スレッド作成日が]@ %2$[今週]@ ";
+"%[threadID]@ %[is last week]@" = "%1$[スレッド作成日が]@ %2$[先週]@ ";
+
+"%[threadID]@ %[is exactly]@ %@ %[Hours]@ ago" = "%1$[スレッド作成日が]@ %3$@ %4$[時間]@ 前 %2$[である]@";
+"%[threadID]@ %[is exactly]@ %@ %[Days]@ ago" = "%1$[スレッド作成日が]@ %3$@ %4$[日]@ 前 %2$[である]@";
+"%[threadID]@ %[is exactly]@ %@ %[Weeks]@ ago" = "%1$[スレッド作成日が]@ %3$@ %4$[週]@ 前 %2$[である]@";
+"%[threadID]@ %[is exactly]@ %@ %[Months]@ ago" = "%1$[スレッド作成日が]@ %3$@ %4$[ヶ月]@ 前 %2$[である]@";
+"%[threadID]@ %[is exactly]@ %@ %[Years]@ ago" = "%1$[スレッド作成日が]@ %3$@ %4$[年]@ 前 %2$[である]@";
+
+"%[threadID]@ %[is in the last]@ %@ %[Hours]@" = "%1$[スレッド作成日が]@ %3$@ %4$[時間]@ %2$[以内]@";
+"%[threadID]@ %[is in the last]@ %@ %[Days]@" = "%1$[スレッド作成日が]@ %3$@ %4$[日]@ %2$[以内]@";
+"%[threadID]@ %[is in the last]@ %@ %[Weeks]@" = "%1$[スレッド作成日が]@ %3$@ %4$[週]@ %2$[以内]@";
+"%[threadID]@ %[is in the last]@ %@ %[Months]@" = "%1$[スレッド作成日が]@ %3$@ %4$[ヶ月]@ %2$[以内]@";
+"%[threadID]@ %[is in the last]@ %@ %[Years]@" = "%1$[スレッド作成日が]@ %3$@ %4$[年]@ %2$[以内]@";
+
+"%[threadID]@ %[is not in the last]@ %@ %[Hours]@" = "%1$[スレッド作成日が]@ %3$@ %4$[時間]@ %2$[以内ではない]@";
+"%[threadID]@ %[is not in the last]@ %@ %[Days]@" = "%1$[スレッド作成日が]@ %3$@ %4$[日]@ %2$[以内ではない]@";
+"%[threadID]@ %[is not in the last]@ %@ %[Weeks]@" = "%1$[スレッド作成日が]@ %3$@ %4$[週]@ %2$[以内ではない]@";
+"%[threadID]@ %[is not in the last]@ %@ %[Months]@" = "%1$[スレッド作成日が]@ %3$@ %4$[ヶ月]@ %2$[以内ではない]@";
+"%[threadID]@ %[is not in the last]@ %@ %[Years]@" = "%1$[スレッド作成日が]@ %3$@ %4$[年]@ %2$[以内ではない]@";
+
+"%[threadID]@ %[is between]@ %@ and %@ %[Hours]@ ago" = "%1$[スレッド作成日が]@ %3$@ 〜 %4$@ %5$[時間]@ 前 %2$[の範囲]@";
+"%[threadID]@ %[is between]@ %@ and %@ %[Days]@ ago" = "%1$[スレッド作成日が]@ %3$@ 〜 %4$@ %5$[日]@ 前 %2$[の範囲]@";
+"%[threadID]@ %[is between]@ %@ and %@ %[Weeks]@ ago" = "%1$[スレッド作成日が]@ %3$@ 〜 %4$@ %5$[週]@ 前 %2$[の範囲]@";
+"%[threadID]@ %[is between]@ %@ and %@ %[Months]@ ago" = "%1$[スレッド作成日が]@ %3$@ 〜 %4$@ %5$[ヶ月]@ 前 %2$[の範囲]@";
+"%[threadID]@ %[is between]@ %@ and %@ %[Years]@ ago" = "%1$[スレッド作成日が]@ %3$@ 〜 %4$@ %5$[年]@ 前 %2$[の範囲]@";
+
+"%[modifiedDate]@ %[is the date]@ %@" = "%1$[最終更新日が]@ %3$@ %2$[である]@ ";
+"%[modifiedDate]@ %[is not the date]@ %@" = "%1$[最終更新日が]@ %3$@ %2$[でない]@ ";
+"%[modifiedDate]@ %[is after the date]@ %@" = "%1$[最終更新日が]@ %3$@ %2$[より新しい日付]@ ";
+"%[modifiedDate]@ %[is before the date]@ %@" = "%1$[最終更新日が]@ %3$@ %2$[より古い日付]@ ";
+"%[modifiedDate]@ %[is in the range]@ %@ to %@" = "%1$[最終更新日が]@ %3$@ ~ %4$@ %2$[の期間内]@";
+
+"%[modifiedDate]@ %[is today]@" = "%1$[最終更新日が]@ %2$[今日]@ ";
+"%[modifiedDate]@ %[is yesterday]@" = "%1$[最終更新日が]@ %2$[昨日]@ ";
+"%[modifiedDate]@ %[is this week]@" = "%1$[最終更新日が]@ %2$[今週]@ ";
+"%[modifiedDate]@ %[is last week]@" = "%1$[最終更新日が]@ %2$[先週]@ ";
+
+"%[modifiedDate]@ %[is exactly]@ %@ %[Hours]@ ago" = "%1$[最終更新日が]@ %3$@ %4$[時間]@ 前 %2$[である]@";
+"%[modifiedDate]@ %[is exactly]@ %@ %[Days]@ ago" = "%1$[最終更新日が]@ %3$@ %4$[日]@ 前 %2$[である]@";
+"%[modifiedDate]@ %[is exactly]@ %@ %[Weeks]@ ago" = "%1$[最終更新日が]@ %3$@ %4$[週]@ 前 %2$[である]@";
+"%[modifiedDate]@ %[is exactly]@ %@ %[Months]@ ago" = "%1$[最終更新日が]@ %3$@ %4$[ヶ月]@ 前 %2$[である]@";
+"%[modifiedDate]@ %[is exactly]@ %@ %[Years]@ ago" = "%1$[最終更新日が]@ %3$@ %4$[年]@ 前 %2$[である]@";
+
+"%[modifiedDate]@ %[is in the last]@ %@ %[Hours]@" = "%1$[最終更新日が]@ %3$@ %4$[時間]@ %2$[以内]@";
+"%[modifiedDate]@ %[is in the last]@ %@ %[Days]@" = "%1$[最終更新日が]@ %3$@ %4$[日]@ %2$[以内]@";
+"%[modifiedDate]@ %[is in the last]@ %@ %[Weeks]@" = "%1$[最終更新日が]@ %3$@ %4$[週]@ %2$[以内]@";
+"%[modifiedDate]@ %[is in the last]@ %@ %[Months]@" = "%1$[最終更新日が]@ %3$@ %4$[ヶ月]@ %2$[以内]@";
+"%[modifiedDate]@ %[is in the last]@ %@ %[Years]@" = "%1$[最終更新日が]@ %3$@ %4$[年]@ %2$[以内]@";
+
+"%[modifiedDate]@ %[is not in the last]@ %@ %[Hours]@" = "%1$[最終更新日が]@ %3$@ %4$[時間]@ %2$[以内ではない]@";
+"%[modifiedDate]@ %[is not in the last]@ %@ %[Days]@" = "%1$[最終更新日が]@ %3$@ %4$[日]@ %2$[以内ではない]@";
+"%[modifiedDate]@ %[is not in the last]@ %@ %[Weeks]@" = "%1$[最終更新日が]@ %3$@ %4$[週]@ %2$[以内ではない]@";
+"%[modifiedDate]@ %[is not in the last]@ %@ %[Months]@" = "%1$[最終更新日が]@ %3$@ %4$[ヶ月]@ %2$[以内ではない]@";
+"%[modifiedDate]@ %[is not in the last]@ %@ %[Years]@" = "%1$[最終更新日が]@ %3$@ %4$[年]@ %2$[以内ではない]@";
+
+"%[modifiedDate]@ %[is between]@ %@ and %@ %[Hours]@ ago" = "%1$[最終更新日が]@ %3$@ 〜 %4$@ %5$[時間]@ 前 %2$[の範囲]@";
+"%[modifiedDate]@ %[is between]@ %@ and %@ %[Days]@ ago" = "%1$[最終更新日が]@ %3$@ 〜 %4$@ %5$[日]@ 前 %2$[の範囲]@";
+"%[modifiedDate]@ %[is between]@ %@ and %@ %[Weeks]@ ago" = "%1$[最終更新日が]@ %3$@ 〜 %4$@ %5$[週]@ 前 %2$[の範囲]@";
+"%[modifiedDate]@ %[is between]@ %@ and %@ %[Months]@ ago" = "%1$[最終更新日が]@ %3$@ 〜 %4$@ %5$[ヶ月]@ 前 %2$[の範囲]@";
+"%[modifiedDate]@ %[is between]@ %@ and %@ %[Years]@ ago" = "%1$[最終更新日が]@ %3$@ 〜 %4$@ %5$[年]@ 前 %2$[の範囲]@";
+
+"%[LastWrittenDate]@ %[is the date]@ %@" = "%1$[最終書き込み日が]@ %3$@ %2$[である]@ ";
+"%[LastWrittenDate]@ %[is not the date]@ %@" = "%1$[最終書き込み日が]@ %3$@ %2$[でない]@ ";
+"%[LastWrittenDate]@ %[is after the date]@ %@" = "%1$[最終書き込み日が]@ %3$@ %2$[より新しい日付]@ ";
+"%[LastWrittenDate]@ %[is before the date]@ %@" = "%1$[最終書き込み日が]@ %3$@ %2$[より古い日付]@ ";
+"%[LastWrittenDate]@ %[is in the range]@ %@ to %@" = "%1$[最終書き込み日が]@ %3$@ ~ %4$@ %2$[の期間内]@";
+
+"%[LastWrittenDate]@ %[is today]@" = "%1$[最終書き込み日が]@ %2$[今日]@ ";
+"%[LastWrittenDate]@ %[is yesterday]@" = "%1$[最終書き込み日が]@ %2$[昨日]@ ";
+"%[LastWrittenDate]@ %[is this week]@" = "%1$[最終書き込み日が]@ %2$[今週]@ ";
+"%[LastWrittenDate]@ %[is last week]@" = "%1$[最終書き込み日が]@ %2$[先週]@ ";
+
+"%[LastWrittenDate]@ %[is exactly]@ %@ %[Hours]@ ago" = "%1$[最終書き込み日が]@ %3$@ %4$[時間]@ 前 %2$[である]@";
+"%[LastWrittenDate]@ %[is exactly]@ %@ %[Days]@ ago" = "%1$[最終書き込み日が]@ %3$@ %4$[日]@ 前 %2$[である]@";
+"%[LastWrittenDate]@ %[is exactly]@ %@ %[Weeks]@ ago" = "%1$[最終書き込み日が]@ %3$@ %4$[週]@ 前 %2$[である]@";
+"%[LastWrittenDate]@ %[is exactly]@ %@ %[Months]@ ago" = "%1$[最終書き込み日が]@ %3$@ %4$[ヶ月]@ 前 %2$[である]@";
+"%[LastWrittenDate]@ %[is exactly]@ %@ %[Years]@ ago" = "%1$[最終書き込み日が]@ %3$@ %4$[年]@ 前 %2$[である]@";
+
+"%[LastWrittenDate]@ %[is in the last]@ %@ %[Hours]@" = "%1$[最終書き込み日が]@ %3$@ %4$[時間]@ %2$[以内]@";
+"%[LastWrittenDate]@ %[is in the last]@ %@ %[Days]@" = "%1$[最終書き込み日が]@ %3$@ %4$[日]@ %2$[以内]@";
+"%[LastWrittenDate]@ %[is in the last]@ %@ %[Weeks]@" = "%1$[最終書き込み日が]@ %3$@ %4$[週]@ %2$[以内]@";
+"%[LastWrittenDate]@ %[is in the last]@ %@ %[Months]@" = "%1$[最終書き込み日が]@ %3$@ %4$[ヶ月]@ %2$[以内]@";
+"%[LastWrittenDate]@ %[is in the last]@ %@ %[Years]@" = "%1$[最終書き込み日が]@ %3$@ %4$[年]@ %2$[以内]@";
+
+"%[LastWrittenDate]@ %[is not in the last]@ %@ %[Hours]@" = "%1$[最終書き込み日が]@ %3$@ %4$[時間]@ %2$[以内ではない]@";
+"%[LastWrittenDate]@ %[is not in the last]@ %@ %[Days]@" = "%1$[最終書き込み日が]@ %3$@ %4$[日]@ %2$[以内ではない]@";
+"%[LastWrittenDate]@ %[is not in the last]@ %@ %[Weeks]@" = "%1$[最終書き込み日が]@ %3$@ %4$[週]@ %2$[以内ではない]@";
+"%[LastWrittenDate]@ %[is not in the last]@ %@ %[Months]@" = "%1$[最終書き込み日が]@ %3$@ %4$[ヶ月]@ %2$[以内ではない]@";
+"%[LastWrittenDate]@ %[is not in the last]@ %@ %[Years]@" = "%1$[最終書き込み日が]@ %3$@ %4$[年]@ %2$[以内ではない]@";
+
+"%[LastWrittenDate]@ %[is between]@ %@ and %@ %[Hours]@ ago" = "%1$[最終書き込み日が]@ %3$@ 〜 %4$@ %5$[時間]@ 前 %2$[の範囲]@";
+"%[LastWrittenDate]@ %[is between]@ %@ and %@ %[Days]@ ago" = "%1$[最終書き込み日が]@ %3$@ 〜 %4$@ %5$[日]@ 前 %2$[の範囲]@";
+"%[LastWrittenDate]@ %[is between]@ %@ and %@ %[Weeks]@ ago" = "%1$[最終書き込み日が]@ %3$@ 〜 %4$@ %5$[週]@ 前 %2$[の範囲]@";
+"%[LastWrittenDate]@ %[is between]@ %@ and %@ %[Months]@ ago" = "%1$[最終書き込み日が]@ %3$@ 〜 %4$@ %5$[ヶ月]@ 前 %2$[の範囲]@";
+"%[LastWrittenDate]@ %[is between]@ %@ and %@ %[Years]@ ago" = "%1$[最終書き込み日が]@ %3$@ 〜 %4$@ %5$[年]@ 前 %2$[の範囲]@";
